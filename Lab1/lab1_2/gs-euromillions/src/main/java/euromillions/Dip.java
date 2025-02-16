@@ -26,15 +26,27 @@ public class Dip {
 
     public Dip(int[] arrayOfNumbers, int[] arrayOfStarts) {
         this();
-
-        if (REQUIRED_NUMBERS_COUNT_FOR_BET == arrayOfNumbers.length && REQUIRED_STARS_COUNT_FOR_BET == arrayOfStarts.length) {
-            numbers.add(arrayOfNumbers);
-            starts.add(arrayOfStarts);
-        } else {
+    
+        if (arrayOfNumbers.length != REQUIRED_NUMBERS_COUNT_FOR_BET || arrayOfStarts.length != REQUIRED_STARS_COUNT_FOR_BET) {
             throw new IllegalArgumentException("wrong number of elements in numbers/stars");
         }
-
+    
+        for (int num : arrayOfNumbers) {
+            if (num < 1 || num > 50) {
+                throw new IllegalArgumentException("Number out of range: " + num);
+            }
+        }
+    
+        for (int star : arrayOfStarts) {
+            if (star < 1 || star > 12) {
+                throw new IllegalArgumentException("Star out of range: " + star);
+            }
+        }
+    
+        numbers.add(arrayOfNumbers);
+        starts.add(arrayOfStarts);
     }
+    
 
     public static Dip generateRandomDip() {
 
@@ -101,12 +113,13 @@ public class Dip {
         StringBuilder sb = new StringBuilder();
         sb.append("N[");
         for (int number : getNumbersColl()) {
-            sb.append(String.format("%3d", number));
+            sb.append(String.format(" %2d", number));
         }
         sb.append("] S[");
         for (int star : getStarsColl()) {
-            sb.append(String.format("%d", star));
+            sb.append(String.format(" %2d", star));
         }
+        sb.append("]");
         return sb.toString();
     }
 }

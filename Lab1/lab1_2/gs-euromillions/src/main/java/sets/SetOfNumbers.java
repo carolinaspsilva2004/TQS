@@ -43,16 +43,25 @@ public class SetOfNumbers  implements Iterable<Integer> {
 	}
 
 	public boolean intersects(SetOfNumbers subset) {
+		for (int num : subset.collection) {
+			if (this.collection.contains(num)) {
+				return true;
+			}
+		}
 		return false;
 	}
+	
 
 	/**
 	 * subtract (exclude) the elements in the passed subset from the current set
 	 * @return
 	 */
-	public void  subtract (SetOfNumbers subset) {
-		 //TODO: implement this method
+	public void subtract(SetOfNumbers subset) {
+		for (int num : subset.collection) {
+			collection.remove(Integer.valueOf(num));  // Remove o número do conjunto atual
+		}
 	}
+	
 
 
 	public  boolean contains(Integer element) {

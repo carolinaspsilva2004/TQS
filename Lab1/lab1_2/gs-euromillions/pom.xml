@@ -22,4 +22,61 @@
         </dependency>
     </dependencies>
 
+    <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.2</version>
+			</plugin>
+        <!-- Plugin de JaCoCo -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.10</version>  <!-- Usa a versão mais recente -->
+            <executions>
+                <execution>
+                    <id>prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>report</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+
+	</build>
+
+    <reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.8</version>
+            <configuration>
+                <rules>
+                    <rule>
+                        <element>CLASS</element>
+                        <limit>
+                            <counter>LINE</counter>
+                            <value>COVEREDRATIO</value>
+                            <minimum>0.90</minimum> <!-- Definir 90% de cobertura -->
+                        </limit>
+                    </rule>
+                </rules>
+            </configuration>
+        </plugin>
+    </plugins>
+</reporting>
+
 </project>
