@@ -14,12 +14,12 @@ project-root/
 │── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── stack/
-│   │   │       ├── TqsStack.java
-│   │   │       ├── TqsBoundedStack.java
+│   │   │   └── tqs/tqsstack/
+|   │   │   │       ├── TqsStack.java
+|   │   │   │       ├── TqsBoundedStack.java
 │   ├── test/
 │   │   ├── java/
-│   │   │   └── stack/
+│   │   │   └── tqs/tqsstack/
 │   │   │       ├── _TqsStackTest.java (desativado)
 │   │   │       ├── TqsStackNewTest.java (novo conjunto de testes)
 │── pom.xml (configuração do Maven)
