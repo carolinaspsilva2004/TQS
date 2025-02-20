@@ -1,6 +1,10 @@
 package tqs.stocksportfolio;
 
+import lombok.Data;
+
+@Data  // Gera automaticamente getters, setters, equals, hashCode e toString
 public class Stock {
+    
     
     private String label;
     private int quantity;
@@ -10,19 +14,4 @@ public class Stock {
         this.quantity = quantity;
     }
 
-    public String getLabel() {
-        return label;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setLabel(String label) {
-        this.label = label;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 }
