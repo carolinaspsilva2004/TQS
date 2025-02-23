@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TqsBasicHttpClient.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">mockForHttpClient</a> &gt; <a href="index.source.html" class="el_package">tqs.mockforhttpclient</a> &gt; <span class="el_source">TqsBasicHttpClient.java</span></div><h1>TqsBasicHttpClient.java</h1><pre class="source lang-java linenums">package tqs.mockforhttpclient;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+
+import java.io.IOException;
+
+/**
+ * This class implements the ISimpleHttpClient interface and provides a real HTTP client
+ * that performs GET requests to a remote API using Apache HttpClient.
+ */
+<span class="fc" id="L16">public class TqsBasicHttpClient implements ISimpleHttpClient {</span>
+
+    @Override
+public String doHttpGet(String url) throws IOException {
+    // Create a default CloseableHttpClient instance to send HTTP requests
+<span class="fc" id="L21">    try (CloseableHttpClient client = HttpClients.createDefault()) {</span>
+        // Create an HTTP GET request for the given URL
+<span class="fc" id="L23">        HttpGet request = new HttpGet(url);</span>
+
+        // Execute the request and get the response
+<span class="fc" id="L26">        try (CloseableHttpResponse response = client.execute(request)) {</span>
+            // Retrieve the response entity (body of the response)
+<span class="fc" id="L28">            HttpEntity entity = response.getEntity();</span>
+
+            // Convert the entity to a String and return it
+<span class="fc" id="L31">            String jsonResponse = EntityUtils.toString(entity);</span>
+<span class="fc" id="L32">            System.out.println(&quot;API Response: &quot; + jsonResponse);  // Adicionando log para depuração</span>
+<span class="fc" id="L33">            return jsonResponse;</span>
+        }
+    }
+}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
