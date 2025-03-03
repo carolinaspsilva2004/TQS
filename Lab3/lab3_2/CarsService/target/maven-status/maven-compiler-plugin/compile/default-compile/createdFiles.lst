@@ -1,0 +1,5 @@
+tqs/carsservice/controller/CarController.class
+tqs/carsservice/service/CarManagerService.class
+tqs/carsservice/repository/CarRepository.class
+tqs/carsservice/CarsServiceApplication.class
+tqs/carsservice/model/Car.class
