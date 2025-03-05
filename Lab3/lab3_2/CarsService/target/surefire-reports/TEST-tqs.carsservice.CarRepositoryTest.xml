@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.carsservice.CarRepositoryTest" time="0.919" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.carsservice.CarRepositoryTest" time="1.654" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire/surefirebooter-20250303180536607_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire 2025-03-03T18-05-36_318-jvmRun1 surefire-20250303180536607_1tmp surefire_0-20250303180536607_2tmp"/>
+    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire/surefirebooter-20250305195613633_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire 2025-03-05T19-56-13_417-jvmRun1 surefire-20250305195613633_1tmp surefire_0-20250305195613633_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/test-classes:/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/classes:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.3/spring-boot-starter-logging-3.4.3.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-classic/1.5.16/logback-classic-1.5.16.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-core/1.5.16/logback-core-1.5.16.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/carolina/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/home/carolina/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/carolina/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/carolina/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/carolina/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/carolina/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/carolina/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/carolina/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/carolina/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/carolina/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/carolina/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/carolina/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/carolina/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/carolina/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/carolina/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/carolina/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/carolina/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/carolina/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/carolina/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/carolina/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/carolina/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/carolina/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/carolina/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/carolina/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/carolina/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/carolina/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/carolina/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/carolina/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/carolina/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/carolina/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/carolina/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/carolina/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/home/carolina/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/carolina/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/carolina/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/carolina/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/carolina/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire/surefirebooter-20250303180536607_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService/target/surefire/surefirebooter-20250305195613633_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-Ubuntu-122.04.1"/>
     <property name="user.name" value="carolina"/>
@@ -49,7 +49,7 @@
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="43664"/>
+    <property name="PID" value="117797"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
@@ -60,10 +60,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="shouldSaveMultipleCars" classname="tqs.carsservice.CarRepositoryTest" time="0.259">
-    <system-out><![CDATA[2025-03-03T18:05:48.675Z  INFO 43664 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.carsservice.CarRepositoryTest]: CarRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-03-03T18:05:48.712Z  INFO 43664 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.carsservice.CarsServiceApplication for test class tqs.carsservice.CarRepositoryTest
-2025-03-03T18:05:48.719Z  INFO 43664 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+  <testcase name="shouldSaveMultipleCars" classname="tqs.carsservice.CarRepositoryTest" time="0.519">
+    <system-out><![CDATA[2025-03-05T19:56:26.314Z  INFO 117797 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.carsservice.CarRepositoryTest]: CarRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-05T19:56:26.418Z  INFO 117797 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.carsservice.CarsServiceApplication for test class tqs.carsservice.CarRepositoryTest
+2025-03-05T19:56:26.433Z  INFO 117797 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -74,44 +74,44 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-03T18:05:48.761Z  INFO 43664 --- [           main] tqs.carsservice.CarRepositoryTest        : Starting CarRepositoryTest using Java 21.0.6 with PID 43664 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService)
-2025-03-03T18:05:48.762Z  INFO 43664 --- [           main] tqs.carsservice.CarRepositoryTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-03T18:05:48.885Z  INFO 43664 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-03T18:05:48.898Z  INFO 43664 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 1 JPA repository interface.
-2025-03-03T18:05:48.938Z  INFO 43664 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2025-03-03T18:05:48.979Z  INFO 43664 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:a959df6e-4981-43e7-bb07-639dc1aa6e0e;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2025-03-03T18:05:49.030Z  INFO 43664 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-03T18:05:49.033Z  INFO 43664 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-03-03T18:05:49.047Z  INFO 43664 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-03T18:05:49.050Z  WARN 43664 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-03-03T18:05:49.052Z  INFO 43664 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@53b81a55']
+2025-03-05T19:56:26.525Z  INFO 117797 --- [           main] tqs.carsservice.CarRepositoryTest        : Starting CarRepositoryTest using Java 21.0.6 with PID 117797 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab3/lab3_2/CarsService)
+2025-03-05T19:56:26.526Z  INFO 117797 --- [           main] tqs.carsservice.CarRepositoryTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-05T19:56:26.769Z  INFO 117797 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-05T19:56:26.784Z  INFO 117797 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 1 JPA repository interface.
+2025-03-05T19:56:26.827Z  INFO 117797 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2025-03-05T19:56:26.891Z  INFO 117797 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:18283282-0a46-4783-b885-040ab43d83bb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2025-03-05T19:56:26.957Z  INFO 117797 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-05T19:56:26.962Z  INFO 117797 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-05T19:56:26.983Z  INFO 117797 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-05T19:56:26.987Z  WARN 117797 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-03-05T19:56:26.989Z  INFO 117797 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory$EmbeddedDataSourceProxy@c8e99']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-03T18:05:49.108Z  INFO 43664 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-05T19:56:27.107Z  INFO 117797 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: drop table if exists car cascade 
 Hibernate: create table car (car_id bigint generated by default as identity, engine_type varchar(255), maker varchar(255), model varchar(255), segment varchar(255), primary key (car_id))
-2025-03-03T18:05:49.118Z  INFO 43664 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-03T18:05:49.240Z  INFO 43664 --- [           main] tqs.carsservice.CarRepositoryTest        : Started CarRepositoryTest in 0.522 seconds (process running for 12.42)
+2025-03-05T19:56:27.118Z  INFO 117797 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-05T19:56:27.316Z  INFO 117797 --- [           main] tqs.carsservice.CarRepositoryTest        : Started CarRepositoryTest in 0.884 seconds (process running for 13.541)
 Hibernate: insert into car (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
 Hibernate: insert into car (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
 Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from car c1_0
 ]]></system-out>
   </testcase>
-  <testcase name="shouldSaveAndRetrieveCar" classname="tqs.carsservice.CarRepositoryTest" time="0.018">
+  <testcase name="shouldSaveAndRetrieveCar" classname="tqs.carsservice.CarRepositoryTest" time="0.026">
     <system-out><![CDATA[Hibernate: insert into car (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
 Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from car c1_0
 ]]></system-out>
   </testcase>
-  <testcase name="shouldReturnEmptyForNonExistingCar" classname="tqs.carsservice.CarRepositoryTest" time="0.029">
+  <testcase name="shouldReturnEmptyForNonExistingCar" classname="tqs.carsservice.CarRepositoryTest" time="0.043">
     <system-out><![CDATA[Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from car c1_0 where c1_0.car_id=?
 ]]></system-out>
   </testcase>
-  <testcase name="shouldFindCarById" classname="tqs.carsservice.CarRepositoryTest" time="0.02">
+  <testcase name="shouldFindCarById" classname="tqs.carsservice.CarRepositoryTest" time="0.031">
     <system-out><![CDATA[Hibernate: insert into car (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
 ]]></system-out>
   </testcase>
