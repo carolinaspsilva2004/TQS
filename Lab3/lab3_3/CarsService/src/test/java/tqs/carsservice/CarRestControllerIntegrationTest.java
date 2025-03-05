@@ -12,6 +12,9 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import static org.assertj.core.api.Assertions.assertThat;
+import org.springframework.test.context.TestPropertySource;
+
+
 
 import tqs.carsservice.model.Car;
 import tqs.carsservice.repository.CarRepository;
@@ -19,7 +22,8 @@ import tqs.carsservice.repository.CarRepository;
 import java.util.List;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureTestDatabase
+@TestPropertySource(locations = "classpath:application-integrationtest.properties")
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class CarRestControllerIntegrationTest {
 
     @LocalServerPort
