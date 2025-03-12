@@ -1,0 +1,17 @@
+# Created at 2025-03-12T16:06:54.511
+Stream closed
+java.io.IOException: Stream closed
+	at java.base/java.io.BufferedInputStream.getInIfOpen(BufferedInputStream.java:169)
+	at java.base/java.io.BufferedInputStream.implAvailable(BufferedInputStream.java:515)
+	at java.base/java.io.BufferedInputStream.available(BufferedInputStream.java:508)
+	at java.base/java.io.BufferedInputStream.implRead(BufferedInputStream.java:428)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:399)
+	at org.apache.maven.surefire.api.util.internal.Channels$3.readImpl(Channels.java:169)
+	at org.apache.maven.surefire.api.util.internal.AbstractNoninterruptibleReadableChannel.read(AbstractNoninterruptibleReadableChannel.java:50)
+	at org.apache.maven.surefire.api.stream.AbstractStreamDecoder.read(AbstractStreamDecoder.java:430)
+	at org.apache.maven.surefire.api.stream.AbstractStreamDecoder.read(AbstractStreamDecoder.java:419)
+	at org.apache.maven.surefire.api.stream.AbstractStreamDecoder.readMessageType(AbstractStreamDecoder.java:116)
+	at org.apache.maven.surefire.stream.EventDecoder.decode(EventDecoder.java:129)
+	at org.apache.maven.plugin.surefire.extensions.EventConsumerThread.run(EventConsumerThread.java:69)
+
+
