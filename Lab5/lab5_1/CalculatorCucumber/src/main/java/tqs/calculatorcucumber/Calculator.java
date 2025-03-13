@@ -27,24 +27,37 @@ public class Calculator {
     private static final List<String> OPS = asList("-", "+", "*", "/");
 
     public void push(Object arg) {
-        if (OPS.contains(arg)) {
+        if (arg instanceof String && OPS.contains(arg)) {
             Number y = stack.removeLast();
             Number x = stack.isEmpty() ? 0 : stack.removeLast();
             Double val = null;
-            if (arg.equals("-")) {
-                val = x.doubleValue() - y.doubleValue();
-            } else if (arg.equals("+")) {
-                val = x.doubleValue() + y.doubleValue();
-            } else if (arg.equals("*")) {
-                val = x.doubleValue() * y.doubleValue();
-            } else if (arg.equals("/")) {
-                val = x.doubleValue() / y.doubleValue();
+            switch ((String) arg) {
+                case "-":
+                    val = x.doubleValue() - y.doubleValue();
+                    break;
+                case "+":
+                    val = x.doubleValue() + y.doubleValue();
+                    break;
+                case "*":
+                    val = x.doubleValue() * y.doubleValue();
+                    break;
+                case "/":
+                    if (y.doubleValue() == 0) {
+                        throw new ArithmeticException("Divisão por zero não permitida.");
+                    }
+                    val = x.doubleValue() / y.doubleValue();
+                    break;
+                default:
+                    throw new IllegalArgumentException("Operação inválida: " + arg);
             }
             push(val);
-        } else {
+        } else if (arg instanceof Number) {
             stack.add((Number) arg);
+        } else {
+            throw new IllegalArgumentException("Entrada inválida: " + arg);
         }
     }
+    
 
     public Number value() {
         return stack.getLast();
