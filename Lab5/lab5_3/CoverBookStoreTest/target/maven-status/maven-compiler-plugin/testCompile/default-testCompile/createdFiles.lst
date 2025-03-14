@@ -1,3 +1,5 @@
-tqs/coverbookstoretest/CoverBookStoreTest.class
 tqs/coverbookstoretest/CoverBookStoreRefactoringTest.class
+tqs/coverbookstoretest/BookstoreSearchSteps.class
+tqs/coverbookstoretest/RunCucumberTest.class
 tqs/coverbookstoretest/CoverBookStoreTestApplicationTests.class
+tqs/coverbookstoretest/WebDriverSingleton.class

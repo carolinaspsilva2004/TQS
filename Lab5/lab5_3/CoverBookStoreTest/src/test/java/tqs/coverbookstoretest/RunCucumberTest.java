@@ -1,14 +1,12 @@
 package tqs.coverbookstoretest;
 
-import io.cucumber.junit.Cucumber;
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import io.cucumber.junit.platform.engine.Cucumber;
+import org.junit.platform.suite.api.IncludeEngines;
+import org.junit.platform.suite.api.SelectClasspathResource;
+import org.junit.platform.suite.api.Suite;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        features = "tqs/coverbookstoretest",
-        glue = "tqs.coverbookstoretest",
-        plugin = {"pretty", "html:target/cucumber-reports.html"}
-)
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("tqs/coverbookstoretest")
 public class RunCucumberTest {
 }

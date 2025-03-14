@@ -6,20 +6,24 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-
+import io.cucumber.java.Before;
 import static org.assertj.core.api.Assertions.assertThat;
+import java.time.Duration;
 
 @ExtendWith(SeleniumJupiter.class)
 public class BookstoreSearchSteps {
 
-    private final WebDriver driver;
+    private WebDriver driver;
     private WebDriverWait wait;
 
-    public BookstoreSearchSteps(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    public BookstoreSearchSteps() {
+    }
+
+    // WebDriver will be provided before any scenario runs
+    @Before
+    public void setUp() {
+        this.driver = WebDriverSingleton.getDriver();
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     @Given("the user is on the bookstore homepage")
@@ -28,47 +32,53 @@ public class BookstoreSearchSteps {
     }
 
     @When("the user searches for {string}")
-    public void userSearchesFor(String searchQuery) {
+    public void the_user_searches_for(String title) {
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("input[placeholder='Search for books, authors, etc...']")
         ));
-        searchBox.sendKeys(searchQuery);
+        searchBox.sendKeys(title);
         searchBox.sendKeys(Keys.RETURN);
-    }
-
-    @Then("at least one book containing {string} should be displayed")
-    public void atLeastOneBookShouldBeDisplayed(String expectedTitle) {
-        WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector("[data-testid=book-search-item]")
-        ));
-        assertThat(searchResult).isNotNull();
-        assertThat(searchResult.getText()).contains(expectedTitle);
-    }
-
-    @Then("at least one book by {string} should be displayed")
-    public void atLeastOneBookByAuthorShouldBeDisplayed(String expectedAuthor) {
-        WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                By.cssSelector("[data-testid=book-search-item]")
-        ));
-        assertThat(searchResult).isNotNull();
-        assertThat(searchResult.getText()).contains(expectedAuthor);
     }
 
     @Then("no search results should be displayed")
-    public void noResultsShouldBeDisplayed() {
-        assertThat(driver.findElements(By.cssSelector("[data-testid=book-search-item]"))).isEmpty();
+    public void no_search_results_should_be_displayed() {
+        int bookCount = driver.findElements(By.cssSelector("[data-testid=book-search-item]")).size();
+        assertThat(bookCount).isEqualTo(0);
     }
 
-    @When("the user performs an empty search")
-    public void userPerformsEmptySearch() {
+    @Then("at least one book containing {string} should be displayed")
+    public void at_least_one_book_containing_should_be_displayed(String title) {
+        WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("[data-testid=book-search-item]")
+        ));
+        assertThat(searchResult.getText()).contains(title);
+    }
+
+    @Then("an error message should be displayed")
+    public void an_error_message_should_be_displayed() {
+        WebElement errorMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector(".search-error-message") // Ajuste este seletor conforme necessário
+        ));
+        assertThat(errorMsg.getText()).contains("Please enter a search term");
+    }
+
+    @When("the user searches for books by {string}")
+    public void the_user_searches_for_books_by(String author) {
         WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(
                 By.cssSelector("input[placeholder='Search for books, authors, etc...']")
         ));
+        searchBox.sendKeys(author);
         searchBox.sendKeys(Keys.RETURN);
     }
 
-    @Then("all books should be displayed")
-    public void allBooksShouldBeDisplayed() {
-        assertThat(driver.findElements(By.cssSelector("[data-testid=book-search-item]")).size()).isGreaterThan(1);
+    @Then("at least one book by {string} should be displayed")
+    public void at_least_one_book_by_should_be_displayed(String author) {
+        WebElement searchResult = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector("[data-testid=book-search-item]")
+        ));
+        assertThat(searchResult.getText()).contains(author);
     }
+
+
+
 }

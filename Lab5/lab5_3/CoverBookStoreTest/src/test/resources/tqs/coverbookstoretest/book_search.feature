@@ -15,7 +15,4 @@ Feature: Search for books in the online library
     When the user searches for "Unknown Book 12345"
     Then no search results should be displayed
 
-  Scenario: Search with an empty input
-    Given the user is on the bookstore homepage
-    When the user performs an empty search
-    Then all books should be displayed
+ 

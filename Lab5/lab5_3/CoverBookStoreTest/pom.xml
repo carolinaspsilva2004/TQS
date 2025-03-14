@@ -95,6 +95,7 @@
         <scope>test</scope>
     </dependency>
 
+
     <!-- AssertJ -->
     <dependency>
         <groupId>org.assertj</groupId>
@@ -127,6 +128,13 @@
         <artifactId>logback-classic</artifactId>
         <version>${logback.version}</version>
     </dependency>
+
+    <dependency>
+    <groupId>javax.inject</groupId>
+    <artifactId>javax.inject</artifactId>
+    <version>1</version>
+</dependency>
+
 </dependencies>
 
 

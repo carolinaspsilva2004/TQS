@@ -1,3 +1,5 @@
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab4/lab4_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/CoverBookStoreRefactoringTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab4/lab4_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/CoverBookStoreTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab4/lab4_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/CoverBookStoreTestApplicationTests.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab5/lab5_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/BookstoreSearchSteps.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab5/lab5_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/CoverBookStoreRefactoringTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab5/lab5_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/CoverBookStoreTestApplicationTests.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab5/lab5_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/RunCucumberTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab5/lab5_3/CoverBookStoreTest/src/test/java/tqs/coverbookstoretest/WebDriverSingleton.java
