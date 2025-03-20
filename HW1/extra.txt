@@ -1,0 +1,9 @@
+// Prepopulate restaurants (can be placed in a @PostConstruct bean or data.sql)
+INSERT INTO RESTAURANT (id, name, location, external_menu_url) VALUES
+(1, 'Cantina Crasto', 'Crasto', 'https://cms.ua.pt/ementas/santiago'),
+(2, 'Cantina Santiago', 'Santiago', 'https://cms.ua.pt/ementas/santiago'),
+(3, 'Campi Grelhados', 'Campus', 'https://cms.ua.pt/ementas/santiago'),
+(4, 'Campi TrêsDê', 'Campus', 'https://cms.ua.pt/ementas/santiago'),
+(5, 'Cantina ESTGA', 'ESTGA', 'https://cms.ua.pt/ementas/santiago'),
+(6, 'Restaurante Universitário', 'Universitário', 'https://cms.ua.pt/ementas/santiago'),
+(7, 'Restaurante Vegetariano', 'Vegetariano', 'https://cms.ua.pt/ementas/santiago');
