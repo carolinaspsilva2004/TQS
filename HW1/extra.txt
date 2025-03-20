@@ -7,3 +7,12 @@ INSERT INTO RESTAURANT (id, name, location, external_menu_url) VALUES
 (5, 'Cantina ESTGA', 'ESTGA', 'https://cms.ua.pt/ementas/santiago'),
 (6, 'Restaurante Universitário', 'Universitário', 'https://cms.ua.pt/ementas/santiago'),
 (7, 'Restaurante Vegetariano', 'Vegetariano', 'https://cms.ua.pt/ementas/santiago');
+
+spring.datasource.url=jdbc:mysql://localhost:3306/tqs/hw1
+spring.datasource.username=root
+spring.datasource.password=yourpassword
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+server.port=8080
+logging.level.org.springframework=INFO
