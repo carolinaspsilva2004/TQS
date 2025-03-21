@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: tqs.costumercontainers.CustomerRepositoryTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.600 s -- in tqs.costumercontainers.CustomerRepositoryTest
