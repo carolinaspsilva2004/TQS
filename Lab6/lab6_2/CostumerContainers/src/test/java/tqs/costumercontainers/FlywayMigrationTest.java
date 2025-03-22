@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @Testcontainers
-@SpringBootTest
+@SpringBootTest(classes = CostumerContainersApplication.class)
 public class FlywayMigrationTest {
 
     @Container
