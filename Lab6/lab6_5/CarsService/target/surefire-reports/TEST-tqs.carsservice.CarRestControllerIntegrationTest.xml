@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.carsservice.CarControllerRestAssuredTest" time="0.8" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.carsservice.CarRestControllerIntegrationTest" time="7.851" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -42,22 +42,19 @@
     <property name="os.version" value="6.8.0-52-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna4396807170818955378.tmp"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/lib32:/usr/lib/x86_64-linux-gnu/libfakeroot"/>
     <property name="localRepository" value="/home/carolina/.m2/repository"/>
-    <property name="jna.loaded" value="true"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="catalina.home" value="/tmp/tomcat.0.15222352012783819007"/>
-    <property name="com.zaxxer.hikari.pool_number" value="3"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PID" value="7191"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
-    <property name="catalina.base" value="/tmp/tomcat.0.10922896086375273170"/>
+    <property name="catalina.base" value="/tmp/tomcat.0.15222352012783819007"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -67,10 +64,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="whenGetCarById_thenReturnCar" classname="tqs.carsservice.CarControllerRestAssuredTest" time="0.093">
-    <system-out><![CDATA[2025-03-24T20:44:44.374Z  INFO 7191 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.carsservice.CarControllerRestAssuredTest]: CarControllerRestAssuredTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-03-24T20:44:44.403Z  INFO 7191 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.carsservice.CarsServiceApplication for test class tqs.carsservice.CarControllerRestAssuredTest
-2025-03-24T20:44:44.409Z  INFO 7191 --- [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+  <testcase name="givenCarId_whenGetCarById_thenReturnCar" classname="tqs.carsservice.CarRestControllerIntegrationTest" time="1.169">
+    <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+20:44:23.986 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.carsservice.CarRestControllerIntegrationTest]: CarRestControllerIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:44:24.207 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.carsservice.CarsServiceApplication for test class tqs.carsservice.CarRestControllerIntegrationTest
+20:44:24.413 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -81,14 +79,75 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-24T20:44:44.441Z  INFO 7191 --- [           main] t.c.CarControllerRestAssuredTest         : Starting CarControllerRestAssuredTest using Java 21.0.6 with PID 7191 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService)
-2025-03-24T20:44:44.441Z  INFO 7191 --- [           main] t.c.CarControllerRestAssuredTest         : No active profile set, falling back to 1 default profile: "default"
-2025-03-24T20:44:44.946Z  INFO 7191 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-24T20:44:44.947Z  INFO 7191 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-24T20:44:44.948Z  INFO 7191 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-24T20:44:44.969Z  INFO 7191 --- [           main] t.c.CarControllerRestAssuredTest         : Started CarControllerRestAssuredTest in 0.561 seconds (process running for 22.131)
+2025-03-24T20:44:24.806Z  INFO 7191 --- [           main] t.c.CarRestControllerIntegrationTest     : Starting CarRestControllerIntegrationTest using Java 21.0.6 with PID 7191 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService)
+2025-03-24T20:44:24.808Z  INFO 7191 --- [           main] t.c.CarRestControllerIntegrationTest     : No active profile set, falling back to 1 default profile: "default"
+2025-03-24T20:44:25.860Z  INFO 7191 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-24T20:44:25.951Z  INFO 7191 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72 ms. Found 1 JPA repository interface.
+2025-03-24T20:44:26.740Z  INFO 7191 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-03-24T20:44:26.772Z  INFO 7191 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-24T20:44:26.772Z  INFO 7191 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-24T20:44:26.849Z  INFO 7191 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-24T20:44:26.850Z  INFO 7191 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1781 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-03-24T20:44:27.165Z  INFO 7191 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-24T20:44:27.375Z  INFO 7191 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-03-24T20:44:27.377Z  INFO 7191 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-24T20:44:27.431Z  INFO 7191 --- [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
+2025-03-24T20:44:27.453Z  WARN 7191 --- [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2025-03-24T20:44:27.484Z  INFO 7191 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-03-24T20:44:27.487Z  INFO 7191 --- [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.018s)
+2025-03-24T20:44:27.500Z  INFO 7191 --- [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-03-24T20:44:27.562Z  INFO 7191 --- [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2025-03-24T20:44:27.570Z  INFO 7191 --- [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
+2025-03-24T20:44:27.600Z  INFO 7191 --- [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.011s)
+2025-03-24T20:44:27.748Z  INFO 7191 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-24T20:44:27.829Z  INFO 7191 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-24T20:44:27.893Z  INFO 7191 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-24T20:44:28.239Z  INFO 7191 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-24T20:44:28.326Z  INFO 7191 --- [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-24T20:44:29.184Z  INFO 7191 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: drop table if exists cars cascade 
+Hibernate: create table cars (car_id bigint generated by default as identity, engine_type varchar(255), maker varchar(255), model varchar(255), segment varchar(255), primary key (car_id))
+2025-03-24T20:44:29.214Z  INFO 7191 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-24T20:44:29.609Z  WARN 7191 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-24T20:44:30.223Z  INFO 7191 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 45579 (http) with context path '/'
+2025-03-24T20:44:30.235Z  INFO 7191 --- [           main] t.c.CarRestControllerIntegrationTest     : Started CarRestControllerIntegrationTest in 5.839 seconds (process running for 7.397)
+Hibernate: insert into cars (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
+2025-03-24T20:44:31.076Z  INFO 7191 --- [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-24T20:44:31.077Z  INFO 7191 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-24T20:44:31.079Z  INFO 7191 --- [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0 where c1_0.car_id=?
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0
+Hibernate: delete from cars where car_id=?
+]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="givenCars_whenGetCars_thenStatus200" classname="tqs.carsservice.CarRestControllerIntegrationTest" time="0.056">
+    <system-out><![CDATA[Hibernate: insert into cars (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
+Hibernate: insert into cars (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0
+Hibernate: delete from cars where car_id=?
+Hibernate: delete from cars where car_id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenGetAllCars_thenReturnList" classname="tqs.carsservice.CarControllerRestAssuredTest" time="0.082"/>
-  <testcase name="whenGetCarByInvalidId_thenReturnNotFound" classname="tqs.carsservice.CarControllerRestAssuredTest" time="0.01"/>
+  <testcase name="whenValidInput_thenCreateCar" classname="tqs.carsservice.CarRestControllerIntegrationTest" time="0.036">
+    <system-out><![CDATA[Hibernate: insert into cars (engine_type,maker,model,segment,car_id) values (?,?,?,?,default)
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0
+Hibernate: select c1_0.car_id,c1_0.engine_type,c1_0.maker,c1_0.model,c1_0.segment from cars c1_0
+Hibernate: delete from cars where car_id=?
+]]></system-out>
+  </testcase>
 </testsuite>
