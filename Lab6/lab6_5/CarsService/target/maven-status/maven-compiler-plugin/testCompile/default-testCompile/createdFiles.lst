@@ -1,7 +1,5 @@
-tqs/carsservice/CarRestControllerTestContainersTest.class
-tqs/carsservice/CarRestControllerIntegrationTest.class
-tqs/carsservice/CarControllerRestAssuredTest.class
-tqs/carsservice/CarRepositoryTest.class
 tqs/carsservice/CarManagerServiceTest.class
 tqs/carsservice/CarsServiceApplicationTests.class
-tqs/carsservice/CarRestControllerIntegrationTest$1.class
+tqs/carsservice/CarRestControllerTestContainersTest.class
+tqs/carsservice/CarControllerRestAssuredTest.class
+tqs/carsservice/CarRepositoryTest.class

@@ -3,6 +3,7 @@ package tqs.carsservice.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "cars")  // sem "s" no final, exatamente como o Hibernate está tentando usar
 public class Car {
 
     @Id

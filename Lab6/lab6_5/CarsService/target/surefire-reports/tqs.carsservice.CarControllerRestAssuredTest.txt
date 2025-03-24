@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tqs.carsservice.CarControllerRestAssuredTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.716 s -- in tqs.carsservice.CarControllerRestAssuredTest

@@ -12,11 +12,13 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import tqs.carsservice.model.Car;
+import org.springframework.test.context.TestPropertySource;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@TestPropertySource("classpath:application-integration.properties")
 @Testcontainers
 public class CarRestControllerTestContainersTest {
 
@@ -29,19 +31,12 @@ public class CarRestControllerTestContainersTest {
     @LocalServerPort
     private int port;
 
-    @DynamicPropertySource
-    static void properties(DynamicPropertyRegistry registry) {
-        registry.add("spring.datasource.url", postgres::getJdbcUrl);
-        registry.add("spring.datasource.username", postgres::getUsername);
-        registry.add("spring.datasource.password", postgres::getPassword);
-        registry.add("spring.jpa.hibernate.ddl-auto", () -> "none");
-        registry.add("spring.flyway.enabled", () -> "true");
-    }
-
     @BeforeAll
     public static void setupContainer() {
         postgres.start();
+        System.out.println("Postgres Container is running at: " + postgres.getJdbcUrl());
     }
+
 
     @Test
     void whenPostCar_thenCarIsCreated() {
@@ -71,6 +66,6 @@ public class CarRestControllerTestContainersTest {
                 .get("/cars")
                 .then()
                 .statusCode(200)
-                .body("$", hasSize(2));
+                .body("$", hasSize(3));
     }
 }

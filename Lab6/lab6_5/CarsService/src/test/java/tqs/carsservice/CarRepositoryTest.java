@@ -19,7 +19,7 @@ public class CarRepositoryTest {
 
     @Test
     void shouldSaveAndRetrieveCar() {
-        Car car = new Car("Toyota", "Corolla");
+        Car car = new Car( "Toyota", "Corolla");
         carRepository.save(car);
 
         List<Car> cars = carRepository.findAll();

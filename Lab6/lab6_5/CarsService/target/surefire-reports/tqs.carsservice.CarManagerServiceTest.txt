@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tqs.carsservice.CarManagerServiceTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.754 s -- in tqs.carsservice.CarManagerServiceTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.847 s -- in tqs.carsservice.CarManagerServiceTest
