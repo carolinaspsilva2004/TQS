@@ -1,30 +1,48 @@
+# CarsService - Explicação das Alterações e Melhorias
 
+## Introdução
+Neste projeto, decidi melhorar a estrutura de testes do meu controlador REST (`CarController`) utilizando o **REST Assured** em conjunto com o ambiente **MockMvc**. Estas alterações visaram não só reforçar a qualidade dos testes, como também garantir que estou a testar de forma isolada e eficiente o comportamento do controlador, sem depender do ambiente completo.
 
-# **Car Service - Testes da Camada de Persistência**  
+## O que alterei
 
- 
-## C) **Vantagens e Desvantagens de Usar uma Conexão Real com uma Base de Dados nos Testes**  
+### 1. Implementação de testes com RestAssuredMockMvc
+Anteriormente, estava a utilizar apenas o MockMvc com chamadas diretas e verificações simples.
+Agora, passei a utilizar a biblioteca **REST Assured** na variante **RestAssuredMockMvc**, que me permite escrever testes muito mais legíveis e expressivos, simulando requisições REST num ambiente de MockMvc.
 
-### ✅ **Vantagens**  
-1. **Ambiente Realista** – Testar com uma base de dados real garante que consultas, relacionamentos e restrições funcionem como em produção.  
-2. **Teste de Integridade dos Dados** – Restrições como `NOT NULL`, `FOREIGN KEY` e `UNIQUE` podem ser verificadas corretamente.  
-3. **Análise de Desempenho** – Permite testar tempos de execução de consultas e estratégias de otimização.  
-4. **Funcionalidades Específicas da Base de Dados** – Algumas bases de dados possuem comportamentos únicos que só podem ser testados em um ambiente real.  
+### 2. Anotação @WebMvcTest
+Utilizei `@WebMvcTest(CarController.class)` para garantir que apenas o contexto web referente ao `CarController` é carregado, sem carregar o contexto completo da aplicação. Isto torna os testes mais rápidos e específicos.
 
-### ❌ **Desvantagens**  
-1. **Execução Mais Lenta** – Operações em bases de dados reais são mais lentas do que em bases de dados em memória.  
-2. **Configuração e Manutenção Complexas** – Requer configuração, limpeza e, às vezes, redefinição entre testes.  
-3. **Persistência de Dados de Teste** – Dados de testes podem permanecer na base de dados e afetar execuções futuras se não forem corretamente gerenciados.  
-4. **Dependência de Fatores Externos** – Problemas de rede, indisponibilidade da base de dados ou estados inconsistentes podem afetar a confiabilidade dos testes.  
+### 3. Mock do serviço CarManagerService
+Incluí um mock do serviço `CarManagerService` através de `@MockBean`. Desta forma, consigo isolar completamente o controlador e garantir que o comportamento que estou a testar não depende da lógica do serviço, mas sim da forma como o controller reage às respostas do serviço.
 
-#
-## **Como Executar os Testes**  
-1. Corre o docker:  
-   ```sh
-        docker run --name mysql5tqs -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=tqs -e MYSQL_USER=demo -e MYSQL_PASSWORD=demo -p 33060:3306 -d mysql/mysql-server:5.7
-  
-3. Executa os testes:  
-   ```sh
-   mvn test
-   ```  
+### 4. Estrutura de testes
+Implementei três testes principais:
+- **Teste de obtenção de todos os carros**: Valido se a resposta contém a lista correta e no formato esperado.
+- **Teste de obtenção de um carro por ID válido**: Garante que um pedido com um ID válido retorna o carro correto.
+- **Teste de obtenção de um carro por ID inválido**: Testa o comportamento do sistema quando o carro não existe (devolvendo 404).
+
+## Diferenças em relação à versão anterior
+- Antes, o foco estava em testes mais tradicionais com MockMvc, sem uma sintaxe fluída e legível.
+- Agora, os testes utilizam o poder do REST Assured para criar um fluxo mais natural de leitura: `given()...when()...then()`.
+- Os testes passaram a estar totalmente desacoplados do serviço e da base de dados, garantindo maior rapidez e foco no comportamento do controller.
+- A verificação do JSON de resposta tornou-se mais robusta, utilizando o `hasSize()` e `equalTo()` do REST Assured para validar campos específicos.
+
+## Melhorias
+- **Legibilidade:** A escrita dos testes tornou-se muito mais limpa e fácil de compreender.
+- **Velocidade:** Como utilizo apenas o contexto web parcial com mocks, os testes correm de forma significativamente mais rápida.
+- **Manutenção:** Com esta abordagem, fica mais simples adicionar novos casos de teste, alterá-los ou diagnosticar falhas.
+- **Cobertura:** A utilização do mock permite testar comportamentos de erro (404), que seriam difíceis de simular num ambiente sem mocks.
+
+## Propósito das novas implementações
+- Garantir a validação do comportamento do controlador sem dependências externas.
+- Obter feedback rápido e fiável sobre a integridade das rotas expostas pelo controlador.
+- Facilitar a manutenção do código e permitir alterações futuras no serviço ou na base de dados sem impacto nos testes do controller.
+
+## Sobre o `pom.xml`
+Incluí no `pom.xml` a dependência `io.rest-assured:spring-mock-mvc` para poder usar o REST Assured em conjunto com MockMvc. Esta dependência é fundamental para suportar a sintaxe fluída e expressiva que utilizei nos testes.
+
+Além disso, mantive as dependências já existentes de `spring-boot-starter-test`, `mockito-core`, `h2` e `spring-boot-starter-data-jpa`, que garantem a base de testes, mocking e persistência em memória.
+
+## Conclusão
+Com estas alterações, o meu projeto passou a ter uma camada de testes muito mais robusta, clara e eficiente. Os controladores estão agora bem validados, os testes são rápidos e fáceis de interpretar, e a abordagem permite-me confiar na qualidade do código antes de o integrar ou disponibilizar. Esta foi uma melhoria que trouxe profissionalismo e segurança ao meu processo de desenvolvimento.
 
