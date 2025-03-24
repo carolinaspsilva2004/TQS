@@ -3,7 +3,6 @@ package tqs.carsservice.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "cars") // Define o nome da tabela explicitamente
 public class Car {
 
     @Id

@@ -1,5 +1,6 @@
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_4/CarsService/src/test/java/tqs/carsservice/CarControllerRestAssuredTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_4/CarsService/src/test/java/tqs/carsservice/CarManagerServiceTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_4/CarsService/src/test/java/tqs/carsservice/CarRepositoryTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_4/CarsService/src/test/java/tqs/carsservice/CarRestControllerIntegrationTest.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_4/CarsService/src/test/java/tqs/carsservice/CarsServiceApplicationTests.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarControllerRestAssuredTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarManagerServiceTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarRepositoryTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarRestControllerIntegrationTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarRestControllerTestContainersTest.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/Lab6/lab6_5/CarsService/src/test/java/tqs/carsservice/CarsServiceApplicationTests.java
