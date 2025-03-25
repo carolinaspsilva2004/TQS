@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.Hw1ApplicationTests" time="0.912" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.controller.MealControllerTest" time="2.862" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -51,7 +51,7 @@
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="catalina.home" value="/tmp/tomcat.0.5356718764837865260"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend"/>
     <property name="os.arch" value="amd64"/>
@@ -69,55 +69,14 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[HW1] "/>
   </properties>
-  <testcase name="contextLoads" classname="tqs.hw1.Hw1ApplicationTests" time="0.009">
-    <system-out><![CDATA[2025-03-25T11:51:05.715Z  INFO 17146 --- [HW1] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw1.Hw1ApplicationTests]: Hw1ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-03-25T11:51:05.729Z  INFO 17146 --- [HW1] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.Hw1ApplicationTests
-2025-03-25T11:51:05.738Z  INFO 17146 --- [HW1] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.4.3)
-
-2025-03-25T11:51:05.774Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : Starting Hw1ApplicationTests using Java 21.0.6 with PID 17146 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
-2025-03-25T11:51:05.774Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : No active profile set, falling back to 1 default profile: "default"
-2025-03-25T11:51:05.987Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-25T11:51:05.999Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
-2025-03-25T11:51:06.150Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-03-25T11:51:06.151Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
-2025-03-25T11:51:06.151Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-03-25T11:51:06.153Z  INFO 17146 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
-2025-03-25T11:51:06.155Z  WARN 17146 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
-2025-03-25T11:51:06.161Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.004s)
-2025-03-25T11:51:06.165Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 1
-2025-03-25T11:51:06.166Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
-2025-03-25T11:51:06.191Z  INFO 17146 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-25T11:51:06.195Z  INFO 17146 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-03-25T11:51:06.208Z  INFO 17146 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-25T11:51:06.210Z  INFO 17146 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
-	Database driver: undefined/unknown
-	Database version: 2.3.232
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-25T11:51:06.299Z  INFO 17146 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: drop table if exists meal cascade 
-Hibernate: drop table if exists reservation cascade 
-Hibernate: drop table if exists restaurant cascade 
-Hibernate: create table meal (date date, id bigint generated by default as identity, restaurant_id bigint, description varchar(255), primary key (id))
-Hibernate: create table reservation (used boolean not null, id bigint generated by default as identity, meal_id bigint, reservation_date timestamp(6), code varchar(255), primary key (id))
-Hibernate: create table restaurant (id bigint generated by default as identity, external_menu_url varchar(255), location varchar(255), name varchar(255), primary key (id))
-Hibernate: alter table if exists meal add constraint FKcd9jk7bc83ep499vvqepldy9g foreign key (restaurant_id) references restaurant
-Hibernate: alter table if exists reservation add constraint FKcbopybh7ci4xynox3e2tg48l7 foreign key (meal_id) references meal
-2025-03-25T11:51:06.309Z  INFO 17146 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-25T11:51:06.434Z  WARN 17146 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-25T11:51:06.607Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : Started Hw1ApplicationTests in 0.869 seconds (process running for 22.62)
+  <testcase name="whenGetAllMeals_thenReturnMealsList" classname="tqs.hw1.controller.MealControllerTest" time="0.083">
+    <system-out><![CDATA[2025-03-25T11:50:57.988Z  INFO 17146 --- [HW1] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw1.controller.MealControllerTest]: MealControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-03-25T11:50:57.999Z  INFO 17146 --- [HW1] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.controller.MealControllerTest
+2025-03-25T11:50:58.004Z  INFO 17146 --- [HW1] [           main] tc.postgres:15.2                         : Creating container for image: postgres:15.2
+2025-03-25T11:50:58.114Z  INFO 17146 --- [HW1] [           main] tc.postgres:15.2                         : Container postgres:15.2 is starting: 04e3728b2f4cd1e7cb8c45705893a8ed2338e340c464b4d44cd0633cd605d029
+2025-03-25T11:51:00.405Z  INFO 17146 --- [HW1] [           main] tc.postgres:15.2                         : Container postgres:15.2 started in PT2.400976259S
+2025-03-25T11:51:00.406Z  INFO 17146 --- [HW1] [           main] tc.postgres:15.2                         : Container is started (JDBC URL: jdbc:postgresql://localhost:38069/test?loggerLevel=OFF)
+Hibernate: select m1_0.id,m1_0.date,m1_0.description,m1_0.restaurant_id from meal m1_0
 ]]></system-out>
   </testcase>
 </testsuite>

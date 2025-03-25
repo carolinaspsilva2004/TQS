@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.Hw1ApplicationTests" time="0.912" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.controller.ReservationControllerTest" time="13.042" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -51,7 +51,7 @@
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="catalina.home" value="/tmp/tomcat.0.5356718764837865260"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend"/>
     <property name="os.arch" value="amd64"/>
@@ -69,10 +69,123 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[HW1] "/>
   </properties>
-  <testcase name="contextLoads" classname="tqs.hw1.Hw1ApplicationTests" time="0.009">
-    <system-out><![CDATA[2025-03-25T11:51:05.715Z  INFO 17146 --- [HW1] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw1.Hw1ApplicationTests]: Hw1ApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-03-25T11:51:05.729Z  INFO 17146 --- [HW1] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.Hw1ApplicationTests
-2025-03-25T11:51:05.738Z  INFO 17146 --- [HW1] [           main] o.s.b.d.r.RestartApplicationListener     : Restart disabled due to context in which it is running
+  <testcase name="whenBookMeal_thenReservationIsCreated" classname="tqs.hw1.controller.ReservationControllerTest" time="2.159">
+    <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+11:50:45.163 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.hw1.controller.ReservationControllerTest]: ReservationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:50:45.379 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.controller.ReservationControllerTest
+11:50:45.583 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+11:50:45.588 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+11:50:45.628 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.5
+11:50:46.011 [main] WARN org.testcontainers.dockerclient.DockerClientProviderStrategy -- DOCKER_HOST unix:///var/run/docker.sock is not listening
+java.net.BindException: Permissão negada
+	at java.base/sun.nio.ch.UnixDomainSockets.connect0(Native Method)
+	at java.base/sun.nio.ch.UnixDomainSockets.connect(UnixDomainSockets.java:154)
+	at java.base/sun.nio.ch.UnixDomainSockets.connect(UnixDomainSockets.java:150)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:878)
+	at java.base/java.nio.channels.SocketChannel.open(SocketChannel.java:285)
+	at com.github.dockerjava.transport.UnixSocket.<init>(UnixSocket.java:45)
+	at com.github.dockerjava.transport.UnixSocket.get(UnixSocket.java:27)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$test$2(DockerClientProviderStrategy.java:194)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.test(DockerClientProviderStrategy.java:208)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.tryOutStrategy(DockerClientProviderStrategy.java:284)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.lambda$getFirstValidStrategy$5(DockerClientProviderStrategy.java:263)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1685)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:129)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:527)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:513)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:647)
+	at org.testcontainers.dockerclient.DockerClientProviderStrategy.getFirstValidStrategy(DockerClientProviderStrategy.java:264)
+	at org.testcontainers.DockerClientFactory.getOrInitializeStrategy(DockerClientFactory.java:154)
+	at org.testcontainers.DockerClientFactory.client(DockerClientFactory.java:196)
+	at org.testcontainers.DockerClientFactory$1.getDockerClient(DockerClientFactory.java:108)
+	at com.github.dockerjava.api.DockerClientDelegate.authConfig(DockerClientDelegate.java:109)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:321)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$4(TestcontainersExtension.java:83)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore.lambda$getOrComputeIfAbsent$5(NamespacedHierarchicalStore.java:182)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$MemoizingSupplier.computeValue(NamespacedHierarchicalStore.java:422)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$MemoizingSupplier.get(NamespacedHierarchicalStore.java:411)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$StoredValue.evaluate(NamespacedHierarchicalStore.java:358)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$StoredValue.access$200(NamespacedHierarchicalStore.java:337)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore.getOrComputeIfAbsent(NamespacedHierarchicalStore.java:185)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.lambda$getOrComputeIfAbsent$2(NamespaceAwareStore.java:57)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.accessStore(NamespaceAwareStore.java:90)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.getOrComputeIfAbsent(NamespaceAwareStore.java:57)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$13(ClassBasedTestDescriptor.java:396)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:396)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:212)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:153)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+11:50:46.475 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/carolina/.docker/desktop/docker.sock)
+11:50:46.481 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+11:50:46.527 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 27.1.1
+  API Version: 1.46
+  Operating System: Docker Desktop
+  Total Memory: 2378 MB
+  Labels: 
+    com.docker.desktop.address=unix:///home/carolina/.docker/desktop/docker-cli.sock
+11:50:46.622 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
+11:50:46.649 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+11:50:46.841 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: 9e36bda4e8f6191db1c62deaa70d9234bc44279f935abbe058802bbe9d180b64
+11:50:47.725 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT1.103028453S
+11:50:47.736 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+11:50:47.736 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+11:50:47.737 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+11:50:47.738 [main] INFO tc.postgres:15.2 -- Creating container for image: postgres:15.2
+11:50:47.854 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 is starting: 4df07b3b7dd3b5aa007c69dde7b065ba70aad53b6e6ca9c6239315cf6ac3c89c
+11:50:49.826 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 started in PT2.087796094S
+11:50:49.827 [main] INFO tc.postgres:15.2 -- Container is started (JDBC URL: jdbc:postgresql://localhost:44599/test?loggerLevel=OFF)
+11:50:49.905 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -83,30 +196,40 @@
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-25T11:51:05.774Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : Starting Hw1ApplicationTests using Java 21.0.6 with PID 17146 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
-2025-03-25T11:51:05.774Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : No active profile set, falling back to 1 default profile: "default"
-2025-03-25T11:51:05.987Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-25T11:51:05.999Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
-2025-03-25T11:51:06.150Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-03-25T11:51:06.151Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn20: url=jdbc:h2:mem:testdb user=SA
-2025-03-25T11:51:06.151Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-03-25T11:51:06.153Z  INFO 17146 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
-2025-03-25T11:51:06.155Z  WARN 17146 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
-2025-03-25T11:51:06.161Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.004s)
-2025-03-25T11:51:06.165Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": 1
-2025-03-25T11:51:06.166Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Schema "PUBLIC" is up to date. No migration necessary.
-2025-03-25T11:51:06.191Z  INFO 17146 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-25T11:51:06.195Z  INFO 17146 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-03-25T11:51:06.208Z  INFO 17146 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-25T11:51:06.210Z  INFO 17146 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
+2025-03-25T11:50:50.299Z  INFO 17146 --- [HW1] [           main] t.h.c.ReservationControllerTest          : Starting ReservationControllerTest using Java 21.0.6 with PID 17146 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
+2025-03-25T11:50:50.302Z  INFO 17146 --- [HW1] [           main] t.h.c.ReservationControllerTest          : No active profile set, falling back to 1 default profile: "default"
+2025-03-25T11:50:51.346Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25T11:50:51.435Z  INFO 17146 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76 ms. Found 3 JPA repository interfaces.
+2025-03-25T11:50:52.133Z  INFO 17146 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-03-25T11:50:52.155Z  INFO 17146 --- [HW1] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-25T11:50:52.156Z  INFO 17146 --- [HW1] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25T11:50:52.211Z  INFO 17146 --- [HW1] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-25T11:50:52.213Z  INFO 17146 --- [HW1] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1683 ms
+Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+2025-03-25T11:50:52.527Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-25T11:50:52.756Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-03-25T11:50:52.759Z  INFO 17146 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-25T11:50:52.825Z  INFO 17146 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
+2025-03-25T11:50:52.831Z  WARN 17146 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2025-03-25T11:50:52.862Z  INFO 17146 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-03-25T11:50:52.865Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.021s)
+2025-03-25T11:50:52.877Z  INFO 17146 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-03-25T11:50:52.933Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2025-03-25T11:50:52.945Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
+2025-03-25T11:50:52.983Z  INFO 17146 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.021s)
+2025-03-25T11:50:53.105Z  INFO 17146 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25T11:50:53.168Z  INFO 17146 --- [HW1] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-25T11:50:53.209Z  INFO 17146 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-25T11:50:53.553Z  INFO 17146 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25T11:50:53.631Z  INFO 17146 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
 	Autocommit mode: undefined/unknown
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-25T11:51:06.299Z  INFO 17146 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25T11:50:54.408Z  INFO 17146 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: drop table if exists meal cascade 
 Hibernate: drop table if exists reservation cascade 
 Hibernate: drop table if exists restaurant cascade 
@@ -115,9 +238,21 @@ Hibernate: create table reservation (used boolean not null, id bigint generated 
 Hibernate: create table restaurant (id bigint generated by default as identity, external_menu_url varchar(255), location varchar(255), name varchar(255), primary key (id))
 Hibernate: alter table if exists meal add constraint FKcd9jk7bc83ep499vvqepldy9g foreign key (restaurant_id) references restaurant
 Hibernate: alter table if exists reservation add constraint FKcbopybh7ci4xynox3e2tg48l7 foreign key (meal_id) references meal
-2025-03-25T11:51:06.309Z  INFO 17146 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-25T11:51:06.434Z  WARN 17146 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-25T11:51:06.607Z  INFO 17146 --- [HW1] [           main] tqs.hw1.Hw1ApplicationTests              : Started Hw1ApplicationTests in 0.869 seconds (process running for 22.62)
+2025-03-25T11:50:54.438Z  INFO 17146 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25T11:50:54.871Z  WARN 17146 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-25T11:50:55.472Z  INFO 17146 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 44437 (http) with context path '/'
+2025-03-25T11:50:55.484Z  INFO 17146 --- [HW1] [           main] t.h.c.ReservationControllerTest          : Started ReservationControllerTest in 5.593 seconds (process running for 11.497)
+2025-03-25T11:50:57.123Z  INFO 17146 --- [HW1] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25T11:50:57.123Z  INFO 17146 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-25T11:50:57.124Z  INFO 17146 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: insert into restaurant (external_menu_url,location,name,id) values (?,?,?,default)
+Hibernate: select m1_0.id,m1_0.date,m1_0.description,m1_0.restaurant_id from meal m1_0
 ]]></system-out>
+    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
   </testcase>
 </testsuite>
