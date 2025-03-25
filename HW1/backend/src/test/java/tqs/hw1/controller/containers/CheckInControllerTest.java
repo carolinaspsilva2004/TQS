@@ -1,30 +1,27 @@
-package tqs.hw1.controller;
+package tqs.hw1.controller.containers;
 
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import tqs.hw1.model.Restaurant;
+import org.springframework.test.context.DynamicPropertyRegistry;
 
 import static org.hamcrest.Matchers.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-public class RestaurantControllerTest {
+public class CheckInControllerTest {
 
     @Container
     public static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15.2")
             .withDatabaseName("test")
             .withUsername("test")
             .withPassword("test");
-
 
     @LocalServerPort
     private int port;
@@ -35,27 +32,26 @@ public class RestaurantControllerTest {
     }
 
     @Test
-    void whenAddRestaurant_thenRestaurantIsCreated() {
-        Restaurant restaurant = new Restaurant("Testaurant", "Porto", "http://menu.example.com");
+    void whenCheckInReservation_thenReturnTrue() {
+        String code = "ABC123"; // Substitua com um código válido de reserva
 
         RestAssured.given()
                 .port(port)
-                .contentType(ContentType.JSON)
-                .body(restaurant)
-                .post("/restaurants")
+                .post("/checkin/" + code)
                 .then()
                 .statusCode(200)
-                .body("name", equalTo("Testaurant"))
-                .body("location", equalTo("Porto"));
+                .body(is("true"));
     }
 
     @Test
-    void whenGetRestaurants_thenListIsReturned() {
+    void whenCheckInReservation_thenReturnFalse() {
+        String code = "INVALIDCODE"; // Substitua com um código inválido de reserva
+
         RestAssured.given()
                 .port(port)
-                .get("/restaurants")
+                .post("/checkin/" + code)
                 .then()
                 .statusCode(200)
-                .body("$", hasSize(greaterThanOrEqualTo(0)));
+                .body(is("false"));
     }
 }
