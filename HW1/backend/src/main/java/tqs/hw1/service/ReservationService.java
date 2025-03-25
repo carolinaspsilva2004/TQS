@@ -2,16 +2,22 @@ package tqs.hw1.service;
 
 import tqs.hw1.model.*;
 import tqs.hw1.repository.*;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Service
-@RequiredArgsConstructor
 public class ReservationService {
     private final ReservationRepository reservationRepository;
+
+    public ReservationService(ReservationRepository reservationRepository) {
+        this.reservationRepository = reservationRepository;
+    }
+
+    public List<Reservation> getReservations() {
+        return reservationRepository.findAll();
+    }
 
     public Reservation createReservation(Meal meal) {
         Reservation reservation = new Reservation();

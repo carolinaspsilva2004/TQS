@@ -1,15 +1,17 @@
 package tqs.hw1.controller;
 
 import tqs.hw1.service.WeatherService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/weather")
-@RequiredArgsConstructor
 public class WeatherController {
     
     private final WeatherService weatherService;
+
+    public WeatherController(WeatherService weatherService) {
+        this.weatherService = weatherService;
+    }
 
     @GetMapping("/{city}/{date}")
     public String getWeatherForDate(@PathVariable String city, @PathVariable String date) {

@@ -16,3 +16,38 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 server.port=8080
 logging.level.org.springframework=INFO
+
+
+
+
+
+spring.application.name=HW1
+server.port=8080
+logging.level.org.springframework=INFO
+
+# weahter api key
+weather.api.key=CX33AEHU2DGV4P6CA9L2RB6LQ
+
+# Database Configuration - MySQL
+spring.datasource.url=jdbc:mysql://mysqldb:3306/moliceirodb
+spring.datasource.username=demo
+spring.datasource.password=password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# JPA Configuration
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.cache.use_second_level_cache=false
+spring.jpa.properties.hibernate.cache.region.factory_class=org.hibernate.cache.NoCacheRegionFactory
+
+# Logging Configuration
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
+logging.level.org.springframework=INFO
+logging.level.org.ies.deti.ua.medisync=DEBUG
+logging.level.org.springframework.data.mongodb=DEBUG
+
+# CORS Configuration
+app.cors.allowed-origin=http://localhost:5173

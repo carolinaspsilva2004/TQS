@@ -3,19 +3,24 @@ package tqs.hw1.controller;
 import tqs.hw1.model.*;
 import tqs.hw1.repository.*;
 import tqs.hw1.service.*;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.*;
 
 @RestController
 @RequestMapping("/restaurants")
-@RequiredArgsConstructor
 public class RestaurantController {
     private final RestaurantRepository restaurantRepository;
     private final MealRepository mealRepository;
     private final WeatherService weatherService;
     private final ExternalMenuService externalMenuService;
+
+    public RestaurantController(RestaurantRepository restaurantRepository, MealRepository mealRepository, WeatherService weatherService, ExternalMenuService externalMenuService) {
+        this.restaurantRepository = restaurantRepository;
+        this.mealRepository = mealRepository;
+        this.weatherService = weatherService;
+        this.externalMenuService = externalMenuService;
+    }
 
     @GetMapping
     public List<Restaurant> getAllRestaurants() {

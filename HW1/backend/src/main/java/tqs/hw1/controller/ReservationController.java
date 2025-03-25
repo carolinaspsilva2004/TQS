@@ -4,17 +4,20 @@ import tqs.hw1.model.Meal;
 import tqs.hw1.model.Reservation;
 import tqs.hw1.repository.MealRepository;
 import tqs.hw1.service.ReservationService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/reservations")
-@RequiredArgsConstructor
 public class ReservationController {
     private final MealRepository mealRepository;
     private final ReservationService reservationService;
+
+    public ReservationController(MealRepository mealRepository, ReservationService reservationService) {
+        this.mealRepository = mealRepository;
+        this.reservationService = reservationService;
+    }
 
     @PostMapping("/book/{mealId}")
     public Reservation bookMeal(@PathVariable Long mealId) {
