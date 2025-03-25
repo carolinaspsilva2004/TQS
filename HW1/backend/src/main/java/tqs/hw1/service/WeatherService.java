@@ -15,20 +15,19 @@ public class WeatherService {
     private String apiKey;
 
     private final RestTemplate restTemplate = new RestTemplate();
-    private final ObjectMapper objectMapper = new ObjectMapper(); // Para converter a resposta JSON
+    private final ObjectMapper objectMapper = new ObjectMapper(); 
 
     public WeatherResponse getForecast(String city, String date) throws Exception {
         String url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city;
 
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)
-                .queryParam("unitGroup", "metric")  // Alterado para "metric" ou "us" conforme necessário
+                .queryParam("unitGroup", "metric")  
                 .queryParam("include", "hours,current,alerts,days") 
                 .queryParam("key", apiKey)
                 .queryParam("contentType", "json");
 
         ResponseEntity<String> response = restTemplate.getForEntity(uriBuilder.toUriString(), String.class);
 
-        // Converte a resposta JSON para o objeto WeatherResponse
         return objectMapper.readValue(response.getBody(), WeatherResponse.class);
     }
 }

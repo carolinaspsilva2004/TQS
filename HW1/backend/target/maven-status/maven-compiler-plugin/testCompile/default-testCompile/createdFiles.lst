@@ -1,9 +1,9 @@
+tqs/hw1/unitTests/ReservationServiceTest.class
+tqs/hw1/repositoryTests/MealRepositoryTest.class
 tqs/hw1/controller/containers/CheckInControllerTest.class
+tqs/hw1/repositoryTests/ReservationRepositoryTest.class
 tqs/hw1/controller/containers/MealControllerTest.class
-tqs/hw1/service/ReservationServiceTest.class
 tqs/hw1/controller/containers/ReservationControllerTest.class
 tqs/hw1/controller/containers/RestaurantControllerTest.class
 tqs/hw1/controller/containers/WeatherControllerTest.class
-tqs/hw1/repository/MealRepositoryTest.class
-tqs/hw1/repository/ReservationRepositoryTest.class
 tqs/hw1/Hw1ApplicationTests.class
