@@ -39,18 +39,13 @@ public class ReservationControllerTest {
 
     @Test
     void whenBookMeal_thenReservationIsCreated() {
-        // Primeiro criar um restaurante
         var restaurant = RestAssured.given().port(port).contentType(ContentType.JSON)
                 .body(new Restaurant("RestoTest", "Lisbon", "http://fakeurl.com"))
                 .post("/restaurants")
                 .then().statusCode(200)
                 .extract().as(Restaurant.class);
 
-        // Inserir uma meal manualmente no banco de dados via request não implementado ou via repo seria o ideal,
-        // ou simplesmente adicionar uma meal diretamente pelo endpoint updateMeals se tiver conteúdo externo.
-        // Como alternativa: poderias usar um endpoint de inserção, se existir.
-
-        // Aqui, assumimos que já há alguma Meal no banco de dados (ou previamente carregada).
+        
         var meals = RestAssured.given().port(port)
                 .get("/meals")
                 .then().statusCode(200)

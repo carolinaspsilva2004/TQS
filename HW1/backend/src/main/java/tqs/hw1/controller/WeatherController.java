@@ -22,7 +22,6 @@ public class WeatherController {
 
     @GetMapping("/{city}/{date}")
     public WeatherResponse getWeatherForDate(@PathVariable String city, @PathVariable String date) throws Exception {
-        // Obtém a previsão do tempo para a cidade e a data
         return weatherService.getForecast(city, date);
     }
 
@@ -30,7 +29,6 @@ public class WeatherController {
     public WeatherResponse getDaysAndCurrentWeather(@PathVariable String city, @PathVariable String date) throws Exception {
         WeatherResponse weatherResponse = weatherService.getForecast(city, date);
         
-        // Retorna apenas os dados de "current"
         return new WeatherResponse(
             null,
             weatherResponse.getCurrentConditions(),
@@ -42,7 +40,6 @@ public class WeatherController {
     public WeatherResponse getWeatherAlerts(@PathVariable String city, @PathVariable String date) throws Exception {
         WeatherResponse weatherResponse = weatherService.getForecast(city, date);
         
-        // Retorna apenas os dados de "alerts"
         return new WeatherResponse(
             null, 
             null, 
@@ -54,13 +51,11 @@ public class WeatherController {
     public List<WeatherResponse.Day.Hours> getWeatherHours(@PathVariable String city, @PathVariable String date) throws Exception {
         WeatherResponse weatherResponse = weatherService.getForecast(city, date);
     
-        // Encontrar o dia correspondente
         WeatherResponse.Day selectedDay = weatherResponse.getDays().stream()
             .filter(day -> day.getDatetime().equals(date))
             .findFirst()
             .orElseThrow(() -> new Exception("Date not found in response"));
     
-        // Retornar só as horas desse dia
         return selectedDay.getHours();
     }
     

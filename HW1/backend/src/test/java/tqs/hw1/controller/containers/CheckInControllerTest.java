@@ -47,20 +47,17 @@ public class CheckInControllerTest {
 
     @Test
     void whenCheckInReservation_thenReturnTrue() {
-        // Crie uma reserva com o código "ABC123"
-        String code = "ABC123"; // Código de reserva
-        Meal meal = new Meal(); // Crie ou recupere um Meal válido
-        meal = mealRepository.save(meal);  // Salve o meal no banco de dados
+        String code = "ABC123"; 
+        Meal meal = new Meal(); 
+        meal = mealRepository.save(meal); 
         Reservation reservation = new Reservation();
         reservation.setCode(code);
         reservation.setMeal(meal);
         reservation.setUsed(false);
         reservation.setReservationDate(LocalDate.now().atStartOfDay());
         
-        // Salve a reserva no repositório
         reservationRepository.save(reservation);
 
-        // Verifique se o check-in retorna "true"
         RestAssured.given()
                 .port(port)
                 .post("/checkin/" + code)
@@ -72,7 +69,7 @@ public class CheckInControllerTest {
 
     @Test
     void whenCheckInReservation_thenReturnFalse() {
-        String code = "INVALIDCODE"; // Substitua com um código inválido de reserva
+        String code = "INVALIDCODE"; 
 
         RestAssured.given()
                 .port(port)

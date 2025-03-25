@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.controller.containers.ReservationControllerTest" time="12.433" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="tqs.hw1.controller.containers.ReservationControllerTest" time="16.164" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250325151001706_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-03-25T15-10-01_591-jvmRun1 surefire-20250325151001706_1tmp surefire_0-20250325151001706_2tmp"/>
+    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250325175151064_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-03-25T17-51-50_911-jvmRun1 surefire-20250325175151064_1tmp surefire_0-20250325175151064_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/test-classes:/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/classes:/home/carolina/.m2/repository/org/jsoup/jsoup/1.18.1/jsoup-1.18.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-mock-mvc/5.5.1/spring-mock-mvc-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-commons/5.5.1/spring-commons-5.5.1.jar:/home/carolina/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.3/spring-boot-starter-logging-3.4.3.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-classic/1.5.16/logback-classic-1.5.16.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-core/1.5.16/logback-core-1.5.16.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/carolina/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/home/carolina/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/carolina/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/carolina/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/carolina/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/carolina/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/carolina/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/carolina/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/carolina/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/carolina/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/carolina/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/carolina/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/carolina/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/carolina/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/carolina/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/carolina/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/carolina/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/carolina/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/carolina/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/carolina/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-core/10.20.1/flyway-core-10.20.1.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.18.2/jackson-dataformat-toml-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-database-postgresql/10.20.1/flyway-database-postgresql-10.20.1.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/carolina/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/home/carolina/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-testcontainers/3.4.3/spring-boot-testcontainers-3.4.3.jar:/home/carolina/.m2/repository/org/testcontainers/testcontainers/1.20.5/testcontainers-1.20.5.jar:/home/carolina/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/home/carolina/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/carolina/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/carolina/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-api/3.4.1/docker-java-api-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.4.1/docker-java-transport-zerodep-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport/3.4.1/docker-java-transport-3.4.1.jar:/home/carolina/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/carolina/.m2/repository/org/testcontainers/junit-jupiter/1.20.5/junit-jupiter-1.20.5.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured/5.5.1/rest-assured-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy/4.0.25/groovy-4.0.25.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-xml/4.0.25/groovy-xml-4.0.25.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/carolina/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/carolina/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/carolina/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/carolina/.m2/repository/io/rest-assured/json-path/5.5.1/json-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-json/4.0.25/groovy-json-4.0.25.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured-common/5.5.1/rest-assured-common-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/xml-path/5.5.1/xml-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/carolina/.m2/repository/org/testcontainers/postgresql/1.20.5/postgresql-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/jdbc/1.20.5/jdbc-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/database-commons/1.20.5/database-commons-1.20.5.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/carolina/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/carolina/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/carolina/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/carolina/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/carolina/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/carolina/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/carolina/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/carolina/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/carolina/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/carolina/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/carolina/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/carolina/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/carolina/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/carolina/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/carolina/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/carolina/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:/home/carolina/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/carolina/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250325151001706_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250325175151064_3.jar"/>
     <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-Ubuntu-122.04.1"/>
@@ -43,22 +43,22 @@
     <property name="os.version" value="6.8.0-52-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna10686946174707662457.tmp"/>
+    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna2961962260998475914.tmp"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/lib32:/usr/lib/x86_64-linux-gnu/libfakeroot"/>
     <property name="localRepository" value="/home/carolina/.m2/repository"/>
     <property name="jna.loaded" value="true"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="catalina.home" value="/tmp/tomcat.0.12069999196487570539"/>
+    <property name="catalina.home" value="/tmp/tomcat.0.11858800815596784017"/>
     <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="39747"/>
+    <property name="PID" value="61796"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
-    <property name="catalina.base" value="/tmp/tomcat.0.12069999196487570539"/>
+    <property name="catalina.base" value="/tmp/tomcat.0.11858800815596784017"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -69,14 +69,14 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[HW1] "/>
   </properties>
-  <testcase name="whenBookMeal_thenReservationIsCreated" classname="tqs.hw1.controller.containers.ReservationControllerTest" time="2.125">
+  <testcase name="whenBookMeal_thenReservationIsCreated" classname="tqs.hw1.controller.containers.ReservationControllerTest" time="2.583">
     <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-15:10:02.802 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.hw1.controller.containers.ReservationControllerTest]: ReservationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-15:10:02.990 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.controller.containers.ReservationControllerTest
-15:10:03.178 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
-15:10:03.181 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-15:10:03.219 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.5
-15:10:03.563 [main] WARN org.testcontainers.dockerclient.DockerClientProviderStrategy -- DOCKER_HOST unix:///var/run/docker.sock is not listening
+17:51:52.502 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.hw1.controller.containers.ReservationControllerTest]: ReservationControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:51:52.758 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.controller.containers.ReservationControllerTest
+17:51:53.005 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+17:51:53.010 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+17:51:53.061 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.5
+17:51:53.491 [main] WARN org.testcontainers.dockerclient.DockerClientProviderStrategy -- DOCKER_HOST unix:///var/run/docker.sock is not listening
 java.net.BindException: Permissão negada
 	at java.base/sun.nio.ch.UnixDomainSockets.connect0(Native Method)
 	at java.base/sun.nio.ch.UnixDomainSockets.connect(UnixDomainSockets.java:154)
@@ -165,27 +165,27 @@ java.net.BindException: Permissão negada
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-15:10:03.949 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/carolina/.docker/desktop/docker.sock)
-15:10:03.951 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
-15:10:03.978 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+17:51:54.077 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/carolina/.docker/desktop/docker.sock)
+17:51:54.080 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+17:51:54.120 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
   Server Version: 27.1.1
   API Version: 1.46
   Operating System: Docker Desktop
   Total Memory: 2378 MB
   Labels: 
     com.docker.desktop.address=unix:///home/carolina/.docker/desktop/docker-cli.sock
-15:10:04.076 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
-15:10:04.107 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
-15:10:04.301 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: f19f721475aefb16f2f40c72295cebac512646af2bb27f12509262baf8f8ae48
-15:10:05.223 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT1.147057957S
-15:10:05.233 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-15:10:05.233 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
-15:10:05.234 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
-15:10:05.235 [main] INFO tc.postgres:15.2 -- Creating container for image: postgres:15.2
-15:10:05.336 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 is starting: b7abcf1c7913cdbc383780ff77ac60d4b93e204c82ed14664877addf06e8e0fc
-15:10:07.335 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 started in PT2.099783597S
-15:10:07.336 [main] INFO tc.postgres:15.2 -- Container is started (JDBC URL: jdbc:postgresql://localhost:36791/test?loggerLevel=OFF)
-15:10:07.415 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+17:51:54.268 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
+17:51:54.305 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+17:51:54.537 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: 878ab8b7a07dcc8035ca9aa9bbcaaf1306a4130e3a02296ac60f7827353dcdcd
+17:51:55.762 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT1.494058579S
+17:51:55.773 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+17:51:55.774 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+17:51:55.775 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+17:51:55.776 [main] INFO tc.postgres:15.2 -- Creating container for image: postgres:15.2
+17:51:55.889 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 is starting: ba1353b2162ea29a83deb2fda2327bf19305519c7311164f045b148fe2352e83
+17:51:58.391 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 started in PT2.615770738S
+17:51:58.393 [main] INFO tc.postgres:15.2 -- Container is started (JDBC URL: jdbc:postgresql://localhost:40253/test?loggerLevel=OFF)
+17:51:58.492 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -196,32 +196,32 @@ java.net.BindException: Permissão negada
 
  :: Spring Boot ::                (v3.4.3)
 
-2025-03-25T15:10:07.755Z  INFO 39747 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : Starting ReservationControllerTest using Java 21.0.6 with PID 39747 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
-2025-03-25T15:10:07.757Z  INFO 39747 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2025-03-25T15:10:08.588Z  INFO 39747 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-25T15:10:08.658Z  INFO 39747 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
-2025-03-25T15:10:09.271Z  INFO 39747 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
-2025-03-25T15:10:09.289Z  INFO 39747 --- [HW1] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-03-25T15:10:09.289Z  INFO 39747 --- [HW1] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
-2025-03-25T15:10:09.337Z  INFO 39747 --- [HW1] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-03-25T15:10:09.339Z  INFO 39747 --- [HW1] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1386 ms
+2025-03-25T17:51:58.941Z  INFO 61796 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : Starting ReservationControllerTest using Java 21.0.6 with PID 61796 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
+2025-03-25T17:51:58.943Z  INFO 61796 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : No active profile set, falling back to 1 default profile: "default"
+2025-03-25T17:52:00.088Z  INFO 61796 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-25T17:52:00.190Z  INFO 61796 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 3 JPA repository interfaces.
+2025-03-25T17:52:01.016Z  INFO 61796 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-03-25T17:52:01.043Z  INFO 61796 --- [HW1] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-03-25T17:52:01.045Z  INFO 61796 --- [HW1] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-25T17:52:01.114Z  INFO 61796 --- [HW1] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-03-25T17:52:01.116Z  INFO 61796 --- [HW1] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1849 ms
 Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-2025-03-25T15:10:09.624Z  INFO 39747 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-25T15:10:09.821Z  INFO 39747 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-03-25T15:10:09.823Z  INFO 39747 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-25T15:10:09.879Z  INFO 39747 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
-2025-03-25T15:10:09.886Z  WARN 39747 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
-2025-03-25T15:10:09.912Z  INFO 39747 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-03-25T15:10:09.914Z  INFO 39747 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.014s)
-2025-03-25T15:10:09.923Z  INFO 39747 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-03-25T15:10:09.975Z  INFO 39747 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2025-03-25T15:10:09.987Z  INFO 39747 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
-2025-03-25T15:10:10.020Z  INFO 39747 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.019s)
-2025-03-25T15:10:10.126Z  INFO 39747 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-25T15:10:10.186Z  INFO 39747 --- [HW1] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-03-25T15:10:10.225Z  INFO 39747 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-03-25T15:10:10.530Z  INFO 39747 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-25T15:10:10.611Z  INFO 39747 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-03-25T17:52:01.485Z  INFO 61796 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-03-25T17:52:01.760Z  INFO 61796 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-03-25T17:52:01.762Z  INFO 61796 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-03-25T17:52:01.827Z  INFO 61796 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
+2025-03-25T17:52:01.836Z  WARN 61796 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2025-03-25T17:52:01.874Z  INFO 61796 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2025-03-25T17:52:01.878Z  INFO 61796 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.019s)
+2025-03-25T17:52:01.888Z  INFO 61796 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2025-03-25T17:52:01.961Z  INFO 61796 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2025-03-25T17:52:01.972Z  INFO 61796 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
+2025-03-25T17:52:02.015Z  INFO 61796 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.022s)
+2025-03-25T17:52:02.183Z  INFO 61796 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-25T17:52:02.269Z  INFO 61796 --- [HW1] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-25T17:52:02.323Z  INFO 61796 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-03-25T17:52:02.755Z  INFO 61796 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-25T17:52:02.865Z  INFO 61796 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -229,7 +229,7 @@ Standard Commons Logging discovery in action with spring-jcl: please remove comm
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-03-25T15:10:11.512Z  INFO 39747 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-25T17:52:04.020Z  INFO 61796 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 Hibernate: drop table if exists meal cascade 
 Hibernate: drop table if exists reservation cascade 
 Hibernate: drop table if exists restaurant cascade 
@@ -238,13 +238,13 @@ Hibernate: create table reservation (used boolean not null, id bigint generated 
 Hibernate: create table restaurant (id bigint generated by default as identity, external_menu_url varchar(255), location varchar(255), name varchar(255), primary key (id))
 Hibernate: alter table if exists meal add constraint FKcd9jk7bc83ep499vvqepldy9g foreign key (restaurant_id) references restaurant
 Hibernate: alter table if exists reservation add constraint FKcbopybh7ci4xynox3e2tg48l7 foreign key (meal_id) references meal
-2025-03-25T15:10:11.545Z  INFO 39747 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-25T15:10:11.948Z  WARN 39747 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-25T15:10:12.523Z  INFO 39747 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42211 (http) with context path '/'
-2025-03-25T15:10:12.534Z  INFO 39747 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : Started ReservationControllerTest in 5.131 seconds (process running for 10.735)
-2025-03-25T15:10:14.136Z  INFO 39747 --- [HW1] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-25T15:10:14.137Z  INFO 39747 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-03-25T15:10:14.139Z  INFO 39747 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-03-25T17:52:04.068Z  INFO 61796 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-25T17:52:04.593Z  WARN 61796 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-25T17:52:05.360Z  INFO 61796 --- [HW1] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 42851 (http) with context path '/'
+2025-03-25T17:52:05.374Z  INFO 61796 --- [HW1] [           main] t.h.c.c.ReservationControllerTest        : Started ReservationControllerTest in 6.898 seconds (process running for 14.185)
+2025-03-25T17:52:07.318Z  INFO 61796 --- [HW1] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-25T17:52:07.318Z  INFO 61796 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-03-25T17:52:07.320Z  INFO 61796 --- [HW1] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 Hibernate: insert into restaurant (external_menu_url,location,name,id) values (?,?,?,default)
 Hibernate: select m1_0.id,m1_0.date,m1_0.description,m1_0.restaurant_id from meal m1_0
 ]]></system-out>

@@ -48,11 +48,9 @@ public class RestaurantController {
         for (Meal meal : meals) {
             Map<String, Object> mealInfo = new HashMap<>();
             try {
-                // Chama o serviço de previsão do tempo e trata a exceção
                 mealInfo.put("meal", meal);
                 mealInfo.put("weather", weatherService.getForecast(meal.getRestaurant().getLocation(), meal.getDate().toString()));
             } catch (Exception e) {
-                // Aqui você pode capturar a exceção e lidar com ela, por exemplo, colocando uma mensagem de erro
                 mealInfo.put("weather", "Erro ao obter previsão do tempo");
                 e.printStackTrace();
             }

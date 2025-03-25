@@ -10,7 +10,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.DynamicPropertyRegistry;
-
+import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -53,14 +53,14 @@ public class WeatherControllerTest {
         String date = "2025-03-25";
         
         // Espera-se que o "current" e "days" estejam presentes na resposta
-        String expectedCurrentCondition = "Partially cloudy";  // Substitua pelo valor esperado do "current"
+        String expectedCurrentCondition = "Partially cloudy"; 
 
         RestAssured.given()
                 .port(port)
                 .get("/weather/" + city + "/" + date + "/current")
                 .then()
                 .statusCode(200)
-                .body("current.conditions", equalTo(expectedCurrentCondition));
+                .body("currentConditions.conditions", equalTo(expectedCurrentCondition));
     }
 
     @Test
@@ -68,15 +68,12 @@ public class WeatherControllerTest {
         String city = "Aveiro";
         String date = "2025-03-25";
         
-        // Espera-se que o "alerts" esteja presente na resposta
-        String expectedAlert = "";  // Substitua pelo valor esperado de alertas
-
         RestAssured.given()
                 .port(port)
                 .get("/weather/" + city + "/" + date + "/alerts")
                 .then()
                 .statusCode(200)
-                .body("alerts[0].description", equalTo(expectedAlert));
+                .body("$",empty());
     }
 
     
