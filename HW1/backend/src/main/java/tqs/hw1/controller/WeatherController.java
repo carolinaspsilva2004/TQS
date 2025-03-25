@@ -20,15 +20,15 @@ public class WeatherController {
         return weatherService.getForecast(city, date);
     }
 
-    @GetMapping("/{city}/{date}/days-current")
+    @GetMapping("/{city}/{date}/current")
     public WeatherResponse getDaysAndCurrentWeather(@PathVariable String city, @PathVariable String date) throws Exception {
         WeatherResponse weatherResponse = weatherService.getForecast(city, date);
         
-        // Retorna apenas os dados de "days" e "current"
+        // Retorna apenas os dados de "current"
         return new WeatherResponse(
-            weatherResponse.getDays(), 
+            null,
             null, 
-            weatherResponse.getCurrent(), 
+            weatherResponse.getCurrentConditions(),
             null, 
             null
         );

@@ -1,45 +1,30 @@
 package tqs.hw1.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class WeatherResponse {
+    
     private List<Day> days;
     private List<Event> events;
-    private Current current;
+    private currentConditions currentConditions;
     private List<Alert> alerts;
     private List<Hour> hours;
-
+   
     public WeatherResponse() {
     }
 
-    public WeatherResponse(List<Day> days, List<Event> events, Current current, List<Alert> alerts, List<Hour> hours) {
+    public WeatherResponse(List<Day> days, List<Event> events, currentConditions currentConditions, List<Alert> alerts, List<Hour> hours) {
         this.days = days;
         this.events = events;
-        this.current = current;
+        this.currentConditions = currentConditions;
         this.alerts = alerts;
         this.hours = hours;
     }
 
-    public WeatherResponse(List<Event> events, Current current, List<Hour> hours) {
-        this.events = events;
-        this.current = current;
-        this.hours = hours;
-    }
-
-    public WeatherResponse(List<Day> days, List<Event> events, Current current) {
-        this.days = days;
-        this.events = events;
-        this.current = current;
-    }
-
-    public WeatherResponse(List<Day> days, List<Event> events, Current current, List<Alert> alerts) {
-        this.days = days;
-        this.events = events;
-        this.current = current;
-        this.alerts = alerts;
-    }
-
+    
     public List<Day> getDays() {
         return days;
     }
@@ -56,12 +41,12 @@ public class WeatherResponse {
         this.events = events;
     }
 
-    public Current getCurrent() {
-        return current;
+    public currentConditions getCurrentConditions() {
+        return currentConditions;
     }
 
-    public void setCurrent(Current current) {
-        this.current = current;
+    public void setCurrent(currentConditions currentConditions) {
+        this.currentConditions = currentConditions;
     }
 
     public List<Alert> getAlerts() {
@@ -85,17 +70,18 @@ public class WeatherResponse {
         return "WeatherResponse{" +
                 "days=" + days +
                 ", events=" + events +
-                ", current=" + current +
+                ", currentConditions=" + currentConditions +
                 ", alerts=" + alerts +
                 ", hours=" + hours +
                 '}';
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Day {
         private String datetime;
         private String temp;
         private String conditions;
-
+       
         public Day() {
         }
 
@@ -178,15 +164,17 @@ public class WeatherResponse {
         }
     }
 
-    public static class Current {
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    public static class currentConditions {
         private String temperature;
         private String conditions;
         private String humidity;
 
-        public Current() {
+        public currentConditions() {
         }
+        
 
-        public Current(String temperature, String conditions, String humidity) {
+        public currentConditions(String temperature, String conditions, String humidity) {
             this.temperature = temperature;
             this.conditions = conditions;
             this.humidity = humidity;
