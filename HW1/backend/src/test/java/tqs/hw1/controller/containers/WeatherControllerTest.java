@@ -73,7 +73,7 @@ public class WeatherControllerTest {
                 .get("/weather/" + city + "/" + date + "/alerts")
                 .then()
                 .statusCode(200)
-                .body("$",empty());
+                .body("alerts", empty());
     }
 
     
