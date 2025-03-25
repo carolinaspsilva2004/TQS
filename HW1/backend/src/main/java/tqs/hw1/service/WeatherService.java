@@ -22,7 +22,7 @@ public class WeatherService {
 
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("unitGroup", "metric")  // Alterado para "metric" ou "us" conforme necessário
-                .queryParam("include", "hours,current,alerts,events,days") 
+                .queryParam("include", "hours,current,alerts,days") 
                 .queryParam("key", apiKey)
                 .queryParam("contentType", "json");
 

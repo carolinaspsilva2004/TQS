@@ -3,6 +3,12 @@ package tqs.hw1.controller;
 import tqs.hw1.service.WeatherService;
 import tqs.hw1.model.WeatherResponse;
 import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping("/weather")
@@ -27,9 +33,7 @@ public class WeatherController {
         // Retorna apenas os dados de "current"
         return new WeatherResponse(
             null,
-            null, 
             weatherResponse.getCurrentConditions(),
-            null, 
             null
         );
     }
@@ -42,37 +46,22 @@ public class WeatherController {
         return new WeatherResponse(
             null, 
             null, 
-            null, 
-            weatherResponse.getAlerts(), 
-            null
-        );
-    }
-
-    @GetMapping("/{city}/{date}/events")
-    public WeatherResponse getWeatherEvents(@PathVariable String city, @PathVariable String date) throws Exception {
-        WeatherResponse weatherResponse = weatherService.getForecast(city, date);
-        
-        // Retorna apenas os dados de "events"
-        return new WeatherResponse(
-            null, 
-            weatherResponse.getEvents(), 
-            null, 
-            null, 
-            null
+            weatherResponse.getAlerts()
         );
     }
 
     @GetMapping("/{city}/{date}/hours")
-    public WeatherResponse getWeatherHours(@PathVariable String city, @PathVariable String date) throws Exception {
+    public List<WeatherResponse.Day.Hours> getWeatherHours(@PathVariable String city, @PathVariable String date) throws Exception {
         WeatherResponse weatherResponse = weatherService.getForecast(city, date);
-        
-        // Retorna apenas os dados de "hours"
-        return new WeatherResponse(
-            null, 
-            null, 
-            null, 
-            null, 
-            weatherResponse.getHours()
-        );
+    
+        // Encontrar o dia correspondente
+        WeatherResponse.Day selectedDay = weatherResponse.getDays().stream()
+            .filter(day -> day.getDatetime().equals(date))
+            .findFirst()
+            .orElseThrow(() -> new Exception("Date not found in response"));
+    
+        // Retornar só as horas desse dia
+        return selectedDay.getHours();
     }
+    
 }

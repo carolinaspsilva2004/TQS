@@ -9,7 +9,7 @@ tqs/hw1/model/Restaurant.class
 tqs/hw1/dto/MealDTO.class
 tqs/hw1/model/Reservation.class
 tqs/hw1/dto/ReservationDTO.class
-tqs/hw1/model/WeatherResponse$Event.class
+tqs/hw1/model/WeatherResponse$Day$Hours.class
 tqs/hw1/model/WeatherResponse$Day.class
 tqs/hw1/model/WeatherResponse.class
 tqs/hw1/controller/MealController.class
@@ -18,7 +18,6 @@ tqs/hw1/model/Meal.class
 tqs/hw1/service/ReservationService.class
 tqs/hw1/model/WeatherResponse$Alert.class
 tqs/hw1/service/WeatherService.class
-tqs/hw1/model/WeatherResponse$Hour.class
 tqs/hw1/service/ExternalMenuService.class
 tqs/hw1/controller/WeatherController.class
 tqs/hw1/Hw1Application.class

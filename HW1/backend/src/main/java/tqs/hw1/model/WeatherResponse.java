@@ -8,20 +8,16 @@ import java.util.List;
 public class WeatherResponse {
     
     private List<Day> days;
-    private List<Event> events;
     private currentConditions currentConditions;
     private List<Alert> alerts;
-    private List<Hour> hours;
    
     public WeatherResponse() {
     }
 
-    public WeatherResponse(List<Day> days, List<Event> events, currentConditions currentConditions, List<Alert> alerts, List<Hour> hours) {
+    public WeatherResponse(List<Day> days, currentConditions currentConditions, List<Alert> alerts) {
         this.days = days;
-        this.events = events;
         this.currentConditions = currentConditions;
         this.alerts = alerts;
-        this.hours = hours;
     }
 
     
@@ -33,13 +29,6 @@ public class WeatherResponse {
         this.days = days;
     }
 
-    public List<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(List<Event> events) {
-        this.events = events;
-    }
 
     public currentConditions getCurrentConditions() {
         return currentConditions;
@@ -57,22 +46,13 @@ public class WeatherResponse {
         this.alerts = alerts;
     }
 
-    public List<Hour> getHours() {
-        return hours;
-    }
-
-    public void setHours(List<Hour> hours) {
-        this.hours = hours;
-    }
 
     @Override
     public String toString() {
         return "WeatherResponse{" +
                 "days=" + days +
-                ", events=" + events +
                 ", currentConditions=" + currentConditions +
                 ", alerts=" + alerts +
-                ", hours=" + hours +
                 '}';
     }
 
@@ -81,14 +61,16 @@ public class WeatherResponse {
         private String datetime;
         private String temp;
         private String conditions;
+        private List<Hours> hours;
        
         public Day() {
         }
 
-        public Day(String datetime, String temp, String conditions) {
+        public Day(String datetime, String temp, String conditions, List<Hours> hours) {
             this.datetime = datetime;
             this.temp = temp;
             this.conditions = conditions;
+            this.hours = hours;
         }
 
         public String getDatetime() {
@@ -115,58 +97,74 @@ public class WeatherResponse {
             this.conditions = conditions;
         }
 
+        public List<Hours> getHours() {
+            return hours;
+        }
+
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        public static class Hours {
+            private String datetime;
+            private String temp;
+            private String conditions;
+    
+            public Hours() {
+            }
+    
+            public Hours(String datetime, String temp, String conditions) {
+                this.datetime = datetime;
+                this.temp = temp;
+                this.conditions = conditions;
+            }
+    
+            public String getDatetime() {
+                return datetime;
+            }
+    
+            public void setDatetime(String datetime) {
+                this.datetime = datetime;
+            }
+    
+            public String getTemp() {
+                return temp;
+            }
+    
+            public void setTemp(String temp) {
+                this.temp = temp;
+            }
+    
+            public String getConditions() {
+                return conditions;
+            }
+    
+            public void setConditions(String conditions) {
+                this.conditions = conditions;
+            }
+    
+            @Override
+            public String toString() {
+                return "Hour{" +
+                        "datetime='" + datetime + '\'' +
+                        ", temp='" + temp + '\'' +
+                        ", conditions='" + conditions + '\'' +
+                        '}';
+            }
+        }
+
         @Override
         public String toString() {
             return "Day{" +
                     "datetime='" + datetime + '\'' +
                     ", temp='" + temp + '\'' +
                     ", conditions='" + conditions + '\'' +
+                    ", hours=" + hours +
                     '}';
         }
         
-        // Getters and Setters
-    }
-
-    public static class Event {
-        private String datetime;
-        private String description;
-
-        public Event() {
-        }   
-
-        public Event(String datetime, String description) {
-            this.datetime = datetime;
-            this.description = description;
-        }
-
-        public String getDatetime() {
-            return datetime;
-        }
-
-        public void setDatetime(String datetime) {
-            this.datetime = datetime;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        @Override
-        public String toString() {
-            return "Event{" +
-                    "datetime='" + datetime + '\'' +
-                    ", description='" + description + '\'' +
-                    '}';
-        }
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class currentConditions {
-        private String temperature;
+        private String temp;
         private String conditions;
         private String humidity;
 
@@ -174,18 +172,18 @@ public class WeatherResponse {
         }
         
 
-        public currentConditions(String temperature, String conditions, String humidity) {
-            this.temperature = temperature;
+        public currentConditions(String temp, String conditions, String humidity) {
+            this.temp = temp;
             this.conditions = conditions;
             this.humidity = humidity;
         }
 
-        public String getTemperature() {
-            return temperature;
+        public String getTemp() {
+            return temp;
         }
 
-        public void setTemperature(String temperature) {
-            this.temperature = temperature;
+        public void setTemp(String temp) {
+            this.temp = temp;
         }
 
         public String getConditions() {
@@ -207,7 +205,7 @@ public class WeatherResponse {
         @Override
         public String toString() {
             return "Current{" +
-                    "temperature='" + temperature + '\'' +
+                    "temperature='" + temp + '\'' +
                     ", conditions='" + conditions + '\'' +
                     ", humidity='" + humidity + '\'' +
                     '}';
@@ -216,6 +214,7 @@ public class WeatherResponse {
         
     }
 
+    @JsonIgnoreProperties(ignoreUnknown = true)
     public static class Alert {
         private String description;
         private String severity;
@@ -265,51 +264,4 @@ public class WeatherResponse {
         
     }
 
-    public static class Hour {
-        private String datetime;
-        private String temp;
-        private String conditions;
-
-        public Hour() {
-        }
-
-        public Hour(String datetime, String temp, String conditions) {
-            this.datetime = datetime;
-            this.temp = temp;
-            this.conditions = conditions;
-        }
-
-        public String getDatetime() {
-            return datetime;
-        }
-
-        public void setDatetime(String datetime) {
-            this.datetime = datetime;
-        }
-
-        public String getTemp() {
-            return temp;
-        }
-
-        public void setTemp(String temp) {
-            this.temp = temp;
-        }
-
-        public String getConditions() {
-            return conditions;
-        }
-
-        public void setConditions(String conditions) {
-            this.conditions = conditions;
-        }
-
-        @Override
-        public String toString() {
-            return "Hour{" +
-                    "datetime='" + datetime + '\'' +
-                    ", temp='" + temp + '\'' +
-                    ", conditions='" + conditions + '\'' +
-                    '}';
-        }
     }
-}
