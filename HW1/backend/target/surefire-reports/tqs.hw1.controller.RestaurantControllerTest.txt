@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: tqs.hw1.controller.RestaurantControllerTest
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.039 s -- in tqs.hw1.controller.RestaurantControllerTest

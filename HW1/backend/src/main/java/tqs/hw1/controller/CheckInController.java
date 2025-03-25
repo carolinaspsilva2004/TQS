@@ -13,7 +13,9 @@ public class CheckInController {
     }
 
     @PostMapping("/{code}")
-    public boolean checkInReservation(@PathVariable String code) {
-        return reservationService.checkInReservation(code);
+    public String checkInReservation(@PathVariable String code) {
+        boolean checkInSuccess = reservationService.checkInReservation(code);
+        return String.valueOf(checkInSuccess);  // Converte o valor booleano para string
     }
+
 }

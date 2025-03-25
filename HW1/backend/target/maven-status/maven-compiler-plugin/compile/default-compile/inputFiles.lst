@@ -10,6 +10,7 @@
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/model/Meal.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/model/Reservation.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/model/Restaurant.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/model/WeatherResponse.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/MealRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/ReservationRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/RestaurantRepository.java

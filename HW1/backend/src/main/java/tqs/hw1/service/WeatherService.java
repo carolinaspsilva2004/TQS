@@ -5,29 +5,30 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.util.UriComponentsBuilder;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import tqs.hw1.model.WeatherResponse;
 
 @Service
 public class WeatherService {
 
     @Value("${weather.api.key}")
-    private String apiKey;  // Defina a chave da API no arquivo application.properties
-    
-    private final RestTemplate restTemplate = new RestTemplate();
+    private String apiKey;
 
-    public String getForecast(String city, String date) {
+    private final RestTemplate restTemplate = new RestTemplate();
+    private final ObjectMapper objectMapper = new ObjectMapper(); // Para converter a resposta JSON
+
+    public WeatherResponse getForecast(String city, String date) throws Exception {
         String url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/" + city;
 
-        // Construa a URL para fazer a requisição à API com os parâmetros necessários
         UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)
-                .queryParam("unitGroup", "metric")
-                .queryParam("include", "events,days,alerts,current,hours")
+                .queryParam("unitGroup", "metric")  // Alterado para "metric" ou "us" conforme necessário
+                .queryParam("include", "hours,current,alerts,events,days") // Incluindo hours, current, alerts e events
                 .queryParam("key", apiKey)
                 .queryParam("contentType", "json");
 
-        // Realiza a requisição HTTP para obter a previsão
         ResponseEntity<String> response = restTemplate.getForEntity(uriBuilder.toUriString(), String.class);
 
-        // Retorna a resposta da API externa
-        return response.getBody();
+        // Converte a resposta JSON para o objeto WeatherResponse
+        return objectMapper.readValue(response.getBody(), WeatherResponse.class);
     }
 }
