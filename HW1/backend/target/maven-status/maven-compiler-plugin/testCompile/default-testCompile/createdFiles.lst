@@ -1,10 +1,10 @@
-tqs/hw1/controller/integration/WeatherControllerTest.class
+tqs/hw1/controller/integration/WeatherControllerTemplateIT.class
+tqs/hw1/integration/CheckInMockIT.class
 tqs/hw1/unitTests/ReservationServiceTest.class
 tqs/hw1/repositoryTests/MealRepositoryTest.class
-tqs/hw1/controller/integration/RestaurantControllerTest.class
 tqs/hw1/repositoryTests/ReservationRepositoryTest.class
-tqs/hw1/integration/CheckInIT.class
-tqs/hw1/controller/integration/ReservationControllerTest.class
-tqs/hw1/controller/integration/MealControllerTest.class
-tqs/hw1/controller/integration/CheckInControllerTest.class
+tqs/hw1/controller/integration/CheckInControllerTemplateIT.class
+tqs/hw1/controller/integration/ReservationControllerTemplateIT.class
+tqs/hw1/controller/integration/MealControllerTemplateIT.class
+tqs/hw1/controller/integration/RestaurantControllerTemplateIT.class
 tqs/hw1/Hw1ApplicationTests.class

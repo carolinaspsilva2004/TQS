@@ -21,7 +21,7 @@ import static org.hamcrest.Matchers.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-public class CheckInControllerTest {
+public class CheckInControllerTemplateIT {
 
 
     @Container
