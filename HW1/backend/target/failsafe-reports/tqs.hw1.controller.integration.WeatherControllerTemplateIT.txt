@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.WeatherControllerTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.961 s <<< FAILURE! - in tqs.hw1.controller.integration.WeatherControllerTemplateIT
-tqs.hw1.controller.integration.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 2.489 s  <<< FAILURE!
+Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.64 s <<< FAILURE! - in tqs.hw1.controller.integration.WeatherControllerTemplateIT
+tqs.hw1.controller.integration.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 2.09 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <200> but was <500>.

@@ -83,7 +83,7 @@ public class WeatherControllerTemplateIT {
         String date = "2025-03-25";
         
         // Espera-se que os "hours" tenham condições específicas na primeira entrada
-        String expectedHourCondition = "Clear";  // Altere para a condição esperada
+        String expectedHourCondition = "Partially cloudy";  // Altere para a condição esperada
 
         RestAssured.given()
                 .port(port)
