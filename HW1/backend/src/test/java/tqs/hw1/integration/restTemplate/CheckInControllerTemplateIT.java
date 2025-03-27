@@ -1,4 +1,4 @@
-package tqs.hw1.controller.integration;
+package tqs.hw1.controller.integration.restTemplate;
 
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.BeforeAll;

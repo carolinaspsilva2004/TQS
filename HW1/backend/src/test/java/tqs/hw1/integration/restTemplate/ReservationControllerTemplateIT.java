@@ -1,4 +1,4 @@
-package tqs.hw1.controller.integration;
+package tqs.hw1.controller.integration.restTemplate;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
