@@ -36,7 +36,7 @@ public class RestaurantControllerTemplateIT {
 
     @Test
     void whenAddRestaurant_thenRestaurantIsCreated() {
-        Restaurant restaurant = new Restaurant("Testaurant", "Porto", "http://menu.example.com");
+        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.example.com");
 
         RestAssured.given()
                 .port(port)
@@ -45,9 +45,7 @@ public class RestaurantControllerTemplateIT {
                 .post("/restaurants")
                 .then()
                 .statusCode(200)
-                .body("name", equalTo("Testaurant"))
-                .body("location", equalTo("Porto"));
-    }
+                .body("name", equalTo("Testaurant"));    }
 
     @Test
     void whenGetRestaurants_thenListIsReturned() {

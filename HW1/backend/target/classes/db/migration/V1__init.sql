@@ -2,7 +2,7 @@
 CREATE TABLE restaurant (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    external_menu_url VARCHAR(500)
+    externalMenuUrl VARCHAR(500)
 );
 
 -- Table: meal

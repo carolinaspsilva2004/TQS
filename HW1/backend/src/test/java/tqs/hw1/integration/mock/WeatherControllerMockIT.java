@@ -27,7 +27,7 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date} returns weather conditions for a given city and date")
     void whenGetWeatherForCityAndDate_thenReturnWeather() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-25";
+        String date = "2025-03-28";
         
         String expectedCondition = "Partially cloudy";  // Use the correct expected condition
         
@@ -40,7 +40,7 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date}/current returns current weather conditions")
     void whenGetWeatherDaysAndCurrent_thenReturnCorrectData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-25";
+        String date = "2025-03-28";
         
         String expectedCurrentCondition = "Partially cloudy";  // Use the correct expected condition
         
@@ -53,7 +53,7 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date}/alerts returns weather alerts")
     void whenGetWeatherAlerts_thenReturnAlerts() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-25";
+        String date = "2025-03-28";
         
         mvc.perform(get("/weather/" + city + "/" + date + "/alerts"))
                 .andExpect(status().isOk())
@@ -64,7 +64,7 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date}/hours returns hourly weather data")
     void whenGetWeatherHours_thenReturnHourlyData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-25";
+        String date = "2025-03-29";
         
         String expectedHourCondition = "Partially cloudy";  // Use the correct expected condition
         

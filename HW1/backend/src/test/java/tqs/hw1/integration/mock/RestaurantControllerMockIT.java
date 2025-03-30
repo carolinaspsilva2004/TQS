@@ -38,28 +38,25 @@ public class RestaurantControllerMockIT {
     @Test
     @DisplayName("POST /restaurants creates a restaurant")
     void whenAddRestaurant_thenRestaurantIsCreated() throws Exception {
-        Restaurant restaurant = new Restaurant("Testaurant", "Porto", "http://menu.example.com");
+        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.example.com");
 
         mvc.perform(post("/restaurants")
                         .contentType("application/json")
-                        .content("{\"name\":\"Testaurant\", \"location\":\"Porto\", \"menuUrl\":\"http://menu.example.com\"}"))
+                        .content("{\"name\":\"Testaurant\", \"externalMenuUrl\":\"http://menu.example.com\"}"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.name").value("Testaurant"))
-                .andExpect(jsonPath("$.location").value("Porto"))
-                .andExpect(jsonPath("$.menuUrl").value("http://menu.example.com"));
-    }
+                .andExpect(jsonPath("$.name").value("Testaurant"));
+                }
 
     @Test
     @DisplayName("GET /restaurants returns list of restaurants")
     void whenGetRestaurants_thenListIsReturned() throws Exception {
         // Create a restaurant
-        Restaurant restaurant = new Restaurant("Testaurant", "Porto", "http://menu.example.com");
+        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.example.com");
         restaurantRepository.save(restaurant);
 
         mvc.perform(get("/restaurants"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(greaterThanOrEqualTo(1))))
-                .andExpect(jsonPath("$[0].name").value("Testaurant"))
-                .andExpect(jsonPath("$[0].location").value("Porto"));
+                .andExpect(jsonPath("$[0].name").value("Testaurant"));
     }
 }

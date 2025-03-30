@@ -49,7 +49,7 @@ public class ReservationControllerMockIT {
     @DisplayName("POST /reservations/book/{mealId} creates a reservation")
     void whenBookMeal_thenReservationIsCreated() throws Exception {
         // Criar um restaurante
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("RestoTest", "Lisbon", "http://fakeurl.com"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("RestoTest", "http://fakeurl.com"));
 
         LocalDate date = LocalDate.parse("2025-03-25"); // exemplo de como criar LocalDate
 

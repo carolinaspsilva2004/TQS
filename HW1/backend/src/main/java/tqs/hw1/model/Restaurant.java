@@ -9,15 +9,13 @@ public class Restaurant {
     private Long id;
 
     private String name;
-    private String location;
     private String externalMenuUrl;
 
     public Restaurant() {
     }
 
-    public Restaurant(String name, String location, String externalMenuUrl) {
+    public Restaurant(String name, String externalMenuUrl) {
         this.name = name;
-        this.location = location;
         this.externalMenuUrl = externalMenuUrl;
     }
     
@@ -29,9 +27,7 @@ public class Restaurant {
         return name;
     }
 
-    public String getLocation() {
-        return location;
-    }
+    
 
     public String getExternalMenuUrl() {
         return externalMenuUrl;
@@ -45,9 +41,6 @@ public class Restaurant {
         this.name = name;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
     public void setExternalMenuUrl(String externalMenuUrl) {
         this.externalMenuUrl = externalMenuUrl;
@@ -59,7 +52,6 @@ public class Restaurant {
         return "Restaurant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
                 ", externalMenuUrl='" + externalMenuUrl + '\'' +
                 '}';
     }

@@ -15,5 +15,7 @@
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/ReservationRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/RestaurantRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/ExternalMenuService.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/MealService.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/ReservationService.java
+/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/RestaurantService.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/WeatherService.java

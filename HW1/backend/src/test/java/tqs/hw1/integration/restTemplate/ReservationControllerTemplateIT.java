@@ -40,7 +40,7 @@ public class ReservationControllerTemplateIT {
     @Test
     void whenBookMeal_thenReservationIsCreated() {
         var restaurant = RestAssured.given().port(port).contentType(ContentType.JSON)
-                .body(new Restaurant("RestoTest", "Lisbon", "http://fakeurl.com"))
+                .body(new Restaurant("RestoTest", "http://fakeurl.com"))
                 .post("/restaurants")
                 .then().statusCode(200)
                 .extract().as(Restaurant.class);

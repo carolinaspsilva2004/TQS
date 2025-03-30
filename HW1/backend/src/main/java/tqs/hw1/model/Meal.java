@@ -12,9 +12,9 @@ public class Meal {
     private String description;
     private LocalDate date;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)    
     private Restaurant restaurant;
-
+    
     public Meal() {
     }
 
