@@ -2,54 +2,55 @@ package tqs.hw1.controller;
 
 import tqs.hw1.model.Meal;
 import tqs.hw1.model.Reservation;
-import tqs.hw1.repository.MealRepository;
 import tqs.hw1.service.ReservationService;
-
+import tqs.hw1.service.MealService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/reservations")
 public class ReservationController {
-    private final MealRepository mealRepository;
+    private final MealService mealService;
     private final ReservationService reservationService;
 
-    public ReservationController(MealRepository mealRepository, ReservationService reservationService) {
-        this.mealRepository = mealRepository;
+    public ReservationController(MealService mealService, ReservationService reservationService) {
+        this.mealService = mealService;
         this.reservationService = reservationService;
     }
 
     @PostMapping("/book/{mealId}")
     public ResponseEntity<Reservation> bookMeal(@PathVariable Long mealId) {
-        Meal meal = mealRepository.findById(mealId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Meal not found"));
-        Reservation reservation = reservationService.createReservation(meal);
+        Optional<Meal> meal = mealService.getMealById(mealId);
+        if (meal.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+        Reservation reservation = reservationService.createReservation(meal.get());
         return ResponseEntity.status(HttpStatus.CREATED).body(reservation);
     }
 
     @GetMapping("/{code}")
     public ResponseEntity<Reservation> checkReservation(@PathVariable String code) {
-        Optional<Reservation> reservation = reservationService.getReservationByCode(code);
-        return reservation.map(ResponseEntity::ok)
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+        return reservationService.getReservationByCode(code)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
     @PostMapping("/checkin/{code}")
     public ResponseEntity<String> checkIn(@PathVariable String code) {
-        boolean result = reservationService.checkInReservation(code);
-        if (result) {
+        boolean success = reservationService.checkInReservation(code);
+        if (success) {
             return ResponseEntity.ok("Check-in successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found or already used");
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found or already used");
     }
 
     @GetMapping
-    public List<Reservation> getAllReservations() {
-        return reservationService.getReservations();
+    public ResponseEntity<List<Reservation>> getAllReservations() {
+        List<Reservation> reservations = reservationService.getReservations();
+        return ResponseEntity.ok(reservations);
     }
 }

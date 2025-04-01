@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="tqs.hw1.integration.mock.MealControllerMockIT" time="10.807" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="tqs.hw1.integration.mock.MealControllerMockIT" time="63.605" tests="1" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -8,14 +8,12 @@
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.vendor.url" value="https://ubuntu.com/"/>
     <property name="user.timezone" value="Europe/Lisbon"/>
-    <property name="org.jboss.logging.provider" value="slf4j"/>
     <property name="os.name" value="Linux"/>
     <property name="java.vm.specification.version" value="21"/>
-    <property name="APPLICATION_NAME" value="HW1"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250329020958908_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-03-29T02-09-58_663-jvmRun1 surefire-20250329020958908_1tmp surefire_0-20250329020958908_2tmp"/>
+    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250401214035668_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-04-01T21-40-35_348-jvmRun1 surefire-20250401214035668_1tmp surefire_0-20250401214035668_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/test-classes:/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/classes:/home/carolina/.m2/repository/org/jsoup/jsoup/1.18.1/jsoup-1.18.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-mock-mvc/5.5.1/spring-mock-mvc-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-commons/5.5.1/spring-commons-5.5.1.jar:/home/carolina/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.3/spring-boot-starter-logging-3.4.3.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-classic/1.5.16/logback-classic-1.5.16.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-core/1.5.16/logback-core-1.5.16.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/carolina/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/home/carolina/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/carolina/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/carolina/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/carolina/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/carolina/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/carolina/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/carolina/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/carolina/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/carolina/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/carolina/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/carolina/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/carolina/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/carolina/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/carolina/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/carolina/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/carolina/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/carolina/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/carolina/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/carolina/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-core/10.20.1/flyway-core-10.20.1.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.18.2/jackson-dataformat-toml-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-database-postgresql/10.20.1/flyway-database-postgresql-10.20.1.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/carolina/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/home/carolina/.m2/repository/org/checkerframework/checker-qual/3.48.3/checker-qual-3.48.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-testcontainers/3.4.3/spring-boot-testcontainers-3.4.3.jar:/home/carolina/.m2/repository/org/testcontainers/testcontainers/1.20.5/testcontainers-1.20.5.jar:/home/carolina/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/home/carolina/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/carolina/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/carolina/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-api/3.4.1/docker-java-api-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.4.1/docker-java-transport-zerodep-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport/3.4.1/docker-java-transport-3.4.1.jar:/home/carolina/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/carolina/.m2/repository/org/testcontainers/junit-jupiter/1.20.5/junit-jupiter-1.20.5.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured/5.5.1/rest-assured-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy/4.0.25/groovy-4.0.25.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-xml/4.0.25/groovy-xml-4.0.25.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/carolina/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/carolina/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/carolina/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/carolina/.m2/repository/io/rest-assured/json-path/5.5.1/json-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-json/4.0.25/groovy-json-4.0.25.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured-common/5.5.1/rest-assured-common-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/xml-path/5.5.1/xml-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/carolina/.m2/repository/org/testcontainers/postgresql/1.20.5/postgresql-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/jdbc/1.20.5/jdbc-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/database-commons/1.20.5/database-commons-1.20.5.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/carolina/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/carolina/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/carolina/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/carolina/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/carolina/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/carolina/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/carolina/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/carolina/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/carolina/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/carolina/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/carolina/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/carolina/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/carolina/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/carolina/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/carolina/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/carolina/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:/home/carolina/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/carolina/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,10 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
-    <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250329020958908_3.jar"/>
-    <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
+    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250401214035668_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-Ubuntu-122.04.1"/>
     <property name="user.name" value="carolina"/>
@@ -42,20 +37,17 @@
     <property name="os.version" value="6.8.0-52-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna16662983796037427631.tmp"/>
+    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna5750586664789893804.tmp"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/lib32:/usr/lib/x86_64-linux-gnu/libfakeroot"/>
     <property name="localRepository" value="/home/carolina/.m2/repository"/>
     <property name="jna.loaded" value="true"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="78223"/>
-    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -64,81 +56,45 @@
     <property name="java.vm.version" value="21.0.6+7-Ubuntu-122.04.1"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
-    <property name="LOGGED_APPLICATION_NAME" value="[HW1] "/>
   </properties>
-  <testcase name="whenGetAllMeals_thenReturnsMealsList" classname="tqs.hw1.integration.mock.MealControllerMockIT" time="0.826">
-    <error message="detached entity passed to persist: tqs.hw1.model.Restaurant" type="org.springframework.dao.InvalidDataAccessApiUsageException"><![CDATA[org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist: tqs.hw1.model.Restaurant
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:310)
-	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:244)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
-	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61)
-	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:343)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:160)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
-	at jdk.proxy2/jdk.proxy2.$Proxy152.save(Unknown Source)
-	at tqs.hw1.integration.mock.MealControllerMockIT.whenGetAllMeals_thenReturnsMealsList(MealControllerMockIT.java:64)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+  <testcase name="" classname="tqs.hw1.integration.mock.MealControllerMockIT" time="63.605">
+    <error message="Container startup failed for image postgres:15.2" type="org.testcontainers.containers.ContainerLaunchException"><![CDATA[org.testcontainers.containers.ContainerLaunchException: Container startup failed for image postgres:15.2
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:351)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:322)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$4(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-Caused by: org.hibernate.PersistentObjectException: detached entity passed to persist: tqs.hw1.model.Restaurant
-	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:90)
-	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
-	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:803)
-	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:751)
-	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:295)
-	at org.hibernate.engine.spi.CascadingActions$7.cascade(CascadingActions.java:285)
-	at org.hibernate.engine.internal.Cascade.cascadeToOne(Cascade.java:570)
-	at org.hibernate.engine.internal.Cascade.cascadeAssociation(Cascade.java:492)
-	at org.hibernate.engine.internal.Cascade.cascadeProperty(Cascade.java:253)
-	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:192)
-	at org.hibernate.event.internal.AbstractSaveEventListener.cascadeBeforeSave(AbstractSaveEventListener.java:489)
-	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:305)
-	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:223)
-	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:136)
-	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:177)
-	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:95)
-	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:79)
-	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55)
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127)
-	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:761)
-	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:745)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:320)
-	at jdk.proxy2/jdk.proxy2.$Proxy144.persist(Unknown Source)
-	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:636)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170)
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158)
-	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:515)
-	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:284)
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:752)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:174)
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:149)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:69)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:380)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
+Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:88)
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:336)
 	... 9 more
+Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:556)
+	at org.testcontainers.containers.GenericContainer.lambda$doStart$0(GenericContainer.java:346)
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:81)
+	... 10 more
+Caused by: java.lang.IllegalStateException: Wait strategy failed. Container exited with code 1
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:525)
+	... 12 more
+Caused by: org.testcontainers.containers.ContainerLaunchException: Timed out waiting for log output matching '.*database system is ready to accept connections.*\s'
+	at org.testcontainers.containers.wait.strategy.LogMessageWaitStrategy.waitUntilReady(LogMessageWaitStrategy.java:47)
+	at org.testcontainers.containers.wait.strategy.AbstractWaitStrategy.waitUntilReady(AbstractWaitStrategy.java:52)
+	at org.testcontainers.containers.PostgreSQLContainer.waitUntilContainerStarted(PostgreSQLContainer.java:149)
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:492)
+	... 12 more
 ]]></error>
     <system-out><![CDATA[Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
-02:10:00.046 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.hw1.integration.mock.MealControllerMockIT]: MealControllerMockIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-02:10:00.271 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.integration.mock.MealControllerMockIT
-02:10:00.434 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
-02:10:00.437 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
-02:10:00.473 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.5
-02:10:00.810 [main] WARN org.testcontainers.dockerclient.DockerClientProviderStrategy -- DOCKER_HOST unix:///var/run/docker.sock is not listening
+21:40:36.838 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [tqs.hw1.integration.mock.MealControllerMockIT]: MealControllerMockIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:40:37.042 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.integration.mock.MealControllerMockIT
+21:40:37.288 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+21:40:37.291 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+21:40:37.323 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 1.20.5
+21:40:37.704 [main] WARN org.testcontainers.dockerclient.DockerClientProviderStrategy -- DOCKER_HOST unix:///var/run/docker.sock is not listening
 java.net.BindException: Permissão negada
 	at java.base/sun.nio.ch.UnixDomainSockets.connect0(Native Method)
 	at java.base/sun.nio.ch.UnixDomainSockets.connect(UnixDomainSockets.java:154)
@@ -227,88 +183,110 @@ java.net.BindException: Permissão negada
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-02:10:01.188 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/carolina/.docker/desktop/docker.sock)
-02:10:01.190 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
-02:10:01.219 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+21:40:38.102 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with Docker accessed via Unix socket (/home/carolina/.docker/desktop/docker.sock)
+21:40:38.104 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+21:40:38.133 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
   Server Version: 27.1.1
   API Version: 1.46
   Operating System: Docker Desktop
   Total Memory: 2378 MB
   Labels: 
     com.docker.desktop.address=unix:///home/carolina/.docker/desktop/docker-cli.sock
-02:10:01.302 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
-02:10:01.365 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
-02:10:01.566 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: 831c832bec7a1645bf9923c0c573c3d617534548a7e064e77b9dd579c31aa244
-02:10:02.183 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT0.880386021S
-02:10:02.193 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
-02:10:02.193 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
-02:10:02.194 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
-02:10:02.195 [main] INFO tc.postgres:latest -- Creating container for image: postgres:latest
-02:10:02.292 [main] INFO tc.postgres:latest -- Container postgres:latest is starting: 1e91ecfff19e3bd8ae7e5d899dd65f3a57e78e9c5fb7f1a08a2df835ec1a2aab
-02:10:04.257 [main] INFO tc.postgres:latest -- Container postgres:latest started in PT2.061405725S
-02:10:04.259 [main] INFO tc.postgres:latest -- Container is started (JDBC URL: jdbc:postgresql://localhost:38227/test?loggerLevel=OFF)
-02:10:04.341 [main] INFO org.springframework.boot.devtools.restart.RestartApplicationListener -- Restart disabled due to context in which it is running
+21:40:38.237 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Creating container for image: testcontainers/ryuk:0.11.0
+21:40:38.267 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+21:40:38.483 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 is starting: f7ff094af4eef7b4689342b43ae45147fcff7d258ba3a56d8f7c3e240d838da0
+21:40:39.219 [main] INFO tc.testcontainers/ryuk:0.11.0 -- Container testcontainers/ryuk:0.11.0 started in PT0.982307188S
+21:40:39.230 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+21:40:39.231 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+21:40:39.232 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+21:40:39.233 [main] INFO tc.postgres:15.2 -- Creating container for image: postgres:15.2
+21:40:39.401 [main] INFO tc.postgres:15.2 -- Container postgres:15.2 is starting: 0a02576c1b9eebd5f362aead3f61ab0fdda41f56eb2a270cf2b0349cfe99514f
+21:41:40.032 [main] ERROR tc.postgres:15.2 -- Could not start container
+java.lang.IllegalStateException: Wait strategy failed. Container exited with code 1
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:525)
+	at org.testcontainers.containers.GenericContainer.lambda$doStart$0(GenericContainer.java:346)
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:81)
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:336)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:322)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$4(TestcontainersExtension.java:83)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore.lambda$getOrComputeIfAbsent$5(NamespacedHierarchicalStore.java:182)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$MemoizingSupplier.computeValue(NamespacedHierarchicalStore.java:422)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$MemoizingSupplier.get(NamespacedHierarchicalStore.java:411)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$StoredValue.evaluate(NamespacedHierarchicalStore.java:358)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore$StoredValue.access$200(NamespacedHierarchicalStore.java:337)
+	at org.junit.platform.engine.support.store.NamespacedHierarchicalStore.getOrComputeIfAbsent(NamespacedHierarchicalStore.java:185)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.lambda$getOrComputeIfAbsent$2(NamespaceAwareStore.java:57)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.accessStore(NamespaceAwareStore.java:90)
+	at org.junit.jupiter.engine.execution.NamespaceAwareStore.getOrComputeIfAbsent(NamespaceAwareStore.java:57)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeBeforeAllCallbacks$13(ClassBasedTestDescriptor.java:396)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeBeforeAllCallbacks(ClassBasedTestDescriptor.java:396)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:212)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.before(ClassBasedTestDescriptor.java:85)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:153)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:160)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:146)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:144)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:143)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:100)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:55)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:223)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:175)
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:139)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+Caused by: org.testcontainers.containers.ContainerLaunchException: Timed out waiting for log output matching '.*database system is ready to accept connections.*\s'
+	at org.testcontainers.containers.wait.strategy.LogMessageWaitStrategy.waitUntilReady(LogMessageWaitStrategy.java:47)
+	at org.testcontainers.containers.wait.strategy.AbstractWaitStrategy.waitUntilReady(AbstractWaitStrategy.java:52)
+	at org.testcontainers.containers.PostgreSQLContainer.waitUntilContainerStarted(PostgreSQLContainer.java:149)
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:492)
+	... 63 common frames omitted
+21:41:40.070 [main] ERROR tc.postgres:15.2 -- Log output from the failed container:
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
 
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
+The database cluster will be initialized with locale "en_US.utf8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
 
- :: Spring Boot ::                (v3.4.3)
+Data page checksums are disabled.
 
-2025-03-29T02:10:04.680Z  INFO 78223 --- [HW1] [           main] t.h.i.mock.MealControllerMockIT          : Starting MealControllerMockIT using Java 21.0.6 with PID 78223 (started by carolina in /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend)
-2025-03-29T02:10:04.682Z  INFO 78223 --- [HW1] [           main] t.h.i.mock.MealControllerMockIT          : No active profile set, falling back to 1 default profile: "default"
-2025-03-29T02:10:05.617Z  INFO 78223 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-29T02:10:05.689Z  INFO 78223 --- [HW1] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
-2025-03-29T02:10:06.332Z  INFO 78223 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-03-29T02:10:06.527Z  INFO 78223 --- [HW1] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
-2025-03-29T02:10:06.529Z  INFO 78223 --- [HW1] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-03-29T02:10:06.580Z  INFO 78223 --- [HW1] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:testdb (H2 2.3)
-2025-03-29T02:10:06.591Z  WARN 78223 --- [HW1] [           main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
-2025-03-29T02:10:06.620Z  INFO 78223 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
-2025-03-29T02:10:06.623Z  INFO 78223 --- [HW1] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.016s)
-2025-03-29T02:10:06.631Z  INFO 78223 --- [HW1] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-2025-03-29T02:10:06.676Z  INFO 78223 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
-2025-03-29T02:10:06.688Z  INFO 78223 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
-2025-03-29T02:10:06.731Z  INFO 78223 --- [HW1] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.023s)
-2025-03-29T02:10:06.860Z  INFO 78223 --- [HW1] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-29T02:10:06.920Z  INFO 78223 --- [HW1] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
-2025-03-29T02:10:06.957Z  INFO 78223 --- [HW1] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-03-29T02:10:07.294Z  INFO 78223 --- [HW1] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-29T02:10:07.410Z  INFO 78223 --- [HW1] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 2.3.232
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-03-29T02:10:08.331Z  INFO 78223 --- [HW1] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-Hibernate: drop table if exists meal cascade 
-Hibernate: drop table if exists reservation cascade 
-Hibernate: drop table if exists restaurant cascade 
-Hibernate: create table meal (date date, id bigint generated by default as identity, restaurant_id bigint, description varchar(255), primary key (id))
-Hibernate: create table reservation (used boolean not null, id bigint generated by default as identity, meal_id bigint, reservation_date timestamp(6), code varchar(255), primary key (id))
-Hibernate: create table restaurant (id bigint generated by default as identity, external_menu_url varchar(255), location varchar(255), name varchar(255), primary key (id))
-Hibernate: alter table if exists meal add constraint FKcd9jk7bc83ep499vvqepldy9g foreign key (restaurant_id) references restaurant
-Hibernate: alter table if exists reservation add constraint FKcbopybh7ci4xynox3e2tg48l7 foreign key (meal_id) references meal
-2025-03-29T02:10:08.368Z  INFO 78223 --- [HW1] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-29T02:10:08.872Z  WARN 78223 --- [HW1] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-29T02:10:09.324Z  INFO 78223 --- [HW1] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2025-03-29T02:10:09.324Z  INFO 78223 --- [HW1] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2025-03-29T02:10:09.326Z  INFO 78223 --- [HW1] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2025-03-29T02:10:09.368Z  INFO 78223 --- [HW1] [           main] t.h.i.mock.MealControllerMockIT          : Started MealControllerMockIT in 5.037 seconds (process running for 10.411)
-Hibernate: insert into restaurant (external_menu_url,location,name,id) values (?,?,?,default)
-Hibernate: insert into restaurant (external_menu_url,location,name,id) values (?,?,?,default)
-Hibernate: select m1_0.id,m1_0.date,m1_0.description,m1_0.restaurant_id from meal m1_0
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+initdb: error: could not create directory "/var/lib/postgresql/data/pg_wal": No space left on device
+initdb: removing contents of data directory "/var/lib/postgresql/data"
+
 ]]></system-out>
-    <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar)
-WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
-WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
-WARNING: Dynamic loading of agents will be disallowed by default in a future release
-]]></system-err>
   </testcase>
 </testsuite>

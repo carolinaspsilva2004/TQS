@@ -9,7 +9,7 @@ class ReservationTest {
 
     @Test
     void testReservationCreation() {
-        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.url");
+        Restaurant restaurant = new Restaurant("Testaurant");
         Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), restaurant);
         Reservation reservation = new Reservation("ABC123", LocalDateTime.now(), false, meal);
 
@@ -20,7 +20,7 @@ class ReservationTest {
     @Test
     void testSetters() {
         Reservation reservation = new Reservation();
-        Meal meal = new Meal("Steak", LocalDate.now(), new Restaurant("Grill House", "http://grill.com"));
+        Meal meal = new Meal("Steak", LocalDate.now(), new Restaurant("Grill House"));
         LocalDateTime dateTime = LocalDateTime.of(2024, 3, 30, 18, 30);
 
         reservation.setCode("XYZ789");
@@ -36,7 +36,7 @@ class ReservationTest {
 
     @Test
     void testToString() {
-        Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), new Restaurant("Testaurant", "http://menu.url"));
+        Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), new Restaurant("Testaurant"));
         Reservation reservation = new Reservation("ABC123", LocalDateTime.now(), false, meal);
 
         assertThat(reservation.toString()).contains("ABC123");

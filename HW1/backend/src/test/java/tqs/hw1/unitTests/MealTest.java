@@ -8,7 +8,7 @@ class MealTest {
 
     @Test
     void testMealCreation() {
-        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.url");
+        Restaurant restaurant = new Restaurant("Testaurant");
         Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), restaurant);
 
         assertThat(meal.getDescription()).isEqualTo("Pasta Carbonara");
@@ -19,7 +19,7 @@ class MealTest {
     @Test
     void testSetters() {
         Meal meal = new Meal();
-        Restaurant restaurant = new Restaurant("New Place", "http://new.menu");
+        Restaurant restaurant = new Restaurant("New Place");
         LocalDate date = LocalDate.of(2024, 3, 30);
 
         meal.setDescription("New Meal");
@@ -33,7 +33,7 @@ class MealTest {
 
     @Test
     void testToString() {
-        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.url");
+        Restaurant restaurant = new Restaurant("Testaurant");
         Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), restaurant);
 
         assertThat(meal.toString()).contains("Pasta Carbonara");

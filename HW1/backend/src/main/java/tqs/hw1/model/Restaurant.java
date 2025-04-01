@@ -9,14 +9,11 @@ public class Restaurant {
     private Long id;
 
     private String name;
-    private String externalMenuUrl;
-
     public Restaurant() {
     }
 
-    public Restaurant(String name, String externalMenuUrl) {
+    public Restaurant(String name) {
         this.name = name;
-        this.externalMenuUrl = externalMenuUrl;
     }
     
     public Long getId() {
@@ -27,11 +24,6 @@ public class Restaurant {
         return name;
     }
 
-    
-
-    public String getExternalMenuUrl() {
-        return externalMenuUrl;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -42,17 +34,13 @@ public class Restaurant {
     }
 
 
-    public void setExternalMenuUrl(String externalMenuUrl) {
-        this.externalMenuUrl = externalMenuUrl;
-    }
-
+    
 
     @Override
     public String toString() {
         return "Restaurant{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", externalMenuUrl='" + externalMenuUrl + '\'' +
                 '}';
     }
 

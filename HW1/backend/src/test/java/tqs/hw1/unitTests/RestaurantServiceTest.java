@@ -29,7 +29,7 @@ class RestaurantServiceTest {
 
     @Test
     void testGetAllRestaurants() {
-        when(restaurantRepository.findAll()).thenReturn(List.of(new Restaurant("Testaurant", "http://menu.url")));
+        when(restaurantRepository.findAll()).thenReturn(List.of(new Restaurant("Testaurant")));
         List<Restaurant> restaurants = restaurantService.getAllRestaurants();
         assertThat(restaurants).hasSize(1);
         verify(restaurantRepository, times(1)).findAll();
@@ -37,7 +37,7 @@ class RestaurantServiceTest {
 
     @Test
     void testGetRestaurantById() {
-        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.url");
+        Restaurant restaurant = new Restaurant("Testaurant");
         when(restaurantRepository.findById(1L)).thenReturn(Optional.of(restaurant));
         Optional<Restaurant> foundRestaurant = restaurantService.getRestaurantById(1L);
         assertThat(foundRestaurant).isPresent().contains(restaurant);
@@ -46,7 +46,7 @@ class RestaurantServiceTest {
 
     @Test
     void testSaveRestaurant() {
-        Restaurant restaurant = new Restaurant("New Place", "http://new.url");
+        Restaurant restaurant = new Restaurant("New Place");
         when(restaurantRepository.save(restaurant)).thenReturn(restaurant);
         Restaurant savedRestaurant = restaurantService.saveRestaurant(restaurant);
         assertThat(savedRestaurant).isEqualTo(restaurant);

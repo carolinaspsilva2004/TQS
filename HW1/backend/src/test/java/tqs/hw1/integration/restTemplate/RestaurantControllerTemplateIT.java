@@ -25,7 +25,6 @@ public class RestaurantControllerTemplateIT {
             .withUsername("test")
             .withPassword("test");
 
-
     @LocalServerPort
     private int port;
 
@@ -36,16 +35,15 @@ public class RestaurantControllerTemplateIT {
 
     @Test
     void whenAddRestaurant_thenRestaurantIsCreated() {
-        Restaurant restaurant = new Restaurant("Testaurant", "http://menu.example.com");
-
         RestAssured.given()
                 .port(port)
                 .contentType(ContentType.JSON)
-                .body(restaurant)
+                .body("{\"name\":\"Testaurant\"}")
                 .post("/restaurants")
                 .then()
                 .statusCode(200)
-                .body("name", equalTo("Testaurant"));    }
+                .body("name", equalTo("Testaurant"));
+    }
 
     @Test
     void whenGetRestaurants_thenListIsReturned() {
@@ -55,5 +53,41 @@ public class RestaurantControllerTemplateIT {
                 .then()
                 .statusCode(200)
                 .body("$", hasSize(greaterThanOrEqualTo(0)));
+    }
+
+    @Test
+    void whenGetRestaurantById_thenCorrectRestaurantIsReturned() {
+        String restaurantId = RestAssured.given()
+                .port(port)
+                .contentType(ContentType.JSON)
+                .body("{\"name\":\"Testaurant\"}")
+                .post("/restaurants")
+                .then()
+                .extract().path("id").toString();
+
+        RestAssured.given()
+                .port(port)
+                .get("/restaurants/" + restaurantId)
+                .then()
+                .statusCode(200)
+                .body("name", equalTo("Testaurant"));
+    }
+
+    @Test
+    void whenDeleteRestaurant_thenItIsRemoved() {
+        String restaurantId = RestAssured.given()
+                .port(port)
+                .contentType(ContentType.JSON)
+                .body("{\"name\":\"ToBeDeleted\"}")
+                .post("/restaurants")
+                .then()
+                .extract().path("id").toString();
+
+        RestAssured.given()
+                .port(port)
+                .delete("/restaurants/" + restaurantId)
+                .then()
+                .statusCode(200)
+                .body(equalTo("Restaurante removido com sucesso."));
     }
 }

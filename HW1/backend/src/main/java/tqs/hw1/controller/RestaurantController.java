@@ -1,81 +1,76 @@
 package tqs.hw1.controller;
 
-import tqs.hw1.model.*;
-import tqs.hw1.repository.*;
-import tqs.hw1.service.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
+import tqs.hw1.model.Meal;
+import tqs.hw1.model.Restaurant;
+import tqs.hw1.service.MealService;
+import tqs.hw1.service.RestaurantService;
+import tqs.hw1.service.WeatherService;
+
 import java.time.LocalDate;
 import java.util.*;
-
 
 @RestController
 @RequestMapping("/restaurants")
 public class RestaurantController {
-    private final RestaurantRepository restaurantRepository;
-    private final MealRepository mealRepository;
-    private final WeatherService weatherService;
-    private final ExternalMenuService externalMenuService;
     private final RestaurantService restaurantService;
+    private final MealService mealService;
+    private final WeatherService weatherService;
 
-    public RestaurantController(RestaurantRepository restaurantRepository, MealRepository mealRepository, WeatherService weatherService, ExternalMenuService externalMenuService, RestaurantService restaurantService) {
+    public RestaurantController(RestaurantService restaurantService, MealService mealService, WeatherService weatherService) {
         this.restaurantService = restaurantService;
-        this.restaurantRepository = restaurantRepository;
-        this.mealRepository = mealRepository;
+        this.mealService = mealService;
         this.weatherService = weatherService;
-        this.externalMenuService = externalMenuService;
     }
 
     @GetMapping
     public List<Restaurant> getAllRestaurants() {
-        return restaurantRepository.findAll();
+        return restaurantService.getAllRestaurants();
     }
 
     @GetMapping("/{id}")
     public Restaurant getRestaurantById(@PathVariable Long id) {
         return restaurantService.getRestaurantById(id)
-                .orElseThrow(() -> new RuntimeException("Restaurante não encontrado com id: " + id));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Restaurante não encontrado com id: " + id));
     }
 
-    @PostMapping
-    public Restaurant addRestaurant(@RequestBody Restaurant restaurant) {
-        return restaurantService.saveRestaurant(restaurant);
+    @PostMapping("/add")
+    public ResponseEntity<Restaurant> addRestaurant(@RequestBody Restaurant restaurant) {
+        return new ResponseEntity<>(restaurantService.saveRestaurant(restaurant), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteRestaurant(@PathVariable Long id) {
+    public ResponseEntity<String> deleteRestaurant(@PathVariable Long id) {
         if (!restaurantService.existsById(id)) {
-            return "Restaurante não encontrado.";
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Restaurante não encontrado.");
         }
         restaurantService.deleteRestaurant(id);
-        return "Restaurante removido com sucesso.";
-    }
-
-
-    @PostMapping("/{id}/updateMeals")
-    public String updateMeals(@PathVariable Long id) {
-        Restaurant restaurant = restaurantService.getRestaurantById(id)
-                .orElseThrow(() -> new RuntimeException("Restaurante não encontrado com id: " + id));
-        externalMenuService.fetchAndSaveMealsForRestaurant(restaurant);
-        return "Refeições atualizadas a partir da fonte externa.";
+        return ResponseEntity.ok("Restaurante removido com sucesso.");
     }
 
     @GetMapping("/{id}/meals")
-    public List<Map<String, Object>> getMeals(@PathVariable Long id) {
-        List<Meal> meals = mealRepository.findByRestaurantIdAndDateAfter(id, LocalDate.now().minusDays(1));
+    public ResponseEntity<List<Map<String, Object>>> getMeals(@PathVariable Long id) {
+        if (!restaurantService.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Restaurante não encontrado com id: " + id);
+        }
+        List<Meal> meals = mealService.getMealsByRestaurantId(id);
         List<Map<String, Object>> result = new ArrayList<>();
 
         for (Meal meal : meals) {
-            Map<String, Object> mealInfo = new HashMap<>();
-            try {
-                mealInfo.put("meal", meal);
-                mealInfo.put("weather", weatherService.getForecast( "Aveiro", meal.getDate().toString()));
-            } catch (Exception e) {
-                mealInfo.put("weather", "Erro ao obter previsão do tempo");
-                e.printStackTrace();
+            if (meal.getDate().isAfter(LocalDate.now().minusDays(1))) {
+                Map<String, Object> mealInfo = new HashMap<>();
+                try {
+                    mealInfo.put("meal", meal);
+                    mealInfo.put("weather", weatherService.getForecast("Aveiro", meal.getDate().toString()));
+                } catch (Exception e) {
+                    mealInfo.put("weather", "Erro ao obter previsão do tempo");
+                }
+                result.add(mealInfo);
             }
-            result.add(mealInfo);
         }
-        return result;
+        return ResponseEntity.ok(result);
     }
-
 }

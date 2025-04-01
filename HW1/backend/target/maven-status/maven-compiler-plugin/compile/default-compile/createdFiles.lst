@@ -5,7 +5,6 @@ tqs/hw1/repository/RestaurantRepository.class
 tqs/hw1/repository/MealRepository.class
 tqs/hw1/model/WeatherResponse$currentConditions.class
 tqs/hw1/service/MealService.class
-tqs/hw1/controller/CheckInController.class
 tqs/hw1/model/Restaurant.class
 tqs/hw1/dto/MealDTO.class
 tqs/hw1/model/Reservation.class
@@ -20,6 +19,5 @@ tqs/hw1/model/Meal.class
 tqs/hw1/service/ReservationService.class
 tqs/hw1/model/WeatherResponse$Alert.class
 tqs/hw1/service/WeatherService.class
-tqs/hw1/service/ExternalMenuService.class
 tqs/hw1/controller/WeatherController.class
 tqs/hw1/Hw1Application.class

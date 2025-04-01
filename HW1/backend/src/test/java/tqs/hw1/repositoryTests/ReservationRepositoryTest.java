@@ -30,7 +30,7 @@ public class ReservationRepositoryTest {
 
     @Test
     void shouldSaveAndRetrieveReservationByCode() {
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("Rest A", "http://a.com"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("Rest A"));
         Meal meal = mealRepository.save(new Meal("Fish & Chips", LocalDate.now(), restaurant));
         Reservation reservation = new Reservation("ABC123", LocalDateTime.now(), false, meal);
         reservationRepository.save(reservation);

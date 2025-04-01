@@ -1,5 +1,4 @@
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/Hw1Application.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/controller/CheckInController.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/controller/MealController.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/controller/ReservationController.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/controller/RestaurantController.java
@@ -14,7 +13,6 @@
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/MealRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/ReservationRepository.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/repository/RestaurantRepository.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/ExternalMenuService.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/MealService.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/ReservationService.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/main/java/tqs/hw1/service/RestaurantService.java

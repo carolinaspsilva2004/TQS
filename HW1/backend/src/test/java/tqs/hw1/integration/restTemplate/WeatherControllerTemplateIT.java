@@ -34,7 +34,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherForCityAndDate_thenReturnWeather() {
         String city = "Aveiro";
-        String date = "2025-03-28";
+        String date = "2025-03-31";
         
         // Atualize a condição esperada com base nos dados da resposta
         String expectedCondition = "Partially cloudy";  // Use a condição correta da resposta
@@ -50,7 +50,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherDaysAndCurrent_thenReturnCorrectData() {
         String city = "Aveiro";
-        String date = "2025-03-28";
+        String date = "2025-04-01";
         
         // Espera-se que o "current" e "days" estejam presentes na resposta
         String expectedCurrentCondition = "Partially cloudy"; 
@@ -66,7 +66,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherAlerts_thenReturnAlerts() {
         String city = "Aveiro";
-        String date = "2025-03-29";
+        String date = "2025-04-01";
         
         RestAssured.given()
                 .port(port)
@@ -80,7 +80,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherHours_thenReturnHourlyData() {
         String city = "Aveiro";
-        String date = "2025-03-29";
+        String date = "2025-04-01";
         
         // Espera-se que os "hours" tenham condições específicas na primeira entrada
         String expectedHourCondition = "Partially cloudy";  // Altere para a condição esperada

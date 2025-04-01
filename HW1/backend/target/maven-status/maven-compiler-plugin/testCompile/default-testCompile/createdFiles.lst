@@ -3,7 +3,6 @@ tqs/hw1/service/MealServiceTest.class
 tqs/hw1/repositoryTests/MealRepositoryTest.class
 tqs/hw1/controller/integration/mock/ReservationControllerMockIT.class
 tqs/hw1/repositoryTests/ReservationRepositoryTest.class
-tqs/hw1/controller/integration/restTemplate/CheckInControllerTemplateIT.class
 tqs/hw1/model/MealTest.class
 tqs/hw1/controller/integration/restTemplate/MealControllerTemplateIT.class
 tqs/hw1/service/RestaurantServiceTest.class
@@ -14,6 +13,5 @@ tqs/hw1/controller/integration/mock/WeatherControllerMockIT.class
 tqs/hw1/model/RestaurantTest.class
 tqs/hw1/controller/integration/restTemplate/RestaurantControllerTemplateIT.class
 tqs/hw1/model/ReservationTest.class
-tqs/hw1/integration/mock/CheckInMockIT.class
 tqs/hw1/integration/mock/MealControllerMockIT.class
 tqs/hw1/Hw1ApplicationTests.class

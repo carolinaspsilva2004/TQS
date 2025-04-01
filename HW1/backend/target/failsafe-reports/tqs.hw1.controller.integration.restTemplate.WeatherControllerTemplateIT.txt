@@ -1,38 +1,35 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 9.192 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
-tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 2.416 s  <<< FAILURE!
-java.lang.AssertionError: 
-1 expectation failed.
-JSON path [0].conditions doesn't match.
-Expected: Partially cloudy
-  Actual: Clear
-
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
-	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
-	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
-	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
-	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
-	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
-	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:270)
-	at io.restassured.specification.ResponseSpecification$body$1.callCurrent(Unknown Source)
-	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:117)
-	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:244)
-	at tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData(WeatherControllerTemplateIT.java:93)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 60.794 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
+tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT  Time elapsed: 60.794 s  <<< ERROR!
+org.testcontainers.containers.ContainerLaunchException: Container startup failed for image postgres:15.2
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:351)
+	at org.testcontainers.containers.GenericContainer.start(GenericContainer.java:322)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.start(TestcontainersExtension.java:276)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension$StoreAdapter.access$200(TestcontainersExtension.java:263)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$4(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.lambda$startContainers$5(TestcontainersExtension.java:83)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.startContainers(TestcontainersExtension.java:83)
+	at org.testcontainers.junit.jupiter.TestcontainersExtension.beforeAll(TestcontainersExtension.java:57)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.rnorth.ducttape.RetryCountExceededException: Retry limit hit with exception
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:88)
+	at org.testcontainers.containers.GenericContainer.doStart(GenericContainer.java:336)
+	... 9 more
+Caused by: org.testcontainers.containers.ContainerLaunchException: Could not create/start container
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:556)
+	at org.testcontainers.containers.GenericContainer.lambda$doStart$0(GenericContainer.java:346)
+	at org.rnorth.ducttape.unreliables.Unreliables.retryUntilSuccess(Unreliables.java:81)
+	... 10 more
+Caused by: java.lang.IllegalStateException: Wait strategy failed. Container exited with code 1
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:525)
+	... 12 more
+Caused by: org.testcontainers.containers.ContainerLaunchException: Timed out waiting for log output matching '.*database system is ready to accept connections.*\s'
+	at org.testcontainers.containers.wait.strategy.LogMessageWaitStrategy.waitUntilReady(LogMessageWaitStrategy.java:47)
+	at org.testcontainers.containers.wait.strategy.AbstractWaitStrategy.waitUntilReady(AbstractWaitStrategy.java:52)
+	at org.testcontainers.containers.PostgreSQLContainer.waitUntilContainerStarted(PostgreSQLContainer.java:149)
+	at org.testcontainers.containers.GenericContainer.tryStart(GenericContainer.java:492)
+	... 12 more
 

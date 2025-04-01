@@ -24,7 +24,7 @@ public class MealRepositoryTest {
 
     @Test
     void shouldSaveAndRetrieveMeal() {
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant", "http://menu.url"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant"));
         Meal meal = new Meal("Pasta Carbonara", LocalDate.now(), restaurant);
         mealRepository.save(meal);
 
@@ -35,7 +35,7 @@ public class MealRepositoryTest {
 
     @Test
     void shouldFindMealsByRestaurantAndFutureDate() {
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("FutureFood", "http://future.url"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("FutureFood"));
         mealRepository.save(new Meal("Meal Today", LocalDate.now(), restaurant));
         mealRepository.save(new Meal("Meal Tomorrow", LocalDate.now().plusDays(1), restaurant));
 
@@ -46,7 +46,7 @@ public class MealRepositoryTest {
 
     @Test
     void shouldFindMealsByRestaurantId() {
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant", "http://menu.url"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant"));
         mealRepository.save(new Meal("Pasta", LocalDate.now(), restaurant));
         mealRepository.save(new Meal("Pizza", LocalDate.now(), restaurant));
 
@@ -57,7 +57,7 @@ public class MealRepositoryTest {
 
     @Test
     void shouldFindMealsByDate() {
-        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant", "http://menu.url"));
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("Testaurant"));
         LocalDate today = LocalDate.now();
         mealRepository.save(new Meal("Burger", today, restaurant));
         mealRepository.save(new Meal("Salad", today, restaurant));

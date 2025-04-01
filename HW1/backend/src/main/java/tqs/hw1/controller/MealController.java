@@ -1,42 +1,57 @@
 package tqs.hw1.controller;
 
-import tqs.hw1.model.Meal;
-import tqs.hw1.repository.MealRepository;
-import org.springframework.web.bind.annotation.*;
-import tqs.hw1.model.Restaurant;
-import tqs.hw1.service.MealService;
-import tqs.hw1.service.ExternalMenuService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import tqs.hw1.model.Meal;
+import tqs.hw1.service.MealService;
 
-
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/meals")
 public class MealController {
     private final MealService mealService;
-    private final ExternalMenuService externalMenuService;
 
-    public MealController(MealService mealService, ExternalMenuService externalMenuService) {
+    public MealController(MealService mealService) {
         this.mealService = mealService;
-        this.externalMenuService = externalMenuService;
     }
 
     @GetMapping
-    public List<Meal> getAllMeals() {
-        return mealService.getAllMeals();
+    public ResponseEntity<List<Meal>> getAllMeals() {
+        return ResponseEntity.ok(mealService.getAllMeals());
     }
 
     @GetMapping("/{id}")
-    public Meal getMealById(@PathVariable Long id) {
+    public ResponseEntity<Meal> getMealById(@PathVariable Long id) {
         return mealService.getMealById(id)
-                .orElseThrow(() -> new RuntimeException("Refeição não encontrada com id: " + id));
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("/fetch")
-    public String fetchMealsFromExternal(@RequestBody Restaurant restaurant) {
-        externalMenuService.fetchAndSaveMealsForRestaurant(restaurant);
-        return "Refeições buscadas e salvas com sucesso.";
+    @GetMapping("/restaurant/{restaurantId}")
+    public ResponseEntity<List<Meal>> getMealsByRestaurantId(@PathVariable Long restaurantId) {
+        return ResponseEntity.ok(mealService.getMealsByRestaurantId(restaurantId));
+    }
+
+    @GetMapping("/date/{date}")
+    public ResponseEntity<List<Meal>> getMealsByDate(@PathVariable String date) {
+        LocalDate localDate = LocalDate.parse(date);
+        return ResponseEntity.ok(mealService.getMealsByDate(localDate));
+    }
+
+    @PostMapping
+    public ResponseEntity<Meal> createMeal(@RequestBody Meal meal) {
+        return ResponseEntity.ok(mealService.saveMeal(meal));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteMeal(@PathVariable Long id) {
+        if (mealService.existsById(id)) {
+            mealService.deleteMeal(id);
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }

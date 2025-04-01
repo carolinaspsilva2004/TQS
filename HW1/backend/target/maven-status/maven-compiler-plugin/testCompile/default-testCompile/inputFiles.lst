@@ -1,10 +1,8 @@
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/Hw1ApplicationTests.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/mock/CheckInMockIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/mock/MealControllerMockIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/mock/ReservationControllerMockIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/mock/RestaurantControllerMockIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/mock/WeatherControllerMockIT.java
-/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/restTemplate/CheckInControllerTemplateIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/restTemplate/MealControllerTemplateIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/restTemplate/ReservationControllerTemplateIT.java
 /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/src/test/java/tqs/hw1/integration/restTemplate/RestaurantControllerTemplateIT.java
