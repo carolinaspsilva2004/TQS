@@ -15,9 +15,11 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import tqs.hw1.model.Meal;
+import tqs.hw1.model.Restaurant;
 import tqs.hw1.repository.MealRepository;
+import tqs.hw1.repository.RestaurantRepository;
 
-
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -35,6 +37,9 @@ public class MealControllerMockIT {
     @Autowired
     private MealRepository mealRepository;
 
+    @Autowired
+    private RestaurantRepository restaurantRepository;
+
     @BeforeAll
     static void setupContainer() {
         container.start();
@@ -43,6 +48,7 @@ public class MealControllerMockIT {
     @AfterEach
     public void resetDb() {
         mealRepository.deleteAll();
+        restaurantRepository.deleteAll();
     }
 
     @Container
@@ -51,12 +57,14 @@ public class MealControllerMockIT {
             .withPassword("test")
             .withDatabaseName("test");
 
-
     @Test
     @DisplayName("GET /meals retorna a lista de refeições")
     void whenGetAllMeals_thenReturnMealsList() throws Exception {
-        Meal meal1 = new Meal();
-        Meal meal2 = new Meal();
+        Restaurant restaurant = new Restaurant("Test Restaurant");
+        restaurantRepository.save(restaurant);
+        
+        Meal meal1 = new Meal("Meal 1", LocalDate.now(), restaurant);
+        Meal meal2 = new Meal("Meal 2", LocalDate.now(), restaurant);
         mealRepository.saveAll(List.of(meal1, meal2));
 
         mvc.perform(get("/meals")
@@ -84,5 +92,22 @@ public class MealControllerMockIT {
         mvc.perform(get("/meals/{id}", nonExistentId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @DisplayName("POST /meals cria uma refeição com sucesso")
+    void whenCreateMeal_thenReturnCreatedMeal() throws Exception {
+        Restaurant restaurant = new Restaurant("Test Restaurant");
+        restaurantRepository.save(restaurant);
+
+        Meal meal = new Meal("Test Meal", LocalDate.now(), restaurant);
+
+        mvc.perform(post("/meals")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{ \"description\": \"Test Meal\", \"date\": \"" + LocalDate.now() + "\", \"restaurant\": { \"id\": " + restaurant.getId() + " } }"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.description", is("Test Meal")))
+                .andExpect(jsonPath("$.date", is(LocalDate.now().toString())))
+                .andExpect(jsonPath("$.restaurant.id", is(restaurant.getId().intValue())));
     }
 }

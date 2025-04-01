@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class WeatherControllerTemplateIT {
 
     @Container
-    public static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15.2")
+    public static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("test")
             .withUsername("test")
             .withPassword("test");
@@ -36,8 +36,7 @@ public class WeatherControllerTemplateIT {
         String city = "Aveiro";
         String date = "2025-03-31";
         
-        // Atualize a condição esperada com base nos dados da resposta
-        String expectedCondition = "Partially cloudy";  // Use a condição correta da resposta
+        String expectedCondition = "Partially cloudy";  
 
         RestAssured.given()
                 .port(port)
@@ -52,7 +51,6 @@ public class WeatherControllerTemplateIT {
         String city = "Aveiro";
         String date = "2025-04-01";
         
-        // Espera-se que o "current" e "days" estejam presentes na resposta
         String expectedCurrentCondition = "Partially cloudy"; 
 
         RestAssured.given()
@@ -82,15 +80,14 @@ public class WeatherControllerTemplateIT {
         String city = "Aveiro";
         String date = "2025-04-01";
         
-        // Espera-se que os "hours" tenham condições específicas na primeira entrada
-        String expectedHourCondition = "Partially cloudy";  // Altere para a condição esperada
+        String expectedHourCondition = "Partially cloudy"; 
 
         RestAssured.given()
                 .port(port)
                 .get("/weather/" + city + "/" + date + "/hours")
                 .then()
                 .statusCode(200)
-                .body("[0].conditions", equalTo(expectedHourCondition));  // Nota a mudança aqui!
+                .body("[0].conditions", equalTo(expectedHourCondition));  
     }
 
 }

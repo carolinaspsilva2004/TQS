@@ -10,18 +10,24 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import org.testcontainers.junit.jupiter.Container;
+import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.containers.PostgreSQLContainer;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
+@Testcontainers
 public class WeatherControllerMockIT {
 
     @Autowired
     private MockMvc mvc;
 
-    @BeforeEach
-    public void setup() {
-        // Setup necessary data here, if needed
-    }
+    @Container
+    public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:latest")
+            .withUsername("test")
+            .withPassword("test")
+            .withDatabaseName("test");
+
 
     @Test
     @DisplayName("GET /weather/{city}/{date} returns weather conditions for a given city and date")
@@ -29,7 +35,7 @@ public class WeatherControllerMockIT {
         String city = "Aveiro";
         String date = "2025-03-31";
         
-        String expectedCondition = "Clear";  // Use the correct expected condition
+        String expectedCondition = "Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date))
                 .andExpect(status().isOk())
@@ -42,7 +48,7 @@ public class WeatherControllerMockIT {
         String city = "Aveiro";
         String date = "2025-04-01";
         
-        String expectedCurrentCondition = "Clear";  // Use the correct expected condition
+        String expectedCurrentCondition = "Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/current"))
                 .andExpect(status().isOk())

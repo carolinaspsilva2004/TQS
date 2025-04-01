@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.*;
 public class RestaurantControllerTemplateIT {
 
     @Container
-    public static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:15.2")
+    public static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:latest")
             .withDatabaseName("test")
             .withUsername("test")
             .withPassword("test");
@@ -39,7 +39,7 @@ public class RestaurantControllerTemplateIT {
                 .port(port)
                 .contentType(ContentType.JSON)
                 .body("{\"name\":\"Testaurant\"}")
-                .post("/restaurants")
+                .post("/restaurants/add")
                 .then()
                 .statusCode(200)
                 .body("name", equalTo("Testaurant"));

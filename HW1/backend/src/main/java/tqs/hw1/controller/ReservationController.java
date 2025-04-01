@@ -23,14 +23,16 @@ public class ReservationController {
     }
 
     @PostMapping("/book/{mealId}")
-    public ResponseEntity<Reservation> bookMeal(@PathVariable Long mealId) {
+    public ResponseEntity<?> bookMeal(@PathVariable Long mealId) {
         Optional<Meal> meal = mealService.getMealById(mealId);
         if (meal.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("{\"message\": \"Meal not found\"}");
         }
         Reservation reservation = reservationService.createReservation(meal.get());
         return ResponseEntity.status(HttpStatus.CREATED).body(reservation);
     }
+    
 
     @GetMapping("/{code}")
     public ResponseEntity<Reservation> checkReservation(@PathVariable String code) {
