@@ -18,6 +18,7 @@ import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
 import tqs.hw1.repository.MealRepository;
 import tqs.hw1.repository.RestaurantRepository;
+import tqs.hw1.controller.MealController;  
 
 import java.time.LocalDate;
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc

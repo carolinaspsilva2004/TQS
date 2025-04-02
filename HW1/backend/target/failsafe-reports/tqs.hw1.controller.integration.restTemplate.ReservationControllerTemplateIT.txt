@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 4, Errors: 2, Skipped: 0, Time elapsed: 4.798 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT
-tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckReservation_thenReturnReservation  Time elapsed: 1.054 s  <<< FAILURE!
+Tests run: 6, Failures: 4, Errors: 2, Skipped: 0, Time elapsed: 3.707 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT
+tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckReservation_thenReturnReservation  Time elapsed: 1.008 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <201> but was <405>.
@@ -42,7 +42,7 @@ Expected status code <201> but was <405>.
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenMealNotFound_thenReturnNotFound  Time elapsed: 0.083 s  <<< ERROR!
+tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenMealNotFound_thenReturnNotFound  Time elapsed: 0.088 s  <<< ERROR!
 java.lang.IllegalStateException: 
 Expected response body to be verified as JSON, HTML or XML but content-type 'text/plain' is not supported out of the box.
 Try registering a custom parser using:
@@ -98,7 +98,7 @@ Content was:
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenGetAllReservations_thenListIsReturned  Time elapsed: 0.028 s  <<< FAILURE!
+tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenGetAllReservations_thenListIsReturned  Time elapsed: 0.024 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <201> but was <405>.
@@ -158,7 +158,7 @@ Expected status code <201> but was <405>.
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckInReservationNotFound_thenReturnNotFound  Time elapsed: 0.031 s  <<< ERROR!
+tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckInReservationNotFound_thenReturnNotFound  Time elapsed: 0.052 s  <<< ERROR!
 java.lang.IllegalStateException: 
 Expected response body to be verified as JSON, HTML or XML but content-type 'text/plain' is not supported out of the box.
 Try registering a custom parser using:
@@ -206,7 +206,7 @@ Reservation not found or already used
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckIn_thenReturnSuccess  Time elapsed: 0.032 s  <<< FAILURE!
+tqs.hw1.controller.integration.restTemplate.ReservationControllerTemplateIT.whenCheckIn_thenReturnSuccess  Time elapsed: 0.023 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <201> but was <405>.

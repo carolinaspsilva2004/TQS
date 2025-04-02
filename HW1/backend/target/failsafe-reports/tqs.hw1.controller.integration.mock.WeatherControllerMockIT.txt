@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.mock.WeatherControllerMockIT
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 5.068 s <<< FAILURE! - in tqs.hw1.controller.integration.mock.WeatherControllerMockIT
-tqs.hw1.controller.integration.mock.WeatherControllerMockIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 1.367 s  <<< ERROR!
+Tests run: 4, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 5.602 s <<< FAILURE! - in tqs.hw1.controller.integration.mock.WeatherControllerMockIT
+tqs.hw1.controller.integration.mock.WeatherControllerMockIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 1.853 s  <<< ERROR!
 jakarta.servlet.ServletException: Request processing failed: java.lang.Exception: Date not found in response
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1022)
 	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
@@ -46,7 +46,7 @@ Caused by: java.lang.Exception: Date not found in response
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
 	... 24 more
 
-tqs.hw1.controller.integration.mock.WeatherControllerMockIT.whenGetWeatherForCityAndDate_thenReturnWeather  Time elapsed: 0.414 s  <<< FAILURE!
+tqs.hw1.controller.integration.mock.WeatherControllerMockIT.whenGetWeatherForCityAndDate_thenReturnWeather  Time elapsed: 0.31 s  <<< FAILURE!
 java.lang.AssertionError: JSON path "days[0].conditions" expected:<Partially cloudy> but was:<Rain, Partially cloudy>
 	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:61)
 	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:128)

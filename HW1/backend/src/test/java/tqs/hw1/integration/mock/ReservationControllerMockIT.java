@@ -1,27 +1,33 @@
 package tqs.hw1.integration.mock;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import tqs.hw1.model.Meal;
+import tqs.hw1.model.Restaurant;
+import tqs.hw1.repository.MealRepository;
+import tqs.hw1.model.Reservation;
+import tqs.hw1.service.MealService;
+import tqs.hw1.service.ReservationService;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
-import tqs.hw1.model.Meal;
-import tqs.hw1.model.Reservation;
-import tqs.hw1.repository.MealRepository;
-import tqs.hw1.repository.ReservationRepository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static org.hamcrest.Matchers.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -33,22 +39,20 @@ public class ReservationControllerMockIT {
     @Autowired
     private MockMvc mvc;
 
-    @Autowired
-    private MealRepository mealRepository;
+    @MockBean
+    private MealService mealService;
 
-    @Autowired
-    private ReservationRepository reservationRepository;
+    @MockBean
+    private ReservationService reservationService;
+
+    private Meal meal;
+    private Reservation reservation;
 
     @BeforeAll
     static void setupContainer() {
         container.start();
     }
 
-    @AfterEach
-    public void resetDb() {
-        reservationRepository.deleteAll();
-        mealRepository.deleteAll();
-    }
 
     @Container
     public static PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:latest")
@@ -56,82 +60,95 @@ public class ReservationControllerMockIT {
             .withPassword("test")
             .withDatabaseName("test");
 
-    @Test
-    @DisplayName("POST /reservations/book/{mealId} cria uma reserva com sucesso")
-    void whenBookMeal_thenCreateReservation() throws Exception {
-        Meal meal = new Meal("Pizza", LocalDate.now(), null);
-        meal = mealRepository.save(meal);
 
-        mvc.perform(post("/reservations/book/{mealId}", meal.getId())
+    @BeforeEach
+    void setup() {
+        // Criando um restaurante de exemplo
+        Restaurant restaurant = new Restaurant("Test Restaurant");
+
+        // Associando o restaurante à refeição
+        meal = new Meal("Meal Test", LocalDateTime.now().toLocalDate(), restaurant);
+
+        // Criando uma reserva com a refeição
+        reservation = new Reservation("ABC123", LocalDateTime.now(), false, meal);
+        }
+
+    
+    @Test
+    @DisplayName("POST /reservations/book/{mealId} - Deve criar uma reserva com sucesso")
+    void whenBookMeal_thenReturnCreatedReservation() throws Exception {
+        when(mealService.getMealById(anyLong())).thenReturn(Optional.of(meal));
+        when(reservationService.createReservation(any(Meal.class))).thenReturn(reservation);
+
+        mvc.perform(post("/reservations/book/1")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.meal.id", is(meal.getId().intValue())));
+                .andExpect(jsonPath("$.code", is("ABC123")));
     }
 
     @Test
-    @DisplayName("POST /reservations/book/{mealId} retorna erro quando a refeição não existe")
-    void whenBookNonExistentMeal_thenReturnError() throws Exception {
-        mvc.perform(post("/reservations/book/{mealId}", 999L)
+    @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro quando refeição não for encontrada")
+    void whenBookMeal_thenReturnNotFound() throws Exception {
+        when(mealService.getMealById(anyLong())).thenReturn(Optional.empty());
+
+        mvc.perform(post("/reservations/book/999")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message", is("Meal not found")));
     }
 
     @Test
-    @DisplayName("GET /reservations retorna todas as reservas")
-    void whenGetAllReservations_thenReturnReservationList() throws Exception {
-        Meal meal = new Meal("Sushi", LocalDate.now(), null);
-        meal = mealRepository.save(meal);
-        Reservation reservation = new Reservation("ABC123", LocalDateTime.now(), false, meal);
-        reservationRepository.save(reservation);
-
-        mvc.perform(get("/reservations")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)));
-    }
-
-    @Test
-    @DisplayName("GET /reservations/{code} retorna uma reserva válida")
+    @DisplayName("GET /reservations/{code} - Deve retornar uma reserva válida")
     void whenCheckReservation_thenReturnReservation() throws Exception {
-        Meal meal = new Meal("Pasta", LocalDate.now(), null);
-        meal = mealRepository.save(meal);
-        Reservation reservation = new Reservation("XYZ789", LocalDateTime.now(), false, meal);
-        reservationRepository.save(reservation);
+        when(reservationService.getReservationByCode("ABC123")).thenReturn(Optional.of(reservation));
 
-        mvc.perform(get("/reservations/{code}", "XYZ789")
+        mvc.perform(get("/reservations/ABC123")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.code", is("XYZ789")));
+                .andExpect(jsonPath("$.code", is("ABC123")));
     }
 
     @Test
-    @DisplayName("GET /reservations/{code} retorna erro quando a reserva não existe")
-    void whenCheckNonExistentReservation_thenReturnError() throws Exception {
-        mvc.perform(get("/reservations/{code}", "INVALID123")
+    @DisplayName("GET /reservations/{code} - Deve retornar erro quando reserva não for encontrada")
+    void whenCheckReservation_thenReturnNotFound() throws Exception {
+        when(reservationService.getReservationByCode("XYZ999")).thenReturn(Optional.empty());
+
+        mvc.perform(get("/reservations/XYZ999")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
 
     @Test
-    @DisplayName("POST /reservations/checkin/{code} realiza check-in com sucesso")
-    void whenCheckInReservation_thenReturnSuccess() throws Exception {
-        Meal meal = new Meal("Burger", LocalDate.now(), null);
-        meal = mealRepository.save(meal);
-        Reservation reservation = new Reservation("CHECKIN123", LocalDateTime.now(), false, meal);
-        reservationRepository.save(reservation);
+    @DisplayName("POST /reservations/checkin/{code} - Deve marcar check-in com sucesso")
+    void whenCheckIn_thenReturnSuccess() throws Exception {
+        when(reservationService.checkInReservation("ABC123")).thenReturn(true);
 
-        mvc.perform(post("/reservations/checkin/{code}", "CHECKIN123")
+        mvc.perform(post("/reservations/checkin/ABC123")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().string("Check-in successful"));
     }
 
     @Test
-    @DisplayName("POST /reservations/checkin/{code} retorna erro quando a reserva não existe")
-    void whenCheckInNonExistentReservation_thenReturnError() throws Exception {
-        mvc.perform(post("/reservations/checkin/{code}", "FAKECODE")
+    @DisplayName("POST /reservations/checkin/{code} - Deve retornar erro quando reserva não for encontrada")
+    void whenCheckIn_thenReturnNotFound() throws Exception {
+        when(reservationService.checkInReservation("XYZ999")).thenReturn(false);
+
+        mvc.perform(post("/reservations/checkin/XYZ999")
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(content().string("Reservation not found or already used"));
+    }
+
+    @Test
+    @DisplayName("GET /reservations - Deve retornar todas as reservas")
+    void whenGetAllReservations_thenReturnReservationsList() throws Exception {
+        when(reservationService.getReservations()).thenReturn(List.of(reservation));
+
+        mvc.perform(get("/reservations")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].code", is("ABC123")));
     }
 }

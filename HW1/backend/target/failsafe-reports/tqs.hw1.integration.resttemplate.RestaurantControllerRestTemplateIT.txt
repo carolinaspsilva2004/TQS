@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: tqs.hw1.integration.resttemplate.RestaurantControllerRestTemplateIT
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.402 s <<< FAILURE! - in tqs.hw1.integration.resttemplate.RestaurantControllerRestTemplateIT
+tqs.hw1.integration.resttemplate.RestaurantControllerRestTemplateIT.whenGetRestaurantById_thenReturnError  Time elapsed: 0.048 s  <<< ERROR!
+org.springframework.web.client.HttpClientErrorException$NotFound: 404  on GET request for "http://localhost:44599/restaurants/999": "{"timestamp":"2025-04-02T12:21:33.418+00:00","status":404,"error":"Not Found","path":"/restaurants/999"}"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:112)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186)
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147)
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:952)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:901)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:800)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:441)
+	at tqs.hw1.integration.resttemplate.RestaurantControllerRestTemplateIT.whenGetRestaurantById_thenReturnError(RestaurantControllerRestTemplateIT.java:78)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+

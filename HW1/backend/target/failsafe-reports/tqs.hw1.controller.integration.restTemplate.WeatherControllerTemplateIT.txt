@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.673 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
-tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 0.801 s  <<< FAILURE!
+Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.911 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT
+tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherHours_thenReturnHourlyData  Time elapsed: 1.557 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 Expected status code <200> but was <500>.
@@ -32,7 +32,7 @@ Expected status code <200> but was <500>.
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 
-tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherForCityAndDate_thenReturnWeather  Time elapsed: 0.618 s  <<< FAILURE!
+tqs.hw1.controller.integration.restTemplate.WeatherControllerTemplateIT.whenGetWeatherForCityAndDate_thenReturnWeather  Time elapsed: 0.654 s  <<< FAILURE!
 java.lang.AssertionError: 
 1 expectation failed.
 JSON path days[0].conditions doesn't match.

@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: hw1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "${POSTGRES_USER}"]
+      interval: 10s
+      retries: 5
+      start_period: 5s
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    volumes:
+      - ./backend:/app  # Mapeia o diretório de código da aplicação
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url": "jdbc:postgresql://postgres:5432/hw1",
+        "spring.datasource.username": "${POSTGRES_USER}",
+        "spring.datasource.password": "${POSTGRES_PASSWORD}",
+        "spring.jpa.hibernate.ddl-auto": "update",
+        "spring.jpa.show-sql": "true",
+        "spring.jpa.properties.hibernate.format_sql": "true"}'
+      WEATHER_API_KEY: ${WEATHER_API_KEY}  # Adiciona a chave da API
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  postgres_data:
+    driver: local
