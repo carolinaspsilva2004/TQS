@@ -58,5 +58,13 @@ public class WeatherController {
     
         return selectedDay.getHours();
     }
+
+    @GetMapping("/cache/stats")
+    public String getCacheStats() {
+        return String.format("Total Requests: %d, Cache Hits: %d, Cache Misses: %d",
+                weatherService.getTotalRequests(),
+                weatherService.getCacheHits(),
+                weatherService.getCacheMisses());
+    }
     
 }

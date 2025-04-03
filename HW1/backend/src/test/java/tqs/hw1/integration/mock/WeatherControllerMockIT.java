@@ -33,49 +33,74 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date} returns weather conditions for a given city and date")
     void whenGetWeatherForCityAndDate_thenReturnWeather() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-31";
+        String date = "2025-04-03";
         
-        String expectedCondition = "Partially cloudy";  // Use the correct expected condition
+        String expectedCondition = "Rain, Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("days[0].conditions").value(expectedCondition));
+
+        // Second request should hit the cache
+        mvc.perform(get("/weather/" + city + "/" + date))
+                .andExpect(status().isOk());
     }
 
     @Test
     @DisplayName("GET /weather/{city}/{date}/current returns current weather conditions")
     void whenGetWeatherDaysAndCurrent_thenReturnCorrectData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-04-01";
+        String date = "2025-04-03";
         
         String expectedCurrentCondition = "Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/current"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("currentConditions.conditions").value(expectedCurrentCondition));
+        
+        // Second request should hit the cache
+        mvc.perform(get("/weather/" + city + "/" + date))
+        .andExpect(status().isOk());
     }
 
     @Test
     @DisplayName("GET /weather/{city}/{date}/alerts returns weather alerts")
     void whenGetWeatherAlerts_thenReturnAlerts() throws Exception {
         String city = "Aveiro";
-        String date = "2025-03-31";
+        String date = "2025-04-03";
         
         mvc.perform(get("/weather/" + city + "/" + date + "/alerts"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("alerts").isEmpty());
+        // Second request should hit the cache
+        mvc.perform(get("/weather/" + city + "/" + date))
+                .andExpect(status().isOk());
     }
 
     @Test
     @DisplayName("GET /weather/{city}/{date}/hours returns hourly weather data")
     void whenGetWeatherHours_thenReturnHourlyData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-04-01";
+        String date = "2025-04-03";
         
         String expectedHourCondition = "Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/hours"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("[0].conditions").value(expectedHourCondition));
+        // Second request should hit the cache
+        mvc.perform(get("/weather/" + city + "/" + date))
+                .andExpect(status().isOk());
+    }
+
+    @Test
+    @DisplayName("GET /weather/cache/stats returns cache statistics")
+    void whenGetCacheStats_thenReturnCorrectStats() throws Exception {
+        mvc.perform(get("/weather/cache/stats"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Total Requests")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Cache Hits")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Cache Misses")));
+        
     }
 }

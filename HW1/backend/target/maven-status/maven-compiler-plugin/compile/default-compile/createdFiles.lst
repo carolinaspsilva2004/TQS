@@ -21,3 +21,4 @@ tqs/hw1/model/WeatherResponse$Alert.class
 tqs/hw1/service/WeatherService.class
 tqs/hw1/controller/WeatherController.class
 tqs/hw1/Hw1Application.class
+tqs/hw1/config/MetricsConfig.class

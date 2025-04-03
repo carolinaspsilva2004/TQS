@@ -1,4 +1,5 @@
 tqs/hw1/controller/integration/restTemplate/WeatherControllerTemplateIT.class
+tqs/hw1/integration/rest/ReservationControllerRestTemplateIT.class
 tqs/hw1/service/MealServiceTest.class
 tqs/hw1/repositoryTests/MealRepositoryTest.class
 tqs/hw1/repositoryTests/ReservationRepositoryTest.class
@@ -7,7 +8,6 @@ tqs/hw1/controller/integration/restTemplate/MealControllerTemplateIT.class
 tqs/hw1/service/RestaurantServiceTest.class
 tqs/hw1/integration/mock/ReservationControllerMockIT.class
 tqs/hw1/integration/mock/RestaurantControllerMockIT.class
-tqs/hw1/controller/integration/restTemplate/ReservationControllerTemplateIT.class
 tqs/hw1/unitTests/ReservationServiceTest.class
 tqs/hw1/controller/integration/mock/WeatherControllerMockIT.class
 tqs/hw1/model/RestaurantTest.class

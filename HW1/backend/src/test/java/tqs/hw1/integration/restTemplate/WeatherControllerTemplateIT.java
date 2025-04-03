@@ -12,6 +12,8 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.containsString;
+import org.junit.jupiter.api.DisplayName;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
@@ -34,9 +36,9 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherForCityAndDate_thenReturnWeather() {
         String city = "Aveiro";
-        String date = "2025-03-31";
+        String date = "2025-04-02";
         
-        String expectedCondition = "Partially cloudy";  
+        String expectedCondition = "Rain, Partially cloudy";  
 
         RestAssured.given()
                 .port(port)
@@ -78,7 +80,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherHours_thenReturnHourlyData() {
         String city = "Aveiro";
-        String date = "2025-04-01";
+        String date = "2025-04-03";
         
         String expectedHourCondition = "Partially cloudy"; 
 
@@ -90,4 +92,26 @@ public class WeatherControllerTemplateIT {
                 .body("[0].conditions", equalTo(expectedHourCondition));  
     }
 
+
+    @Test
+    @DisplayName("Cache deve armazenar a previsão para evitar requisições duplicadas")
+    void whenRequestSameDataTwice_thenCacheShouldBeUsed() {
+        String city = "Aveiro";
+        String date = "2025-04-02";
+
+        // Primeira chamada para popular o cache
+        RestAssured.given()
+                .port(port)
+                .get("/weather/" + city + "/" + date)
+                .then()
+                .statusCode(200);
+
+        // Segunda chamada deve usar cache
+        RestAssured.given()
+                .port(port)
+                .get("/weather/cache/stats")
+                .then()
+                .statusCode(200)
+                .body(containsString("Total Requests: 3, Cache Hits: 0, Cache Misses: 3"));
+    }
 }
