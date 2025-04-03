@@ -197,3 +197,9 @@ Os **thresholds** estabelecidos foram todos atendidos:
 ### Conclusão
 O sistema passou com êxito nos **SLOs** definidos, com todas as métricas dentro dos requisitos estabelecidos. Isso sugere que a API é capaz de lidar com a carga de 20 VUs de maneira eficaz e dentro das expectativas de desempenho.
 
+
+## **E)** 
+![alt text](image.png)
+
+## **F)** 
+![alt text](image-1.png)

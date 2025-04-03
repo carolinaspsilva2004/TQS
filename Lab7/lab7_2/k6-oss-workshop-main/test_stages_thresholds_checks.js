@@ -5,9 +5,9 @@ const BASE_URL = __ENV.BASE_URL || "http://localhost:3333";
 
 export const options = {
   stages: [
-    { duration: "30s", target: 20 }, // Ramp-up: 0 → 20 VUs
-    { duration: "30s", target: 20 }, // Estável: 20 VUs
-    { duration: "30s", target: 0 },  // Ramp-down: 20 → 0 VUs
+    { duration: "30s", target: 120 }, // Ramp-up: 0 → 120 VUs
+    { duration: "30s", target: 120 }, // Estável: 120 VUs
+    { duration: "30s", target: 0 },  // Ramp-down: 120 → 0 VUs
   ],
 
   thresholds: {
@@ -43,7 +43,7 @@ export default function () {
 
   // Log para depuração (opcional)
   if (!checkRes) {
-    console.error(`❌ Falha no teste! Status: ${res.status}, Body: ${res.body}`);
+    console.error(`Falha no teste! Status: ${res.status}, Body: ${res.body}`);
   }
 
   sleep(1); // Simular comportamento real de usuário
