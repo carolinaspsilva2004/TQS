@@ -1,4 +1,4 @@
-package tqs.hw1.integration.resttemplate;
+package tqs.hw1.integration.restTemplate;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,6 +15,7 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import tqs.hw1.model.Restaurant;
 import tqs.hw1.repository.RestaurantRepository;
+import org.flywaydb.core.Flyway;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -40,6 +41,11 @@ public class RestaurantControllerRestTemplateIT {
     @BeforeAll
     static void setupContainer() {
         container.start();
+        Flyway flyway = Flyway.configure()
+            .dataSource(container.getJdbcUrl(), container.getUsername(), container.getPassword())
+            .locations("classpath:db/migration")
+            .load();
+    flyway.migrate();
     }
 
     @AfterEach

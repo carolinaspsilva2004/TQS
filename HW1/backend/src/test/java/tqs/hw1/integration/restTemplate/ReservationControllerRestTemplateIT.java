@@ -1,9 +1,10 @@
-package tqs.hw1.integration.rest;
+package tqs.hw1.integration.restTemplate;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -18,6 +19,7 @@ import tqs.hw1.repository.ReservationRepository;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.flywaydb.core.Flyway;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -49,6 +51,16 @@ public class ReservationControllerRestTemplateIT {
 
     private Meal meal;
     private Reservation reservation;
+
+    @BeforeAll
+    static void setupContainer() {
+        container.start();
+        Flyway flyway = Flyway.configure()
+            .dataSource(container.getJdbcUrl(), container.getUsername(), container.getPassword())
+            .locations("classpath:db/migration")
+            .load();
+    flyway.migrate();
+    }
 
     @BeforeEach
     void setup() {
