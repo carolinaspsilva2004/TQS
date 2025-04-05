@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.767 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT
-tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT.whenGetAllMeals_thenReturnMealsList  Time elapsed: 0.03 s  <<< ERROR!
+Tests run: 2, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.092 s <<< FAILURE! - in tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT
+tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT.whenGetAllMeals_thenReturnMealsList  Time elapsed: 0.036 s  <<< ERROR!
 org.springframework.dao.DataIntegrityViolationException: 
 could not execute statement [ERROR: null value in column "description" of relation "meal" violates not-null constraint
-  Detalhe: Failing row contains (8, null, null, null).] [insert into meal (date,description,restaurant_id) values (?,?,?)]; SQL [insert into meal (date,description,restaurant_id) values (?,?,?)]; constraint [description" of relation "meal]
+  Detalhe: Failing row contains (16, null, null, null).] [insert into meal (date,description,restaurant_id) values (?,?,?)]; SQL [insert into meal (date,description,restaurant_id) values (?,?,?)]; constraint [description" of relation "meal]
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:290)
 	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:241)
 	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:560)
@@ -17,12 +17,12 @@ could not execute statement [ERROR: null value in column "description" of relati
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223)
 	at jdk.proxy2/jdk.proxy2.$Proxy184.save(Unknown Source)
-	at tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT.whenGetAllMeals_thenReturnMealsList(MealControllerTemplateIT.java:50)
+	at tqs.hw1.controller.integration.restTemplate.MealControllerTemplateIT.whenGetAllMeals_thenReturnMealsList(MealControllerTemplateIT.java:55)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement [ERROR: null value in column "description" of relation "meal" violates not-null constraint
-  Detalhe: Failing row contains (8, null, null, null).] [insert into meal (date,description,restaurant_id) values (?,?,?)]
+  Detalhe: Failing row contains (16, null, null, null).] [insert into meal (date,description,restaurant_id) values (?,?,?)]
 	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:97)
 	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
@@ -75,7 +75,7 @@ Caused by: org.hibernate.exception.ConstraintViolationException: could not execu
 	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138)
 	... 9 more
 Caused by: org.postgresql.util.PSQLException: ERROR: null value in column "description" of relation "meal" violates not-null constraint
-  Detalhe: Failing row contains (8, null, null, null).
+  Detalhe: Failing row contains (16, null, null, null).
 	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
 	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
 	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)

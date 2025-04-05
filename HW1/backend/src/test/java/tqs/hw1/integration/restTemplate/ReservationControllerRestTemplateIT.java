@@ -3,6 +3,7 @@ package tqs.hw1.integration.rest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.AfterEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -64,6 +65,13 @@ public class ReservationControllerRestTemplateIT {
         // Criando uma reserva com a refeição e código único
         reservation = new Reservation(uniqueCode, LocalDateTime.now(), false, meal);
         reservation = reservationRepository.save(reservation);  // Salvando a reserva no banco
+    }
+
+    @AfterEach
+    void tearDown() {
+        // Limpando os dados após cada teste
+        reservationRepository.deleteAll();
+        mealRepository.deleteAll();
     }
 
     @Test

@@ -1,19 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.integration.rest.ReservationControllerRestTemplateIT
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.18 s <<< FAILURE! - in tqs.hw1.integration.rest.ReservationControllerRestTemplateIT
-tqs.hw1.integration.rest.ReservationControllerRestTemplateIT.whenGetAllReservations_thenReturnReservationsList  Time elapsed: 0.087 s  <<< FAILURE!
-java.lang.AssertionError: 
-
-Expected size: 1 but was: 6 in:
-[{"code"="436439e7-abda-4e91-af32-0e7f7d512a26", "id"=1, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=1, "restaurant"={"id"=9, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.838224", "used"=false},
-    {"code"="7a05acd8-3004-4eff-96d5-bb247841fb9c", "id"=2, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=2, "restaurant"={"id"=10, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.911313", "used"=false},
-    {"code"="4363a1d1-52ba-4ab5-997f-f08fc6060179", "id"=3, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=2, "restaurant"={"id"=10, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T00:00:00", "used"=false},
-    {"code"="1c34a8e1-059c-42d2-9eff-dcc8b55f2b14", "id"=4, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=3, "restaurant"={"id"=11, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.969682", "used"=false},
-    {"code"="b592076a-33a7-4d1f-991f-f7a6a7b148e7", "id"=5, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=4, "restaurant"={"id"=12, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:08.01598", "used"=true},
-    {"code"="2623d4a4-3d9d-4d24-a5b1-a61d03a0e2d1", "id"=6, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=5, "restaurant"={"id"=13, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:08.074828", "used"=false}]
-	at tqs.hw1.integration.rest.ReservationControllerRestTemplateIT.whenGetAllReservations_thenReturnReservationsList(ReservationControllerRestTemplateIT.java:156)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.345 s - in tqs.hw1.integration.rest.ReservationControllerRestTemplateIT

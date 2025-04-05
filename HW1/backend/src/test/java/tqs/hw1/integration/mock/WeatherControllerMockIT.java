@@ -81,9 +81,9 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date}/hours returns hourly weather data")
     void whenGetWeatherHours_thenReturnHourlyData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-04-03";
+        String date = "2025-04-05";
         
-        String expectedHourCondition = "Partially cloudy";  // Use the correct expected condition
+        String expectedHourCondition = "Rain, Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/hours"))
                 .andExpect(status().isOk())

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="3.18" tests="7" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report-3.0.xsd" version="3.0" name="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="3.345" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="BR"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250403175738667_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-04-03T17-57-38_358-jvmRun1 surefire-20250403175738667_1tmp surefire_0-20250403175738667_2tmp"/>
+    <property name="sun.java.command" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250405174410312_3.jar /home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire 2025-04-05T17-44-09_953-jvmRun1 surefire-20250405174410312_1tmp surefire_0-20250405174410312_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/test-classes:/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/classes:/home/carolina/.m2/repository/com/github/ben-manes/caffeine/caffeine/3.1.8/caffeine-3.1.8.jar:/home/carolina/.m2/repository/org/checkerframework/checker-qual/3.37.0/checker-qual-3.37.0.jar:/home/carolina/.m2/repository/com/google/errorprone/error_prone_annotations/2.21.1/error_prone_annotations-2.21.1.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-core/1.10.5/micrometer-core-1.10.5.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-commons/1.14.4/micrometer-commons-1.14.4.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-observation/1.14.4/micrometer-observation-1.14.4.jar:/home/carolina/.m2/repository/org/hdrhistogram/HdrHistogram/2.1.12/HdrHistogram-2.1.12.jar:/home/carolina/.m2/repository/org/latencyutils/LatencyUtils/2.0.3/LatencyUtils-2.0.3.jar:/home/carolina/.m2/repository/io/micrometer/micrometer-registry-prometheus/1.14.4/micrometer-registry-prometheus-1.14.4.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-core/1.3.6/prometheus-metrics-core-1.3.6.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-model/1.3.6/prometheus-metrics-model-1.3.6.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-config/1.3.6/prometheus-metrics-config-1.3.6.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-tracer-common/1.3.6/prometheus-metrics-tracer-common-1.3.6.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-exposition-formats/1.3.6/prometheus-metrics-exposition-formats-1.3.6.jar:/home/carolina/.m2/repository/io/prometheus/prometheus-metrics-exposition-textformats/1.3.6/prometheus-metrics-exposition-textformats-1.3.6.jar:/home/carolina/.m2/repository/org/jsoup/jsoup/1.18.1/jsoup-1.18.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-mock-mvc/5.5.1/spring-mock-mvc-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/spring-commons/5.5.1/spring-commons-5.5.1.jar:/home/carolina/.m2/repository/org/springframework/spring-test/6.2.3/spring-test-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-webmvc/6.2.3/spring-webmvc-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-aop/6.2.3/spring-aop-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-beans/6.2.3/spring-beans-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-context/6.2.3/spring-context-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-expression/6.2.3/spring-expression-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.4.3/spring-boot-test-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot/3.4.3/spring-boot-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-test/3.4.3/spring-boot-test-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.4.3/spring-boot-autoconfigure-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.4.3/spring-boot-starter-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter/3.4.3/spring-boot-starter-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.4.3/spring-boot-starter-logging-3.4.3.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-classic/1.5.16/logback-classic-1.5.16.jar:/home/carolina/.m2/repository/ch/qos/logback/logback-core/1.5.16/logback-core-1.5.16.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.24.3/log4j-to-slf4j-2.24.3.jar:/home/carolina/.m2/repository/org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar:/home/carolina/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/home/carolina/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/home/carolina/.m2/repository/org/yaml/snakeyaml/2.3/snakeyaml-2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.4.3/spring-boot-starter-jdbc-3.4.3.jar:/home/carolina/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/home/carolina/.m2/repository/org/springframework/spring-jdbc/6.2.3/spring-jdbc-6.2.3.jar:/home/carolina/.m2/repository/org/hibernate/orm/hibernate-core/6.6.8.Final/hibernate-core-6.6.8.Final.jar:/home/carolina/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/home/carolina/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/home/carolina/.m2/repository/org/jboss/logging/jboss-logging/3.6.1.Final/jboss-logging-3.6.1.Final.jar:/home/carolina/.m2/repository/org/hibernate/common/hibernate-commons-annotations/7.0.3.Final/hibernate-commons-annotations-7.0.3.Final.jar:/home/carolina/.m2/repository/io/smallrye/jandex/3.2.0/jandex-3.2.0.jar:/home/carolina/.m2/repository/com/fasterxml/classmate/1.7.0/classmate-1.7.0.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.5/jaxb-runtime-4.0.5.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.5/jaxb-core-4.0.5.jar:/home/carolina/.m2/repository/org/eclipse/angus/angus-activation/2.0.2/angus-activation-2.0.2.jar:/home/carolina/.m2/repository/org/glassfish/jaxb/txw2/4.0.5/txw2-4.0.5.jar:/home/carolina/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/home/carolina/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/home/carolina/.m2/repository/org/antlr/antlr4-runtime/4.13.0/antlr4-runtime-4.13.0.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-jpa/3.4.3/spring-data-jpa-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/data/spring-data-commons/3.4.3/spring-data-commons-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/spring-orm/6.2.3/spring-orm-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-tx/6.2.3/spring-tx-6.2.3.jar:/home/carolina/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/home/carolina/.m2/repository/org/springframework/spring-aspects/6.2.3/spring-aspects-6.2.3.jar:/home/carolina/.m2/repository/org/aspectj/aspectjweaver/1.9.22.1/aspectjweaver-1.9.22.1.jar:/home/carolina/.m2/repository/com/h2database/h2/2.3.232/h2-2.3.232.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-core/10.20.1/flyway-core-10.20.1.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-toml/2.18.2/jackson-dataformat-toml-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.18.2/jackson-databind-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.18.2/jackson-core-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.18.2/jackson-datatype-jsr310-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.18.2/jackson-annotations-2.18.2.jar:/home/carolina/.m2/repository/org/flywaydb/flyway-database-postgresql/10.20.1/flyway-database-postgresql-10.20.1.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-devtools/3.4.3/spring-boot-devtools-3.4.3.jar:/home/carolina/.m2/repository/org/postgresql/postgresql/42.7.5/postgresql-42.7.5.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-testcontainers/3.4.3/spring-boot-testcontainers-3.4.3.jar:/home/carolina/.m2/repository/org/testcontainers/testcontainers/1.20.5/testcontainers-1.20.5.jar:/home/carolina/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/home/carolina/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/home/carolina/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/home/carolina/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-api/3.4.1/docker-java-api-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.4.1/docker-java-transport-zerodep-3.4.1.jar:/home/carolina/.m2/repository/com/github/docker-java/docker-java-transport/3.4.1/docker-java-transport-3.4.1.jar:/home/carolina/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/home/carolina/.m2/repository/org/testcontainers/junit-jupiter/1.20.5/junit-jupiter-1.20.5.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured/5.5.1/rest-assured-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy/4.0.25/groovy-4.0.25.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-xml/4.0.25/groovy-xml-4.0.25.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/carolina/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/carolina/.m2/repository/commons-codec/commons-codec/1.17.2/commons-codec-1.17.2.jar:/home/carolina/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/home/carolina/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/home/carolina/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/home/carolina/.m2/repository/io/rest-assured/json-path/5.5.1/json-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/groovy/groovy-json/4.0.25/groovy-json-4.0.25.jar:/home/carolina/.m2/repository/io/rest-assured/rest-assured-common/5.5.1/rest-assured-common-5.5.1.jar:/home/carolina/.m2/repository/io/rest-assured/xml-path/5.5.1/xml-path-5.5.1.jar:/home/carolina/.m2/repository/org/apache/commons/commons-lang3/3.17.0/commons-lang3-3.17.0.jar:/home/carolina/.m2/repository/org/testcontainers/postgresql/1.20.5/postgresql-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/jdbc/1.20.5/jdbc-1.20.5.jar:/home/carolina/.m2/repository/org/testcontainers/database-commons/1.20.5/database-commons-1.20.5.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.4.3/spring-boot-starter-web-3.4.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.4.3/spring-boot-starter-json-3.4.3.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.18.2/jackson-datatype-jdk8-2.18.2.jar:/home/carolina/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.18.2/jackson-module-parameter-names-2.18.2.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.4.3/spring-boot-starter-tomcat-3.4.3.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.36/tomcat-embed-core-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.36/tomcat-embed-el-10.1.36.jar:/home/carolina/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.36/tomcat-embed-websocket-10.1.36.jar:/home/carolina/.m2/repository/org/springframework/spring-web/6.2.3/spring-web-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.4.3/spring-boot-starter-test-3.4.3.jar:/home/carolina/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/home/carolina/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/home/carolina/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/home/carolina/.m2/repository/net/minidev/json-smart/2.5.2/json-smart-2.5.2.jar:/home/carolina/.m2/repository/net/minidev/accessors-smart/2.5.2/accessors-smart-2.5.2.jar:/home/carolina/.m2/repository/org/ow2/asm/asm/9.7.1/asm-9.7.1.jar:/home/carolina/.m2/repository/org/assertj/assertj-core/3.26.3/assertj-core-3.26.3.jar:/home/carolina/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter/5.11.4/junit-jupiter-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.4/junit-jupiter-api-5.11.4.jar:/home/carolina/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-commons/1.11.4/junit-platform-commons-1.11.4.jar:/home/carolina/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.4/junit-jupiter-params-5.11.4.jar:/home/carolina/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.4/junit-jupiter-engine-5.11.4.jar:/home/carolina/.m2/repository/org/junit/platform/junit-platform-engine/1.11.4/junit-platform-engine-1.11.4.jar:/home/carolina/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/home/carolina/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/home/carolina/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/home/carolina/.m2/repository/org/springframework/spring-core/6.2.3/spring-core-6.2.3.jar:/home/carolina/.m2/repository/org/springframework/spring-jcl/6.2.3/spring-jcl-6.2.3.jar:/home/carolina/.m2/repository/org/xmlunit/xmlunit-core/2.10.0/xmlunit-core-2.10.0.jar:/home/carolina/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy/1.15.11/byte-buddy-1.15.11.jar:/home/carolina/.m2/repository/net/bytebuddy/byte-buddy-agent/1.15.11/byte-buddy-agent-1.15.11.jar:/home/carolina/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="FILE_LOG_CHARSET" value="UTF-8"/>
     <property name="java.awt.headless" value="true"/>
-    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250403175738667_3.jar"/>
+    <property name="surefire.real.class.path" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend/target/surefire/surefirebooter-20250405174410312_3.jar"/>
     <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.6+7-Ubuntu-122.04.1"/>
@@ -43,7 +43,7 @@
     <property name="os.version" value="6.8.0-52-generic"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna10815784115421242835.tmp"/>
+    <property name="jnidispatch.path" value="/home/carolina/.cache/JNA/temp/jna297157112782123179.tmp"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="jna.platform.library.path" value="/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:/usr/lib64:/lib64:/usr/lib:/lib:/lib32:/usr/lib/x86_64-linux-gnu/libfakeroot"/>
     <property name="localRepository" value="/home/carolina/.m2/repository"/>
@@ -51,14 +51,14 @@
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="com.zaxxer.hikari.pool_number" value="3"/>
-    <property name="catalina.home" value="/tmp/tomcat.0.2534633136804614049"/>
+    <property name="catalina.home" value="/tmp/tomcat.0.8120407687911765049"/>
     <property name="java.version" value="21.0.6"/>
     <property name="user.dir" value="/home/carolina/UA/3ANO/2SEMESTRE/TQS/Labs/TQS/HW1/backend"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="PID" value="161369"/>
+    <property name="PID" value="33161"/>
     <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
-    <property name="catalina.base" value="/tmp/tomcat.0.2534633136804614049"/>
+    <property name="catalina.base" value="/tmp/tomcat.0.8120407687911765049"/>
     <property name="native.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
@@ -69,13 +69,13 @@
     <property name="java.class.version" value="65.0"/>
     <property name="LOGGED_APPLICATION_NAME" value="[HW1] "/>
   </properties>
-  <testcase name="whenCheckReservation_thenReturnReservation" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.083">
-    <system-out><![CDATA[2025-04-03T17:58:05.421+01:00  INFO 161369 --- [HW1] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw1.integration.rest.ReservationControllerRestTemplateIT]: ReservationControllerRestTemplateIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2025-04-03T17:58:05.443+01:00  INFO 161369 --- [HW1] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.integration.rest.ReservationControllerRestTemplateIT
-2025-04-03T17:58:05.448+01:00  INFO 161369 --- [HW1] [           main] tc.postgres:latest                       : Creating container for image: postgres:latest
-2025-04-03T17:58:05.549+01:00  INFO 161369 --- [HW1] [           main] tc.postgres:latest                       : Container postgres:latest is starting: 7b7f360b86079da2f5ebfbd00b56dccefdbd52a6a58b95271f18b561dad7776c
-2025-04-03T17:58:07.807+01:00  INFO 161369 --- [HW1] [           main] tc.postgres:latest                       : Container postgres:latest started in PT2.359068621S
-2025-04-03T17:58:07.807+01:00  INFO 161369 --- [HW1] [           main] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:44473/test?loggerLevel=OFF)
+  <testcase name="whenCheckReservation_thenReturnReservation" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.182">
+    <system-out><![CDATA[2025-04-05T17:44:36.993+01:00  INFO 33161 --- [HW1] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [tqs.hw1.integration.rest.ReservationControllerRestTemplateIT]: ReservationControllerRestTemplateIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-04-05T17:44:37.021+01:00  INFO 33161 --- [HW1] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration tqs.hw1.Hw1Application for test class tqs.hw1.integration.rest.ReservationControllerRestTemplateIT
+2025-04-05T17:44:37.025+01:00  INFO 33161 --- [HW1] [           main] tc.postgres:latest                       : Creating container for image: postgres:latest
+2025-04-05T17:44:37.143+01:00  INFO 33161 --- [HW1] [           main] tc.postgres:latest                       : Container postgres:latest is starting: af08cb8745f487068ef3d48d84f15b3dd3ee9e2d8e183a7379487215fa9c1a98
+2025-04-05T17:44:39.350+01:00  INFO 33161 --- [HW1] [           main] tc.postgres:latest                       : Container postgres:latest started in PT2.324769143S
+2025-04-05T17:44:39.350+01:00  INFO 33161 --- [HW1] [           main] tc.postgres:latest                       : Container is started (JDBC URL: jdbc:postgresql://localhost:45185/test?loggerLevel=OFF)
 Hibernate: 
     insert 
     into
@@ -122,9 +122,60 @@ Hibernate:
             on r1_0.id=m1_0.restaurant_id 
     where
         m1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenBookMeal_thenReturnCreatedReservation" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.056">
+  <testcase name="whenBookMeal_thenReturnCreatedReservation" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.076">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -167,9 +218,66 @@ Hibernate:
         (code, meal_id, reservation_date, used) 
     values
         (?, ?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenCheckIn_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.042">
+  <testcase name="whenCheckIn_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.066">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -202,9 +310,60 @@ Hibernate:
         reservation r1_0 
     where
         r1_0.code=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenCheckIn_thenReturnSuccess" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.059">
+  <testcase name="whenCheckIn_thenReturnSuccess" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.08">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -261,23 +420,60 @@ Hibernate:
         used=? 
     where
         id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenGetAllReservations_thenReturnReservationsList" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.087">
-    <failure message="&#10;Expected size: 1 but was: 6 in:&#10;[{&quot;code&quot;=&quot;436439e7-abda-4e91-af32-0e7f7d512a26&quot;, &quot;id&quot;=1, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=1, &quot;restaurant&quot;={&quot;id&quot;=9, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T17:58:07.838224&quot;, &quot;used&quot;=false},&#10;    {&quot;code&quot;=&quot;7a05acd8-3004-4eff-96d5-bb247841fb9c&quot;, &quot;id&quot;=2, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=2, &quot;restaurant&quot;={&quot;id&quot;=10, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T17:58:07.911313&quot;, &quot;used&quot;=false},&#10;    {&quot;code&quot;=&quot;4363a1d1-52ba-4ab5-997f-f08fc6060179&quot;, &quot;id&quot;=3, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=2, &quot;restaurant&quot;={&quot;id&quot;=10, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T00:00:00&quot;, &quot;used&quot;=false},&#10;    {&quot;code&quot;=&quot;1c34a8e1-059c-42d2-9eff-dcc8b55f2b14&quot;, &quot;id&quot;=4, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=3, &quot;restaurant&quot;={&quot;id&quot;=11, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T17:58:07.969682&quot;, &quot;used&quot;=false},&#10;    {&quot;code&quot;=&quot;b592076a-33a7-4d1f-991f-f7a6a7b148e7&quot;, &quot;id&quot;=5, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=4, &quot;restaurant&quot;={&quot;id&quot;=12, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T17:58:08.01598&quot;, &quot;used&quot;=true},&#10;    {&quot;code&quot;=&quot;2623d4a4-3d9d-4d24-a5b1-a61d03a0e2d1&quot;, &quot;id&quot;=6, &quot;meal&quot;={&quot;date&quot;=&quot;2025-04-03&quot;, &quot;description&quot;=&quot;Meal Test&quot;, &quot;id&quot;=5, &quot;restaurant&quot;={&quot;id&quot;=13, &quot;name&quot;=&quot;Test Restaurant&quot;}}, &quot;reservationDate&quot;=&quot;2025-04-03T17:58:08.074828&quot;, &quot;used&quot;=false}]" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: 
-
-Expected size: 1 but was: 6 in:
-[{"code"="436439e7-abda-4e91-af32-0e7f7d512a26", "id"=1, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=1, "restaurant"={"id"=9, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.838224", "used"=false},
-    {"code"="7a05acd8-3004-4eff-96d5-bb247841fb9c", "id"=2, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=2, "restaurant"={"id"=10, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.911313", "used"=false},
-    {"code"="4363a1d1-52ba-4ab5-997f-f08fc6060179", "id"=3, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=2, "restaurant"={"id"=10, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T00:00:00", "used"=false},
-    {"code"="1c34a8e1-059c-42d2-9eff-dcc8b55f2b14", "id"=4, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=3, "restaurant"={"id"=11, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:07.969682", "used"=false},
-    {"code"="b592076a-33a7-4d1f-991f-f7a6a7b148e7", "id"=5, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=4, "restaurant"={"id"=12, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:08.01598", "used"=true},
-    {"code"="2623d4a4-3d9d-4d24-a5b1-a61d03a0e2d1", "id"=6, "meal"={"date"="2025-04-03", "description"="Meal Test", "id"=5, "restaurant"={"id"=13, "name"="Test Restaurant"}}, "reservationDate"="2025-04-03T17:58:08.074828", "used"=false}]
-	at tqs.hw1.integration.rest.ReservationControllerRestTemplateIT.whenGetAllReservations_thenReturnReservationsList(ReservationControllerRestTemplateIT.java:156)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
+  <testcase name="whenGetAllReservations_thenReturnReservationsList" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.083">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -324,18 +520,13 @@ Hibernate:
         m1_0.id=?
 Hibernate: 
     select
-        m1_0.id,
-        m1_0.date,
-        m1_0.description,
         r1_0.id,
-        r1_0.name 
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
     from
-        meal m1_0 
-    left join
-        restaurant r1_0 
-            on r1_0.id=m1_0.restaurant_id 
-    where
-        m1_0.id=?
+        reservation r1_0
 Hibernate: 
     select
         m1_0.id,
@@ -351,36 +542,36 @@ Hibernate:
     where
         m1_0.id=?
 Hibernate: 
-    select
-        m1_0.id,
-        m1_0.date,
-        m1_0.description,
-        r1_0.id,
-        r1_0.name 
+    delete 
     from
-        meal m1_0 
-    left join
-        restaurant r1_0 
-            on r1_0.id=m1_0.restaurant_id 
+        reservation 
     where
-        m1_0.id=?
+        id=?
 Hibernate: 
     select
         m1_0.id,
         m1_0.date,
         m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
         r1_0.id,
         r1_0.name 
     from
-        meal m1_0 
-    left join
         restaurant r1_0 
-            on r1_0.id=m1_0.restaurant_id 
     where
-        m1_0.id=?
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenCheckReservation_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.04">
+  <testcase name="whenCheckReservation_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.067">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -413,9 +604,60 @@ Hibernate:
         reservation r1_0 
     where
         r1_0.code=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
-  <testcase name="whenBookMeal_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.04">
+  <testcase name="whenBookMeal_thenReturnNotFound" classname="tqs.hw1.integration.rest.ReservationControllerRestTemplateIT" time="0.061">
     <system-out><![CDATA[Hibernate: 
     insert 
     into
@@ -451,6 +693,57 @@ Hibernate:
             on r1_0.id=m1_0.restaurant_id 
     where
         m1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.code,
+        r1_0.meal_id,
+        r1_0.reservation_date,
+        r1_0.used 
+    from
+        reservation r1_0
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        r1_0.id,
+        r1_0.name 
+    from
+        meal m1_0 
+    left join
+        restaurant r1_0 
+            on r1_0.id=m1_0.restaurant_id 
+    where
+        m1_0.id=?
+Hibernate: 
+    delete 
+    from
+        reservation 
+    where
+        id=?
+Hibernate: 
+    select
+        m1_0.id,
+        m1_0.date,
+        m1_0.description,
+        m1_0.restaurant_id 
+    from
+        meal m1_0
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        restaurant r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        meal 
+    where
+        id=?
 ]]></system-out>
   </testcase>
 </testsuite>
