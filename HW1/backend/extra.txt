@@ -17,7 +17,13 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 server.port=8080
 logging.level.org.springframework=INFO
 
-
+Cantina Crasto
+Cantina Santiago
+Campi Grelhados
+Campi TrêsDê
+Cantina ESTGA
+Restaurante Universitário
+Restaurante Vegetariano
 
 
 

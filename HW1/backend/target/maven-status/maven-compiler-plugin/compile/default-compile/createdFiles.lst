@@ -1,9 +1,11 @@
 tqs/hw1/controller/ReservationController.class
 tqs/hw1/controller/RestaurantController.class
+tqs/hw1/config/CorsConfig.class
 tqs/hw1/repository/ReservationRepository.class
 tqs/hw1/repository/RestaurantRepository.class
 tqs/hw1/repository/MealRepository.class
 tqs/hw1/model/WeatherResponse$currentConditions.class
+tqs/hw1/config/CorsConfig$1.class
 tqs/hw1/service/MealService.class
 tqs/hw1/model/Restaurant.class
 tqs/hw1/dto/MealDTO.class
@@ -19,6 +21,7 @@ tqs/hw1/model/Meal.class
 tqs/hw1/service/ReservationService.class
 tqs/hw1/model/WeatherResponse$Alert.class
 tqs/hw1/service/WeatherService.class
+tqs/hw1/config/WebConfig.class
 tqs/hw1/controller/WeatherController.class
 tqs/hw1/Hw1Application.class
 tqs/hw1/config/MetricsConfig.class

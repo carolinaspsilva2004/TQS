@@ -9,13 +9,17 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import tqs.hw1.model.Restaurant;
+import tqs.hw1.service.RestaurantService;
 @RestController
 @RequestMapping("/meals")
 public class MealController {
     private final MealService mealService;
+    private final RestaurantService restaurantService;
 
-    public MealController(MealService mealService) {
+    public MealController(MealService mealService, RestaurantService restaurantService) {
         this.mealService = mealService;
+        this.restaurantService = restaurantService;
     }
 
     @GetMapping
@@ -43,8 +47,29 @@ public class MealController {
 
     @PostMapping
     public ResponseEntity<Meal> createMeal(@RequestBody Meal meal) {
-        return ResponseEntity.ok(mealService.saveMeal(meal));
+        try {
+            if (meal.getRestaurant() == null || meal.getRestaurant().getId() == null) {
+                return ResponseEntity.badRequest().body(null);
+            }
+
+            // Buscar o restaurante completo do BD
+            Optional<Restaurant> restaurant = restaurantService.getRestaurantById(meal.getRestaurant().getId());
+            if (restaurant.isEmpty()) {
+                return ResponseEntity.badRequest().body(null);
+            }
+
+            // Atribuir o restaurante carregado à meal
+            meal.setRestaurant(restaurant.get());
+
+            return ResponseEntity.ok(mealService.saveMeal(meal));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body(null);
+        }
     }
+
+
+    
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMeal(@PathVariable Long id) {

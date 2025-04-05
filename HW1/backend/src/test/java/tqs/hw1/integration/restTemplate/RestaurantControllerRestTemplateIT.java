@@ -157,8 +157,8 @@ public class RestaurantControllerRestTemplateIT {
         // Verificação do status e do conteúdo da resposta
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isNotNull().hasSize(2);
-        assertThat(response.getBody()[0].getName()).isEqualTo("Meal 1");
-        assertThat(response.getBody()[1].getName()).isEqualTo("Meal 2");
+        assertThat(response.getBody()[0].getDescription()).isEqualTo("Meal 1");
+        assertThat(response.getBody()[1].getDescription()).isEqualTo("Meal 2");
     }
 
     @Test
