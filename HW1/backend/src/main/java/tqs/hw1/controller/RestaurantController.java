@@ -52,25 +52,19 @@ public class RestaurantController {
     }
 
     @GetMapping("/{id}/meals")
-    public ResponseEntity<List<Map<String, Object>>> getMeals(@PathVariable Long id) {
+    public ResponseEntity<List<Meal>> getMeals(@PathVariable Long id) {
         if (!restaurantService.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Restaurante não encontrado com id: " + id);
         }
         List<Meal> meals = mealService.getMealsByRestaurantId(id);
-        List<Map<String, Object>> result = new ArrayList<>();
-
+        List<Meal> result = new ArrayList<>();
+    
         for (Meal meal : meals) {
             if (meal.getDate().isAfter(LocalDate.now().minusDays(1))) {
-                Map<String, Object> mealInfo = new HashMap<>();
-                try {
-                    mealInfo.put("meal", meal);
-                    mealInfo.put("weather", weatherService.getForecast("Aveiro", meal.getDate().toString()));
-                } catch (Exception e) {
-                    mealInfo.put("weather", "Erro ao obter previsão do tempo");
-                }
-                result.add(mealInfo);
+                result.add(meal);
             }
         }
         return ResponseEntity.ok(result);
     }
+    
 }

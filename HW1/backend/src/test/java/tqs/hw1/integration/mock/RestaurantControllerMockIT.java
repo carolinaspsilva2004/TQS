@@ -14,9 +14,12 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
+import tqs.hw1.repository.MealRepository;
 import tqs.hw1.repository.RestaurantRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -36,6 +39,9 @@ public class RestaurantControllerMockIT {
     @Autowired
     private RestaurantRepository restaurantRepository;
 
+    @Autowired
+    private MealRepository mealRepository;
+
     @BeforeAll
     static void setupContainer() {
         container.start();
@@ -44,6 +50,7 @@ public class RestaurantControllerMockIT {
     @AfterEach
     public void resetDb() {
         restaurantRepository.deleteAll();
+        mealRepository.deleteAll();
     }
 
     @Container
@@ -53,35 +60,41 @@ public class RestaurantControllerMockIT {
             .withDatabaseName("test");
 
     @Test
-    @DisplayName("GET /restaurants retorna a lista de restaurantes")
-    void whenGetAllRestaurants_thenReturnRestaurantsList() throws Exception {
-        Restaurant restaurant1 = new Restaurant("Restaurant A");
-        Restaurant restaurant2 = new Restaurant("Restaurant B");
-        restaurantRepository.saveAll(List.of(restaurant1, restaurant2));
+    @DisplayName("GET /restaurants/{id}/meals retorna as refeições de um restaurante")
+    void whenGetMealsByRestaurant_thenReturnMeals() throws Exception {
+        Restaurant restaurant = new Restaurant("Restaurant A");
+        restaurant = restaurantRepository.save(restaurant);
 
-        mvc.perform(get("/restaurants")
+        Meal meal1 = new Meal("Meal 1", LocalDate.parse("2025-04-05"), restaurant);
+        Meal meal2 = new Meal("Meal 2", LocalDate.parse("2025-04-06"), restaurant);
+        mealRepository.saveAll(List.of(meal1, meal2));
+
+        mvc.perform(get("/restaurants/{id}/meals", restaurant.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(greaterThanOrEqualTo(2))));
+                .andExpect(jsonPath("$", hasSize(2))) // Verifica que há 2 refeições
+                .andExpect(jsonPath("$[0].name", is("Meal 1"))) // Verifica o nome da refeição
+                .andExpect(jsonPath("$[1].name", is("Meal 2"))); // Verifica o nome da refeição
     }
 
     @Test
-    @DisplayName("GET /restaurants retorna lista vazia quando não há restaurantes")
-    void whenGetAllRestaurants_thenReturnEmptyList() throws Exception {
-        restaurantRepository.deleteAll();
+    @DisplayName("GET /restaurants/{id}/meals retorna lista vazia quando não há refeições")
+    void whenGetMealsByRestaurant_thenReturnEmptyList() throws Exception {
+        Restaurant restaurant = new Restaurant("Restaurant A");
+        restaurant = restaurantRepository.save(restaurant);
 
-        mvc.perform(get("/restaurants")
+        mvc.perform(get("/restaurants/{id}/meals", restaurant.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(0)));
+                .andExpect(jsonPath("$", hasSize(0))); // Espera uma lista vazia
     }
 
     @Test
-    @DisplayName("GET /restaurants/{id} retorna erro quando o restaurante não é encontrado")
-    void whenGetRestaurantById_thenReturnError() throws Exception {
+    @DisplayName("GET /restaurants/{id}/meals retorna erro quando o restaurante não é encontrado")
+    void whenGetMealsByNonExistentRestaurant_thenReturnError() throws Exception {
         Long nonExistentId = 999L;
 
-        mvc.perform(get("/restaurants/{id}", nonExistentId)
+        mvc.perform(get("/restaurants/{id}/meals", nonExistentId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
