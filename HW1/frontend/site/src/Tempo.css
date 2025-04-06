@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Reduzindo o espaçamento entre os componentes */
+    padding: 15px; /* Menos padding para deixar mais compacto */
+  }
+  
+  .section-title {
+    font-size: 1.5rem; /* Tamanho de fonte menor para o título */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    text-align: justify; /* Justificando o título */
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* Espaçamento entre label e input mais compacto */
+    width: 100%;
+    max-width: 350px; /* Diminuindo a largura máxima do formulário */
+  }
+  
+  label {
+    font-weight: 500;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Menos espaço entre o label e o ícone */
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    padding: 8px; /* Menos padding para campos de entrada */
+    border-radius: 6px; /* Menor raio de borda */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 0.9rem; /* Fonte menor nos campos de entrada */
+    width: 100%;
+  }
+  
+  .confirm-btn {
+    padding: 10px 18px; /* Botão menor */
+    border-radius: 6px;
+    background-color: #58d479;
+    color: rgb(38, 38, 38);
+    font-weight: bold;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Menos espaço no botão */
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px; /* Menos espaço entre o botão e os outros componentes */
+  }
+  
+  .confirm-btn:hover {
+    background-color: #45aa60;
+  }
+  
+  .weather-results {
+    margin-top: 1.0rem;
+    width: 100%;
+    max-width: 700px; /* Diminuindo a largura máxima dos resultados */
+  }
+  
+  .hourly-summary-card {
+    background-color: #eaf6ff;
+    border-radius: 8px; /* Menor raio de borda */
+    padding: 20px; /* Menos padding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hourly-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px; /* Menos padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 44%;
+  }
+  
+  .hourly-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.0rem; /* Menor espaçamento entre os cards */
+    justify-content: center;
+  }
+  
+  .hourly-info {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem; /* Menos espaço entre o ícone e as informações */
+  }
+  
+  .section-subtitle {
+    font-size: 1rem; /* Tamanho menor para subtítulos */
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.4rem; /* Menos espaço abaixo do subtítulo */
+  }
+  

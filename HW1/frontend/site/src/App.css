@@ -1,18 +1,36 @@
 /* src/App.css */
 .home {
-  display: center;
-  justify-content: space-between;
-  max-width: 90%;
+  display: flex;
+  flex-direction: row; /* Alterado para 'row' para posicionar lado a lado */
   padding: 20px;
-  margin: 30px;
+  gap: 2rem; /* Espaçamento entre as seções */
+  justify-content: center; /* Centraliza as seções na tela */
+}
 
+.main-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+}
+
+.main-description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  align-items: center;
+  display: flex;
+  margin: 30px;
+  justify-content: center;
 
 }
 
-.left-side {
-  flex: 1;
+/* Estilo para as seções à esquerda e direita */
+.left-side, .right-side {
   padding: 24px;
-  background-color: #d3ffc9;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -20,6 +38,16 @@
   gap: 1.5rem;
   max-height: 90vh;
   overflow-y: auto;
+  width: 40%; /* Para que ambas as seções fiquem com largura de 50% */
+}
+
+/* Alterações de cor para as seções */
+.left-side {
+  background-color: #d3ffc9;
+}
+
+.right-side {
+  background-color: #c9e8ff;
 }
 
 .section-title {
@@ -55,7 +83,8 @@ label {
 }
 
 select,
-input[type="date"] {
+input[type="date"],
+input[type="text"] {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -66,19 +95,20 @@ input[type="date"] {
 .confirm-btn {
   padding: 12px 20px;
   border-radius: 8px;
-  background-color: #222;
-  color: white;
+  background-color: #58d479;
+  color: rgb(38, 38, 38);
   font-weight: bold;
   border: none;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  max-width: fit-content;
   transition: background 0.3s ease;
 }
 
 .confirm-btn:hover {
-  background-color: #444;
+  background-color: #45aa60;
 }
 
 .menu-section ul {
@@ -111,63 +141,23 @@ input[type="date"] {
 }
 
 
-.right-side {
-  flex: 1;
-  padding: 24px;
-  border-radius: 12px;
-  background-color: #c9e8ff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.weather-results {
-  margin-top: 1rem;
-}
-
-.hourly-summary-card {
-  background-color: #eaf6ff;
-  border-radius: 10px;
-  padding: 20px; /* Mais padding para deixá-lo maior */
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  color: #333;
-  width: 90%; /* Abarca toda a largura disponível */
-  margin-bottom: 1rem; /* Distância do restante */
-}
-
-/* Mantém os cards das horas pequenos */
-.hourly-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 10px; /* Menos padding para tornar o card menor */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  color: #333;
-  max-width: 200px; /* Limita a largura */
-  margin: 0 auto;
-}
-
-/* Ajusta o layout para os cards das horas se ajustarem */
-.hourly-scroll {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 1rem;
-  justify-content: center;
-}
-
-
-.hourly-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 input[type="text"] {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
   background-color: #fff;
   font-size: 1rem;
+}
+
+/* Código de Reserva */
+.reservation-section {
+  margin-top: 20px;
+  background-color: #f0f9ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #bee3f8;
+}
+
+.reservation-section h3 {
+  color: #2c7be5;
 }
