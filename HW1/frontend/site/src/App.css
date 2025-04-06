@@ -1,45 +1,173 @@
 /* src/App.css */
 .home {
   display: center;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
   max-width: 90%;
+  padding: 20px;
+  margin: 30px;
+
+
 }
 
 .left-side {
-  width: 48%;
-  padding: 20px;
-  border-right: 2px solid #ccc;
+  flex: 1;
+  padding: 24px;
+  background-color: #d3ffc9;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
-.right-side {
-  width: 48%;
-  padding: 20px;
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
 }
 
-h2 {
-  margin-bottom: 20px;
+.section-subtitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-top: 1rem;
 }
 
-select, input {
-  margin: 10px 0;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-ul {
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  color: #333;
+  font-size: 1rem;
+}
+
+select,
+input[type="date"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+.confirm-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #222;
+  color: white;
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #444;
+}
+
+.menu-section ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-li {
-  margin-bottom: 10px;
+.meal-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.meal-card h4 {
+  margin: 0 0 6px 0;
+  color: #444;
+}
+
+.meal-card p {
+  margin: 0;
+  color: #666;
+}
+
+.no-meals-text {
+  color: #777;
+  font-style: italic;
+}
+
+
+.right-side {
+  flex: 1;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #c9e8ff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.weather-results {
+  margin-top: 1rem;
+}
+
+.hourly-summary-card {
+  background-color: #eaf6ff;
+  border-radius: 10px;
+  padding: 20px; /* Mais padding para deixá-lo maior */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  color: #333;
+  width: 90%; /* Abarca toda a largura disponível */
+  margin-bottom: 1rem; /* Distância do restante */
+}
+
+/* Mantém os cards das horas pequenos */
+.hourly-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 10px; /* Menos padding para tornar o card menor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
+  max-width: 200px; /* Limita a largura */
+  margin: 0 auto;
+}
+
+/* Ajusta o layout para os cards das horas se ajustarem */
+.hourly-scroll {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+.hourly-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 20px;
-}
-
-h3 {
-  margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
 }
