@@ -1,13 +1,16 @@
-// src/App.js
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Home';
+import MyReservations from './MyReservations';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/reservas" element={<MyReservations />} />
+      </Routes>
+    </Router>
   );
 }
 

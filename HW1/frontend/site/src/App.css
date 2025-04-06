@@ -60,7 +60,6 @@
   font-size: 1.2rem;
   font-weight: 500;
   color: #333;
-  margin-top: 1rem;
 }
 
 .form-group {
@@ -91,6 +90,32 @@ input[type="text"] {
   background-color: #fff;
   font-size: 1rem;
 }
+
+.minhas-reservas-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #28362c;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-left: 85px;
+  transition: background 0.3s ease;
+}
+
+.minhas-reservas-btn:hover {
+  background-color: #516f5a;
+}
+
+.icon-minhas-reservas {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
 
 .confirm-btn {
   padding: 12px 20px;
@@ -160,4 +185,25 @@ input[type="text"] {
 
 .reservation-section h3 {
   color: #2c7be5;
+}
+
+
+.reservar-btn {
+  padding: 7px 25px;
+  border-radius: 8px;
+  background-color: #28362c;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.reservar-btn:hover {
+  background-color: #516f5a;
 }

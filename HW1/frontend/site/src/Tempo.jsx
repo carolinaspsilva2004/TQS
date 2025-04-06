@@ -52,7 +52,7 @@ const Tempo = () => {
 
     return (
         <div className="container">
-         <h2 className="section-title">Previsão do Tempo</h2>
+         <h2 className="section-title">Previsão Metereológica</h2>
         
                 <div className="form-group">
                   <label htmlFor="city">
@@ -64,7 +64,7 @@ const Tempo = () => {
                     id="city" 
                     value={city} 
                     onChange={(e) => setCity(e.target.value)} 
-                    placeholder="Digite o nome da cidade"
+                    placeholder="Digite o nome da cidade" 
                   />
                 </div>
         
