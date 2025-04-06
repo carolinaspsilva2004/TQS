@@ -55,4 +55,14 @@ public class ReservationController {
         List<Reservation> reservations = reservationService.getReservations();
         return ResponseEntity.ok(reservations);
     }
+
+    @DeleteMapping("/{code}")
+    public ResponseEntity<String> deleteReservation(@PathVariable String code) {
+        boolean deleted = reservationService.deleteReservationByCode(code);
+        if (deleted) {
+            return ResponseEntity.ok("Reservation deleted successfully");
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found");
+    }
+
 }

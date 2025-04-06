@@ -39,4 +39,14 @@ public class ReservationService {
             return true;
         }).orElse(false);
     }
+
+    public boolean deleteReservationByCode(String code) {
+        Optional<Reservation> reservation = reservationRepository.findByCode(code);
+        if (reservation.isPresent()) {
+            reservationRepository.delete(reservation.get());
+            return true;
+        }
+        return false;
+    }
+    
 }
