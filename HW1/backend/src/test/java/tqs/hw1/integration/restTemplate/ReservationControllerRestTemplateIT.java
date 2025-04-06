@@ -175,4 +175,31 @@ public class ReservationControllerRestTemplateIT {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).hasSize(1); // Verifica se há 1 reserva
     }
+
+    @Test
+    @DisplayName("DELETE /reservations/{code} - Deve deletar uma reserva com sucesso")
+    void whenDeleteReservation_thenReturnSuccess() {
+        // Endpoint para deletar uma reserva existente
+        String url = "http://localhost:" + randomServerPort + "/reservations/" + reservation.getCode();
+
+        // Realizando a requisição DELETE e verificando a resposta de sucesso
+        ResponseEntity<String> response = testRestTemplate.exchange(url, org.springframework.http.HttpMethod.DELETE, null, String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).contains("Reservation deleted successfully");
+    }
+
+    @Test
+    @DisplayName("DELETE /reservations/{code} - Deve retornar erro quando reserva não for encontrada")
+    void whenDeleteReservation_thenReturnNotFound() {
+        // Endpoint para deletar uma reserva inexistente
+        String url = "http://localhost:" + randomServerPort + "/reservations/XYZ999";
+
+        // Realizando a requisição DELETE e verificando o erro 404 Not Found
+        ResponseEntity<String> response = testRestTemplate.exchange(url, org.springframework.http.HttpMethod.DELETE, null, String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(response.getBody()).contains("Reservation not found");
+    }
+
 }

@@ -144,11 +144,10 @@ public class RestaurantControllerRestTemplateIT {
     void whenGetMealsByRestaurant_thenReturnMeals() {
         // Criação de restaurante
         Restaurant restaurant = new Restaurant("Restaurant A");
-        restaurant = restaurantRepository.save(restaurant);
 
         // Criação de refeições associadas ao restaurante
-        Meal meal1 = new Meal("Meal 1", LocalDate.parse("2025-04-05"), restaurant);
-        Meal meal2 = new Meal("Meal 2", LocalDate.parse("2025-04-06"), restaurant);
+        Meal meal1 = new Meal("Meal 1", LocalDate.parse("2025-04-10"), restaurant);
+        Meal meal2 = new Meal("Meal 2", LocalDate.parse("2025-04-11"), restaurant);
         mealRepository.saveAll(List.of(meal1, meal2));
 
         // Requisição GET para o endpoint de refeições

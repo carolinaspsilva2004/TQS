@@ -71,15 +71,20 @@ public class MealControllerTemplateIT {
     @Test
     @DisplayName("POST /meals cria uma refeição com sucesso")
     void testCreateMeal() {
-        Restaurant restaurant = new Restaurant("Test Resto");
-        Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 5), restaurant);
-
+        Restaurant restaurant = restaurantRepository.save(new Restaurant("Test Resto"));
+    
+        Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 10), restaurant);
+    
         ResponseEntity<Meal> response = restTemplate.postForEntity(baseUrl(), meal, Meal.class);
-
+    
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        
         assertThat(response.getBody()).isNotNull();
         assertThat(response.getBody().getDescription()).isEqualTo("Pizza");
+        assertThat(response.getBody().getRestaurant()).isNotNull();
+        assertThat(response.getBody().getRestaurant().getName()).isEqualTo("Test Resto");
     }
+    
 
     @Test
     @DisplayName("GET /meals retorna todas as refeições")

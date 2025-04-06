@@ -20,6 +20,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
 import tqs.hw1.repository.MealRepository;
+import tqs.hw1.repository.RestaurantRepository;
 
 import java.time.LocalDate;
 
@@ -40,6 +41,9 @@ public class MealControllerMockIT {
     private MealRepository mealRepository;
 
     @Autowired
+    private RestaurantRepository restaurantRepository;
+
+    @Autowired
     private ObjectMapper objectMapper;
 
     @AfterEach
@@ -57,16 +61,20 @@ public class MealControllerMockIT {
     @Test
     @DisplayName("POST /meals creates a meal successfully")
     void testCreateMeal() throws Exception {
-        Restaurant restaurant = new Restaurant("Test Restaurant");
-        Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 5), restaurant);
-
-        mvc.perform(post("/meals")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(meal)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", notNullValue()))
-                .andExpect(jsonPath("$.description", is("Pizza")));
+                Restaurant restaurant = new Restaurant("Test Restaurant");
+                restaurant = restaurantRepository.save(restaurant); // <-- salvar o restaurante
+                
+                Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 10), restaurant);
+            
+                mvc.perform(post("/meals")
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(objectMapper.writeValueAsString(meal)))
+                        .andExpect(status().isOk())  
+                        .andExpect(jsonPath("$.id", notNullValue()))  
+                        .andExpect(jsonPath("$.description", is("Pizza")));  
     }
+            
+
 
     @Test
     @DisplayName("GET /meals returns all meals")

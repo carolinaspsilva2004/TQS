@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tqs.hw1.integration.mock.ReservationControllerMockIT
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.654 s - in tqs.hw1.integration.mock.ReservationControllerMockIT

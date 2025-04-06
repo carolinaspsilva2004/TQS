@@ -151,4 +151,26 @@ public class ReservationControllerMockIT {
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(jsonPath("$[0].code", is("ABC123")));
     }
+
+    @Test
+    @DisplayName("DELETE /reservations/{code} - Deve deletar uma reserva com sucesso")
+    void whenDeleteReservation_thenReturnSuccess() throws Exception {
+        when(reservationService.deleteReservationByCode("ABC123")).thenReturn(true);
+
+        mvc.perform(delete("/reservations/ABC123")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Reservation deleted successfully"));
+    }
+
+    @Test
+    @DisplayName("DELETE /reservations/{code} - Deve retornar erro quando reserva não for encontrada")
+    void whenDeleteReservation_thenReturnNotFound() throws Exception {
+        when(reservationService.deleteReservationByCode("XYZ999")).thenReturn(false);
+
+        mvc.perform(delete("/reservations/XYZ999")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("Reservation not found"));
+    }
 }

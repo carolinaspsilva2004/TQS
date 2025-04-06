@@ -63,18 +63,17 @@ public class RestaurantControllerMockIT {
     @DisplayName("GET /restaurants/{id}/meals retorna as refeições de um restaurante")
     void whenGetMealsByRestaurant_thenReturnMeals() throws Exception {
         Restaurant restaurant = new Restaurant("Restaurant A");
-        restaurant = restaurantRepository.save(restaurant);
 
-        Meal meal1 = new Meal("Meal 1", LocalDate.parse("2025-04-05"), restaurant);
-        Meal meal2 = new Meal("Meal 2", LocalDate.parse("2025-04-06"), restaurant);
+        Meal meal1 = new Meal("Meal 1", LocalDate.parse("2025-04-10"), restaurant);
+        Meal meal2 = new Meal("Meal 2", LocalDate.parse("2025-04-11"), restaurant);
         mealRepository.saveAll(List.of(meal1, meal2));
 
         mvc.perform(get("/restaurants/{id}/meals", restaurant.getId())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2))) // Verifica que há 2 refeições
-                .andExpect(jsonPath("$[0].name", is("Meal 1"))) // Verifica o nome da refeição
-                .andExpect(jsonPath("$[1].name", is("Meal 2"))); // Verifica o nome da refeição
+                .andExpect(jsonPath("$[0].description", is("Meal 1"))) // Verifica o nome da refeição
+                .andExpect(jsonPath("$[1].description", is("Meal 2"))); // Verifica o nome da refeição
     }
 
     @Test

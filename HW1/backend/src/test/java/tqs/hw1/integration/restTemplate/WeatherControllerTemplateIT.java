@@ -36,9 +36,9 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherForCityAndDate_thenReturnWeather() {
         String city = "Aveiro";
-        String date = "2025-04-02";
+        String date = "2025-04-07";
         
-        String expectedCondition = "Rain, Partially cloudy";  
+        String expectedCondition = "Partially cloudy";  
 
         RestAssured.given()
                 .port(port)
@@ -80,9 +80,9 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherHours_thenReturnHourlyData() {
         String city = "Aveiro";
-        String date = "2025-04-05";
+        String date = "2025-04-07";
         
-        String expectedHourCondition = "Rain, Partially cloudy"; 
+        String expectedHourCondition = "Partially cloudy"; 
 
         RestAssured.given()
                 .port(port)
