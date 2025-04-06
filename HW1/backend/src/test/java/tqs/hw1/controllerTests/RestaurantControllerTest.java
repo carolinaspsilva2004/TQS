@@ -3,7 +3,6 @@ package tqs.hw1.controllerTests;
 import tqs.hw1.controller.RestaurantController;
 import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
-import tqs.hw1.model.WeatherResponse;
 import tqs.hw1.service.MealService;
 import tqs.hw1.service.RestaurantService;
 import tqs.hw1.service.WeatherService;
@@ -19,8 +18,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.HashMap;
 import java.util.Optional;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -146,34 +143,40 @@ class RestaurantControllerTest {
     void whenGetMeals_thenReturnsMeals() throws Exception {
         Long restaurantId = 1L;
         List<Meal> meals = new ArrayList<>();
-        Meal meal = new Meal("Meal A", LocalDate.parse("2025-04-05"), new Restaurant("Restaurant A"));
+        
+        // Refeição recente (deve ser retornada)
+        Meal meal = new Meal("Meal A", LocalDate.parse("2025-04-09"), new Restaurant("Restaurant A"));
         meals.add(meal);
-    
+
+        // Refeição antiga (deve ser filtrada)
+        Meal oldMeal = new Meal("Meal B", LocalDate.parse("2023-04-10"), new Restaurant("Restaurant A"));
+        meals.add(oldMeal);
+        
         when(restaurantService.existsById(restaurantId)).thenReturn(true);
         when(mealService.getMealsByRestaurantId(restaurantId)).thenReturn(meals);
-    
+        
         mockMvc.perform(get("/restaurants/{id}/meals", restaurantId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].description", is("Meal A")));
-    
+                .andExpect(jsonPath("$", hasSize(1)))  // Espera-se apenas "Meal A", pois é mais recente
+                .andExpect(jsonPath("$[0].description", is("Meal A")));  // Verifica se a descrição da refeição é "Meal A"
+        
         verify(restaurantService, times(1)).existsById(restaurantId);
         verify(mealService, times(1)).getMealsByRestaurantId(restaurantId);
     }
+
     
     @Test
     @DisplayName("GET /restaurants/{id}/meals returns 404 when restaurant not found")
     void whenGetMeals_thenReturnsNotFound() throws Exception {
         Long restaurantId = 999L;
-    
+
         when(restaurantService.existsById(restaurantId)).thenReturn(false);
-    
+
         mockMvc.perform(get("/restaurants/{id}/meals", restaurantId)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
-    
+
         verify(restaurantService, times(1)).existsById(restaurantId);
     }
-    
 }

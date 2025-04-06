@@ -4,17 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import tqs.hw1.controller.MealController;
 import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
 import tqs.hw1.service.MealService;
+import tqs.hw1.service.RestaurantService;
 
 import java.time.LocalDate;
 import java.util.Collections;
@@ -35,24 +34,37 @@ public class MealControllerTest {
     @MockBean
     private MealService mealService;
 
+    @MockBean
+    private RestaurantService restaurantService;
+
     @Autowired
     private ObjectMapper objectMapper;
 
     @Test
-    @DisplayName("POST /meals creates a meal successfully")
-    void testCreateMeal() throws Exception {
-        Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 5), new Restaurant("Restaurante"));
-        meal.setId(1L);
+@DisplayName("POST /meals creates a meal successfully")
+void testCreateMeal() throws Exception {
+    // Criação do Restaurant com ID válido
+    Restaurant restaurant = new Restaurant("Restaurante");
+    restaurant.setId(1L);
 
-        Mockito.when(mealService.saveMeal(any(Meal.class))).thenReturn(meal);
+    // Configuração do Meal com o ID do Restaurant
+    Meal meal = new Meal("Pizza", LocalDate.of(2025, 4, 10), restaurant);
+    meal.setId(1L);
 
-        mvc.perform(post("/meals")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(meal)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.description", is("Pizza")));
-    }
+    // Mocking do serviço de restaurant e meal
+    Mockito.when(restaurantService.getRestaurantById(eq(1L))).thenReturn(Optional.of(restaurant));
+    Mockito.when(mealService.saveMeal(any(Meal.class))).thenReturn(meal);
+
+    // Perform the POST request to create a meal
+    mvc.perform(post("/meals")
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .content(objectMapper.writeValueAsString(meal)))
+            .andExpect(status().isOk()) // Espera status 201 (Created)
+            .andExpect(jsonPath("$.id", is(1))) // Verifica o ID
+            .andExpect(jsonPath("$.description", is("Pizza"))); // Verifica a descrição
+}
+
+    
 
     @Test
     @DisplayName("GET /meals returns all meals")

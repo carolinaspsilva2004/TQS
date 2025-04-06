@@ -58,4 +58,35 @@ public class ReservationServiceTest {
         boolean checkedIn = reservationService.checkInReservation("INVALID");
         assertThat(checkedIn).isFalse();
     }
+
+    @Test
+    void shouldDeleteReservation() {
+        // Criação de uma reserva
+        Reservation reservation = new Reservation("DELETE123", LocalDate.now().atStartOfDay(), false, null);
+
+        // Mock para encontrar a reserva
+        when(reservationRepository.findByCode("DELETE123")).thenReturn(Optional.of(reservation));
+
+        // Mock para deletar a reserva
+        doNothing().when(reservationRepository).delete(any(Reservation.class));
+
+        // Teste da função de deleção
+        boolean deleted = reservationService.deleteReservationByCode("DELETE123");
+
+        assertThat(deleted).isTrue();
+        verify(reservationRepository).delete(reservation); // Verificando se o delete foi chamado no repositório
+    }
+
+    @Test
+    void shouldReturnFalseIfReservationCodeNotFoundOnDelete() {
+        // Mock para não encontrar a reserva
+        when(reservationRepository.findByCode("INVALID")).thenReturn(Optional.empty());
+
+        // Teste da função de deleção
+        boolean deleted = reservationService.deleteReservationByCode("INVALID");
+
+        assertThat(deleted).isFalse(); // Deve retornar false quando a reserva não for encontrada
+        verify(reservationRepository, never()).delete(any(Reservation.class)); // Verifica se o delete nunca foi chamado
+    }
+
 }

@@ -8,7 +8,6 @@ import tqs.hw1.model.Meal;
 import tqs.hw1.model.Restaurant;
 import tqs.hw1.service.MealService;
 import tqs.hw1.service.RestaurantService;
-import tqs.hw1.service.WeatherService;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -18,12 +17,10 @@ import java.util.*;
 public class RestaurantController {
     private final RestaurantService restaurantService;
     private final MealService mealService;
-    private final WeatherService weatherService;
 
-    public RestaurantController(RestaurantService restaurantService, MealService mealService, WeatherService weatherService) {
+    public RestaurantController(RestaurantService restaurantService, MealService mealService) {
         this.restaurantService = restaurantService;
         this.mealService = mealService;
-        this.weatherService = weatherService;
     }
 
     @GetMapping
