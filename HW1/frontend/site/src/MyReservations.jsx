@@ -17,7 +17,11 @@ const MyReservations = () => {
 
   useEffect(() => {
     axios.get('http://localhost:8080/reservations')
-      .then(response => setReservations(response.data))
+      .then(response => {
+        // Filtrando as reservas para remover as usadas
+        const activeReservations = response.data.filter(reservation => !reservation.used);
+        setReservations(activeReservations);
+      })
       .catch(error => console.error('Erro ao buscar reservas:', error));
   }, []);
 

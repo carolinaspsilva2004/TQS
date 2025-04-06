@@ -67,7 +67,7 @@
     color: #2d87f0;
   }
   
-  .verify-btn {
+  .verify-btn, .revert-btn {
     background-color: #2d87f0;
     color: white;
     border: none;
@@ -77,12 +77,20 @@
     transition: background-color 0.2s ease;
   }
   
-  .verify-btn:hover {
+  .verify-btn:hover, .revert-btn:hover {
     background-color: #1f6dc3;
   }
   
-  .verify-btn:disabled {
+  .verify-btn:disabled, .revert-btn:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
+  }
+  
+  .revert-btn {
+    background-color: #ff7043;
+  }
+  
+  .revert-btn:hover {
+    background-color: #f4511e;
   }
   
