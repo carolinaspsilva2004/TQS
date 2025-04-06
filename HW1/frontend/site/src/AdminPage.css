@@ -1,0 +1,88 @@
+/* src/components/AdminPage.css */
+
+.admin-page {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #2d87f0;
+    margin-bottom: 30px;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .reservations-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .no-reservations {
+    text-align: center;
+    font-size: 18px;
+    color: #999;
+  }
+  
+  .reservations-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .reservation-item {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+  }
+  
+  .reservation-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .reservation-item.used {
+    background-color: #e0f7fa;
+  }
+  
+  .reservation-item.pending {
+    background-color: #fff3e0;
+  }
+  
+  .reservation-details p {
+    margin: 5px 0;
+  }
+  
+  .reservation-details strong {
+    color: #2d87f0;
+  }
+  
+  .verify-btn {
+    background-color: #2d87f0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .verify-btn:hover {
+    background-color: #1f6dc3;
+  }
+  
+  .verify-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
