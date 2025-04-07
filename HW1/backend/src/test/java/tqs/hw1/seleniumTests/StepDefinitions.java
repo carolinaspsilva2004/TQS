@@ -135,40 +135,44 @@ public void the_meals_for_the_selected_restaurant_and_date_should_be_displayed()
     
 
 
-    @Then("the weather forecast for the selected date should be shown for the chosen city")
-    public void the_weather_forecast_for_the_selected_date_should_be_shown_for_the_chosen_city() {
-        logger.info("Verifying weather forecast for the selected city and date...");
-        try {
-            // Preencher a cidade e a data na interface
-            WebElement cityInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.id("city")
-            ));
-            cityInput.sendKeys("Aveiro");  // Defina a cidade para Lisboa ou outra cidade de teste
-            logger.info("City 'Aveiro' entered in city input field.");
-            
-            WebElement dateInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.id("weatherDate")
-            ));
-            dateInput.sendKeys("08-04-2025");  // A data já foi selecionada antes no cenário
-            logger.info("Date '08-04-2025' entered in weather date input field.");
-            
-            // Clicar no botão para confirmar a cidade e a data
-            WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.cssSelector(".confirm-btn")
-            ));
-            confirmButton.click();
-            
-            logger.info("City and date confirmed by clicking the confirm button.");
-            
-            // Verificar se a previsão do tempo foi exibida corretamente
-            WebElement weatherSummary = wait.until(ExpectedConditions.visibilityOfElementLocated(
-                    By.cssSelector(".weather-results")
-            ));
-            String weatherCondition = weatherSummary.getText();
-            assertThat(weatherCondition).contains("Temperatura média");  // Verifica se a previsão contém a temperatura média
-            logger.info("Weather forecast displayed successfully for city: 'Aveiro' and date: '08-04-2025'.");
-        } catch (Exception e) {
-            logger.severe("Failed to display weather forecast: " + e.getMessage());
-        }
+@Then("the weather forecast for the selected date should be shown for the chosen city")
+public void the_weather_forecast_for_the_selected_date_should_be_shown_for_the_chosen_city() {
+    logger.info("Verifying weather forecast for the selected city and date...");
+    try {
+        // Preencher a cidade
+        WebElement cityInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("city")));
+        cityInput.clear(); // Limpa antes de escrever
+        cityInput.sendKeys("Aveiro");
+        logger.info("City 'Aveiro' entered.");
+
+        // Preencher a data no formato YYYY-MM-DD
+        WebElement dateInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("weatherDate")));
+        dateInput.clear(); // Limpa antes de escrever
+        dateInput.sendKeys("08-04-2025"); // Data no formato YYYY-MM-DD
+        logger.info("Date '08-04-2025' entered.");
+
+        // Clicar no botão de confirmação
+        WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".confirmar-btn")));
+        confirmButton.click();
+        logger.info("Clicked confirm button.");
+
+        // Esperar até que o Resumo Diário esteja visível
+        WebElement summaryCard = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.cssSelector(".weather-results .hourly-summary-card")
+        ));
+
+        String summaryText = summaryCard.getText();
+        logger.info("Weather summary content: " + summaryText);
+
+        // Verificações principais com AssertJ
+        assertThat(summaryText).contains("Temperatura média");
+        assertThat(summaryText).contains("Condições gerais");
+
+        logger.info("Weather forecast displayed successfully for 'Aveiro' on '2025-04-08'.");
+    } catch (Exception e) {
+        logger.severe("Failed to display weather forecast: " + e.getMessage());
+        throw e; // Faz o teste falhar corretamente
     }
+}
+
 }
