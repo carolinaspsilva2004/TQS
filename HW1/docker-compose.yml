@@ -43,6 +43,17 @@ services:
       retries: 3
       start_period: 10s
 
+  frontend:
+    build:
+      context: ./frontend/site
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/site:/app
+    depends_on:
+      - backend
+
   prometheus:
     image: prom/prometheus
     ports:

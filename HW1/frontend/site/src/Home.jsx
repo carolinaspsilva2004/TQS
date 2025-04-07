@@ -16,6 +16,8 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false); // Estado para controlar a visibilidade do modal
   const [showSuccessModal, setShowSuccessModal] = useState(false); // Estado para controlar a visibilidade do SuccessModal
   const [mealIdToBook, setMealIdToBook] = useState(null); // Armazena o mealId que será reservado
+  const [restaurantDateError, setRestaurantDateError] = useState('');
+
 
   const navigate = useNavigate();
 
@@ -157,7 +159,27 @@ const Home = () => {
               <FaCalendarAlt className="icon" />
               Data (ementa):
             </label>
-            <input type="date" id="restaurantDate" value={restaurantDate} onChange={(e) => setRestaurantDate(e.target.value)} />
+            <input
+        type="date"
+        id="restaurantDate"
+        value={restaurantDate}
+        onChange={(e) => {
+          const selectedDate = e.target.value;
+          setRestaurantDate(selectedDate);
+
+          const today = new Date();
+          const inputDate = new Date(selectedDate + 'T00:00:00'); // Evita problemas de fuso horário
+
+          if (inputDate < today.setHours(0, 0, 0, 0)) {
+            setRestaurantDateError('A data não pode ser anterior a hoje.');
+          } else {
+            setRestaurantDateError('');
+          }
+        }}
+      />
+      {restaurantDateError && (
+        <p style={{ color: 'red', fontSize: '0.9rem', marginTop: '5px' }}>{restaurantDateError}</p>
+      )}
           </div>
 
           <button onClick={fetchMeals} className="confirm-btn">
