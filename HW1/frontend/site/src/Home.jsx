@@ -4,8 +4,10 @@ import { FaUtensils, FaCalendarAlt, FaCheckCircle } from 'react-icons/fa';
 import './App.css';
 import Tempo from './Tempo';
 import { useNavigate } from 'react-router-dom';
-import Modal from './Modal'; // Importando o Modal
-import SuccessModal from './SuccessModal'; // Importando o SuccessModal
+import Modal from './Modal';
+import SuccessModal from './SuccessModal'; 
+import logoEmentas from './logo_ementas.svg';
+
 
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -13,9 +15,9 @@ const Home = () => {
   const [restaurantDate, setRestaurantDate] = useState('');
   const [meals, setMeals] = useState([]);
   const [reservationCode, setReservationCode] = useState('');
-  const [showModal, setShowModal] = useState(false); // Estado para controlar a visibilidade do modal
-  const [showSuccessModal, setShowSuccessModal] = useState(false); // Estado para controlar a visibilidade do SuccessModal
-  const [mealIdToBook, setMealIdToBook] = useState(null); // Armazena o mealId que será reservado
+  const [showModal, setShowModal] = useState(false); 
+  const [showSuccessModal, setShowSuccessModal] = useState(false); 
+  const [mealIdToBook, setMealIdToBook] = useState(null); 
   const [restaurantDateError, setRestaurantDateError] = useState('');
 
 
@@ -128,10 +130,14 @@ const Home = () => {
         <h1 className="main-title">Reserva a tua Refeição consoante o Clima</h1>
         <p className="main-description">Escolhe o restaurante e a data da ementa, e depois escolhe a cidade e a data do clima.</p>
       </div>
+      <div className="reserva-container">
       <button onClick={() => navigate('/reservas')} className="minhas-reservas-btn">
         <FaUtensils className="icon-minhas-reservas" />
         As Minhas Reservas
       </button>
+      <img src={logoEmentas} alt="Reserva" className="reserva-img" />
+ 
+    </div>
 
       <div className="home">
         {/* Lado esquerdo: restaurantes */}

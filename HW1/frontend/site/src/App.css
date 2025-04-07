@@ -207,3 +207,15 @@ input[type="text"] {
 .reservar-btn:hover {
   background-color: #516f5a;
 }
+
+.reserva-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espaço entre o botão e a imagem */
+  margin-bottom: 5px;
+}
+
+.reserva-img {
+  width: 25%; /* Ajusta o tamanho como preferires */
+  height: auto;
+}
