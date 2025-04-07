@@ -187,7 +187,7 @@ const Home = () => {
       )}
           </div>
 
-          <button onClick={fetchMeals} className="confirm-btn">
+          <button onClick={fetchMeals} className="confirm-btn" style={{ color: ' rgb(38, 38, 38)' }}>
             <FaCheckCircle className="icon" />
             Confirmar Restaurante/Data
           </button>

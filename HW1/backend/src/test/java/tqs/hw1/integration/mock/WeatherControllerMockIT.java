@@ -81,7 +81,7 @@ public class WeatherControllerMockIT {
     @DisplayName("GET /weather/{city}/{date}/hours returns hourly weather data")
     void whenGetWeatherHours_thenReturnHourlyData() throws Exception {
         String city = "Aveiro";
-        String date = "2025-04-07";
+        String date = "2025-04-12";
         
         String expectedHourCondition = "Partially cloudy";  // Use the correct expected condition
         

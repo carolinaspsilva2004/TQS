@@ -14,6 +14,7 @@ tqs/hw1/service/MealServiceTest.class
 tqs/hw1/controllerTests/WeatherControllerTest.class
 tqs/hw1/model/MealTest.class
 tqs/hw1/service/RestaurantServiceTest.class
+stepdefinitions/ReservationSteps.class
 tqs/hw1/seleniumTests/RunCucumberTest.class
 tqs/hw1/controllerTests/RestaurantControllerTest.class
 tqs/hw1/integration/mock/RestaurantControllerMockIT.class

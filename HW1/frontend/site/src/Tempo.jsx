@@ -81,7 +81,7 @@ const Tempo = () => {
                   />
                 </div>
         
-                <button onClick={fetchWeather} className="confirm-btn">
+                <button onClick={fetchWeather} className="confirmar-btn">
                   <FaCloudSun className="icon" />
                   Confirmar Cidade/Data
                 </button>

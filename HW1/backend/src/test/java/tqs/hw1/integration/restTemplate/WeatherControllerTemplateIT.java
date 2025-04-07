@@ -80,7 +80,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherHours_thenReturnHourlyData() {
         String city = "Aveiro";
-        String date = "2025-04-07";
+        String date = "2025-04-11";
         
         String expectedHourCondition = "Partially cloudy"; 
 
