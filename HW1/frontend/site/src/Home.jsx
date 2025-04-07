@@ -128,15 +128,14 @@ const Home = () => {
     <>
       <div>
         <h1 className="main-title">Reserva a tua Refeição consoante o Clima</h1>
+        <img src={logoEmentas} alt="Reserva" className="reserva-img" />
         <p className="main-description">Escolhe o restaurante e a data da ementa, e depois escolhe a cidade e a data do clima.</p>
       </div>
       <div className="reserva-container">
       <button onClick={() => navigate('/reservas')} className="minhas-reservas-btn">
         <FaUtensils className="icon-minhas-reservas" />
         As Minhas Reservas
-      </button>
-      <img src={logoEmentas} alt="Reserva" className="reserva-img" />
- 
+      </button> 
     </div>
 
       <div className="home">

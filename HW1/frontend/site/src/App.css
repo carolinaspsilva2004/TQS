@@ -1,11 +1,24 @@
 /* src/App.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url('./image.png'); /* Substitua pelo caminho correto */
+  background-size: cover; /* Cobre toda a área da tela */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* A imagem de fundo não rolará com a página */
+}
+
+/* Garante que a div principal ocupe toda a altura da tela */
 .home {
   display: flex;
-  flex-direction: row; /* Alterado para 'row' para posicionar lado a lado */
+  flex-direction: row; /* Lado a lado */
   padding: 20px;
   gap: 2rem; /* Espaçamento entre as seções */
-  justify-content: center; /* Centraliza as seções na tela */
+  justify-content: center; /* Centraliza as seções */
+  min-height: 100vh; /* Garante que ocupe toda a altura */
 }
+
 
 .main-title {
   font-size: 2rem;
@@ -13,18 +26,25 @@
   margin-bottom: 10px;
   align-items: center;
   display: flex;
-  margin: 30px;
+  padding: 25px;
+  margin-top: 10px;
   justify-content: center;
+  margin-bottom: 0px;
+  background-color: #ffffffc6;
 }
 
 .main-description {
   font-size: 1.1rem;
-  color: #666;
+  color: #303030;
   margin-bottom: 30px;
   align-items: center;
   display: flex;
-  margin: 30px;
+  padding: 20px;
   justify-content: center;
+  margin-top: -5px;
+  background-color: #ffffffc6;
+
+  
 
 }
 
@@ -216,6 +236,13 @@ input[type="text"] {
 }
 
 .reserva-img {
-  width: 25%; /* Ajusta o tamanho como preferires */
-  height: auto;
+  width: 40%; /* Ajusta o tamanho como preferires */
+  height: 50%;
+  background-color: #ffffffc6;
+  align-items: center;
+  display: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-left: 380px;
+  padding-right: 400px;
 }

@@ -112,7 +112,7 @@ const MyReservations = () => {
         <span className="back-button-text">Voltar</span>
       </button>
 
-      <h1>As Minhas Reservas</h1>
+      <h1 className='title' >As Minhas Reservas</h1>
       {reservations.length > 0 ? (
         <ul className="reservations-list">
           {reservations.map(res => (
