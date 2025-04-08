@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import tqs.hw1.model.Meal;
-import tqs.hw1.model.Reservation;
+import tqs.hw1.model.*;
 import tqs.hw1.repository.ReservationRepository;
 import tqs.hw1.service.ReservationService;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,18 +30,21 @@ public class ReservationServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
+    // Teste de reserva criada corretamente
     @Test
     void shouldCreateReservation() {
-        Meal meal = new Meal("Steak", LocalDate.now(), null);
+        Restaurant restaurant = new Restaurant("Rest A");
+        Meal meal = new Meal("Fish & Chips", LocalDate.now(), restaurant);
         Reservation savedReservation = new Reservation(UUID.randomUUID().toString(), LocalDate.now().atStartOfDay(), false, meal);
 
         when(reservationRepository.save(any(Reservation.class))).thenReturn(savedReservation);
 
         Reservation reservation = reservationService.createReservation(meal);
-        assertThat(reservation.getMeal().getDescription()).isEqualTo("Steak");
+        assertThat(reservation.getMeal().getDescription()).isEqualTo("Fish & Chips");
         assertThat(reservation.isUsed()).isFalse();
     }
 
+    // Teste de verificação de reserva (check-in)
     @Test
     void shouldCheckInReservation() {
         Reservation reservation = new Reservation("CHECK123", LocalDate.now().atStartOfDay(), false, null);
@@ -52,41 +55,65 @@ public class ReservationServiceTest {
         verify(reservationRepository).save(reservation);
     }
 
+    // Teste para verificar se o ticket já foi utilizado
     @Test
-    void shouldReturnFalseIfReservationCodeNotFoundOnCheckIn() {
-        when(reservationRepository.findByCode("INVALID")).thenReturn(Optional.empty());
-        boolean checkedIn = reservationService.checkInReservation("INVALID");
-        assertThat(checkedIn).isFalse();
+    void shouldRejectCheckInIfReservationAlreadyUsed() {
+        Reservation reservation = new Reservation("CHECK123", LocalDate.now().atStartOfDay(), true, null); // Já usado
+        when(reservationRepository.findByCode("CHECK123")).thenReturn(Optional.of(reservation));
+
+        boolean checkedIn = reservationService.checkInReservation("CHECK123");
+        assertThat(checkedIn).isFalse(); // Não deve permitir o check-in, pois a reserva já foi usada
     }
 
+
+    // Teste para garantir que a reserva não é permitida se o limite de capacidade foi atingido
+    @Test
+    void shouldNotAllowReservationIfRestaurantIsFull() {
+        Restaurant restaurant = new Restaurant("Rest A");
+        Meal meal = new Meal("Steak", LocalDate.now(), restaurant);
+
+        // Digamos que o limite para reservas no restaurante seja 2
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now(), restaurant.getId())).thenReturn(2L);
+
+        // Tentar fazer uma nova reserva
+        Reservation reservation = reservationService.createReservation(meal);
+
+        // Como o limite foi atingido, a criação da reserva deve falhar
+        assertThat(reservation).isNull();
+    }
+
+    // Teste para garantir que a reserva não seja feita em um dia sem serviço (sem refeições)
+    @Test
+    void shouldNotAllowReservationOnDayWithoutService() {
+        Restaurant restaurant = new Restaurant("Rest A");
+        Meal meal = new Meal("Pasta", LocalDate.now().plusDays(1), restaurant); // Reserva para o dia seguinte, quando não há serviço.
+
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now().plusDays(1), restaurant.getId())).thenReturn(0L); // Nenhuma refeição disponível nesse dia.
+
+        // Tentar criar a reserva para um dia sem serviço
+        Reservation reservation = reservationService.createReservation(meal);
+
+        assertThat(reservation).isNull(); // A reserva não deve ser permitida
+    }
+
+    // Teste para garantir que a deleção de reserva funciona corretamente
     @Test
     void shouldDeleteReservation() {
-        // Criação de uma reserva
         Reservation reservation = new Reservation("DELETE123", LocalDate.now().atStartOfDay(), false, null);
-
-        // Mock para encontrar a reserva
         when(reservationRepository.findByCode("DELETE123")).thenReturn(Optional.of(reservation));
-
-        // Mock para deletar a reserva
         doNothing().when(reservationRepository).delete(any(Reservation.class));
 
-        // Teste da função de deleção
         boolean deleted = reservationService.deleteReservationByCode("DELETE123");
-
         assertThat(deleted).isTrue();
         verify(reservationRepository).delete(reservation); // Verificando se o delete foi chamado no repositório
     }
 
+    // Teste para garantir que não é possível deletar uma reserva que não existe
     @Test
     void shouldReturnFalseIfReservationCodeNotFoundOnDelete() {
-        // Mock para não encontrar a reserva
         when(reservationRepository.findByCode("INVALID")).thenReturn(Optional.empty());
-
-        // Teste da função de deleção
         boolean deleted = reservationService.deleteReservationByCode("INVALID");
-
-        assertThat(deleted).isFalse(); // Deve retornar false quando a reserva não for encontrada
-        verify(reservationRepository, never()).delete(any(Reservation.class)); // Verifica se o delete nunca foi chamado
+        assertThat(deleted).isFalse();
+        verify(reservationRepository, never()).delete(any(Reservation.class));
     }
-
 }

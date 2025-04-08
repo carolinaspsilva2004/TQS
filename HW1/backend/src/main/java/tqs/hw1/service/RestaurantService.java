@@ -10,6 +10,7 @@ import java.util.Optional;
 @Service
 public class RestaurantService {
     private final RestaurantRepository restaurantRepository;
+    
 
     public RestaurantService(RestaurantRepository restaurantRepository) {
         this.restaurantRepository = restaurantRepository;

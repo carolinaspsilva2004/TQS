@@ -29,9 +29,16 @@ public class ReservationController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body("{\"message\": \"Meal not found\"}");
         }
-        Reservation reservation = reservationService.createReservation(meal.get());
-        return ResponseEntity.status(HttpStatus.CREATED).body(reservation);
+
+        try {
+            Reservation reservation = reservationService.createReservation(meal.get());
+            return ResponseEntity.status(HttpStatus.CREATED).body(reservation);
+        } catch (IllegalStateException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"" + e.getMessage() + "\"}");
+        }
     }
+
     
 
     @GetMapping("/{code}")
