@@ -3,6 +3,7 @@ tqs/hw1/repositoryTests/MealRepositoryTest.class
 tqs/hw1/repositoryTests/ReservationRepositoryTest.class
 tqs/hw1/integration/restTemplate/ReservationControllerRestTemplateIT.class
 tqs/hw1/integration/restTemplate/RestaurantControllerRestTemplateIT.class
+stepdefinitions/AdminVerificationSteps.class
 tqs/hw1/integration/mock/ReservationControllerMockIT.class
 tqs/hw1/seleniumTests/StepDefinitions.class
 tqs/hw1/integration/restTemplate/MealControllerTemplateIT.class
@@ -10,6 +11,7 @@ tqs/hw1/model/RestaurantTest.class
 tqs/hw1/model/ReservationTest.class
 tqs/hw1/Hw1ApplicationTests.class
 tqs/hw1/controller/integration/restTemplate/WeatherControllerTemplateIT.class
+tqs/hw1/seleniumTests/Hooks.class
 tqs/hw1/service/MealServiceTest.class
 tqs/hw1/controllerTests/WeatherControllerTest.class
 tqs/hw1/model/MealTest.class
@@ -23,3 +25,4 @@ tqs/hw1/controller/integration/mock/WeatherControllerMockIT.class
 tqs/hw1/controllerTests/MealControllerTest.class
 tqs/hw1/seleniumTests/WebDriverSingleton.class
 tqs/hw1/integration/mock/MealControllerMockIT.class
+stepdefinitions/DetailsCancelSteps.class

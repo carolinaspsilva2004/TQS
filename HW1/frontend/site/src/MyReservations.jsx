@@ -120,7 +120,7 @@ const MyReservations = () => {
               <p><strong>Restaurante:</strong> {res.meal?.restaurant?.name}</p>
               <p><strong>Data da Refeição:</strong> {res.meal?.date}</p>
               <p><strong>Ementa:</strong> {formatDescription(res.meal?.description)}</p>
-              <p><strong>Código:</strong> {res.code?.substring(0, 6).toUpperCase()}</p>
+              <p><strong>Código:</strong> {res.code}</p>
               <button className="cancel-btn" onClick={() => cancelReservation(res.code)}>
                 Cancelar
               </button>
@@ -128,8 +128,9 @@ const MyReservations = () => {
           ))}
         </ul>
       ) : (
-        <p>Não há reservas ativas.</p>
-      )}
+<div className="no-reservations-msg">
+    <p>Não há reservas ativas.</p>
+  </div>      )}
 
       {showCancelModal && (
         <CancelModal

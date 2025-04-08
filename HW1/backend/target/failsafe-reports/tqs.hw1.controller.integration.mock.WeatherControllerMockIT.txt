@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tqs.hw1.controller.integration.mock.WeatherControllerMockIT
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.681 s - in tqs.hw1.controller.integration.mock.WeatherControllerMockIT

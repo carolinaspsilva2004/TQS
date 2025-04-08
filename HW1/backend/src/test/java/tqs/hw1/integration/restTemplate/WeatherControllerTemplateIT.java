@@ -36,7 +36,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherForCityAndDate_thenReturnWeather() {
         String city = "Aveiro";
-        String date = "2025-04-07";
+        String date = "2025-04-10";
         
         String expectedCondition = "Partially cloudy";  
 
@@ -51,7 +51,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherDaysAndCurrent_thenReturnCorrectData() {
         String city = "Aveiro";
-        String date = "2025-04-01";
+        String date = "2025-04-10";
         
         String expectedCurrentCondition = "Partially cloudy"; 
 
@@ -66,7 +66,7 @@ public class WeatherControllerTemplateIT {
     @Test
     void whenGetWeatherAlerts_thenReturnAlerts() {
         String city = "Aveiro";
-        String date = "2025-04-01";
+        String date = "2025-04-07";
         
         RestAssured.given()
                 .port(port)
@@ -82,7 +82,7 @@ public class WeatherControllerTemplateIT {
         String city = "Aveiro";
         String date = "2025-04-11";
         
-        String expectedHourCondition = "Partially cloudy"; 
+        String expectedHourCondition = "Rain, Overcast"; 
 
         RestAssured.given()
                 .port(port)
@@ -97,7 +97,7 @@ public class WeatherControllerTemplateIT {
     @DisplayName("Cache deve armazenar a previsão para evitar requisições duplicadas")
     void whenRequestSameDataTwice_thenCacheShouldBeUsed() {
         String city = "Aveiro";
-        String date = "2025-04-02";
+        String date = "2025-04-08";
 
         // Primeira chamada para popular o cache
         RestAssured.given()

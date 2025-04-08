@@ -20,28 +20,10 @@ public class StepDefinitions {
     private WebDriverWait wait;
     private static final Logger logger = Logger.getLogger(StepDefinitions.class.getName());
 
-    public StepDefinitions() {}
-
-    // WebDriver será fornecido antes de qualquer cenário rodar
-    @Before
-    public void setUp() {
-        logger.info("Initializing WebDriver...");
-        this.driver = WebDriverSingleton.getDriver();  // Usa o Singleton do WebDriver
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-        logger.info("WebDriver initialized successfully.");
-    }
-
-    @After
-    public void tearDown() {
-        logger.info("Tearing down WebDriver...");
-        // O WebDriver será fechado automaticamente, devido ao uso do shutdown hook no Singleton
-        if (driver != null) {
-            driver.quit();
-            logger.info("WebDriver quit successfully.");
-        } else {
-            logger.warning("WebDriver was already null when trying to quit.");
-        }
-    }
+    public StepDefinitions() {
+        this.driver = WebDriverSingleton.getDriver();
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    }    
 
     @Given("the user navigates to the homepage")
     public void the_user_navigates_to_the_homepage() {
@@ -75,8 +57,8 @@ public class StepDefinitions {
             WebElement dateInput = wait.until(ExpectedConditions.visibilityOfElementLocated(
                     By.id("restaurantDate")
             ));
-            dateInput.sendKeys("08/04/2025");  // Data no formato MM/DD/YYYY
-            logger.info("Date '08/04/2025' selected for meals.");
+            dateInput.sendKeys("12/04/2025");  // Data no formato MM/DD/YYYY
+            logger.info("Date '12/04/2025' selected for meals.");
         } catch (Exception e) {
             logger.severe("Failed to select date for meals: " + e.getMessage());
         }
@@ -148,8 +130,8 @@ public void the_weather_forecast_for_the_selected_date_should_be_shown_for_the_c
         // Preencher a data no formato YYYY-MM-DD
         WebElement dateInput = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("weatherDate")));
         dateInput.clear(); // Limpa antes de escrever
-        dateInput.sendKeys("08-04-2025"); // Data no formato YYYY-MM-DD
-        logger.info("Date '08-04-2025' entered.");
+        dateInput.sendKeys("12-04-2025"); // Data no formato YYYY-MM-DD
+        logger.info("Date '12-04-2025' entered.");
 
         // Clicar no botão de confirmação
         WebElement confirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".confirmar-btn")));
@@ -168,7 +150,7 @@ public void the_weather_forecast_for_the_selected_date_should_be_shown_for_the_c
         assertThat(summaryText).contains("Temperatura média");
         assertThat(summaryText).contains("Condições gerais");
 
-        logger.info("Weather forecast displayed successfully for 'Aveiro' on '2025-04-08'.");
+        logger.info("Weather forecast displayed successfully for 'Aveiro' on '2025-04-12'.");
     } catch (Exception e) {
         logger.severe("Failed to display weather forecast: " + e.getMessage());
         throw e; // Faz o teste falhar corretamente

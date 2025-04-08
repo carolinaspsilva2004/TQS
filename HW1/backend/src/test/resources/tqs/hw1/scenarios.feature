@@ -17,3 +17,18 @@ Feature: View meals and weather forecast for selected restaurant
     Then a confirmation modal should be displayed
     When the user confirms the reservation
     Then the success modal should be displayed with a reservation code
+
+  Scenario: Food services worker verifies a reservation
+    Given the admin navigates to the "admin" page
+    And there is at least one reservation with status "Pendente"
+    When the admin clicks to mark the reservation as used
+    Then the reservation status should change to "Usada"
+    And the verify button should no longer be visible
+
+  Scenario: The user checks the active reservation and cancels it
+    Given the user navigates to the "My Reservations" page
+    When the user sees the list of active reservations
+    And the user chooses to cancel a reservation
+    And the user confirms the cancellation
+    Then the reservation should be removed from the list
+    And a success message should be displayed

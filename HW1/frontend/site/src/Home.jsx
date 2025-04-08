@@ -8,7 +8,6 @@ import Modal from './Modal';
 import SuccessModal from './SuccessModal'; 
 import logoEmentas from './logo_ementas.svg';
 
-
 const Home = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
@@ -19,7 +18,6 @@ const Home = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false); 
   const [mealIdToBook, setMealIdToBook] = useState(null); 
   const [restaurantDateError, setRestaurantDateError] = useState('');
-
 
   const navigate = useNavigate();
 
@@ -40,12 +38,6 @@ const Home = () => {
     }
   };
 
-  const generateCode = () => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const length = Math.floor(Math.random() * 3) + 4; // 4 a 6
-    return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join('');
-  };
-
   const bookReservation = (mealId) => {
     // Mostra o modal para confirmação
     setMealIdToBook(mealId);
@@ -53,9 +45,9 @@ const Home = () => {
   };
 
   const confirmReservation = () => {
-    const code = generateCode();
-    axios.post(`http://localhost:8080/reservations/book/${mealIdToBook}`, { code })
+    axios.post(`http://localhost:8080/reservations/book/${mealIdToBook}`)
       .then(response => {
+        const { code } = response.data;  // O código já vem da reserva
         setReservationCode(code);
         setShowModal(false); // Fecha o modal após confirmar a reserva
         setShowSuccessModal(true); // Exibe o SuccessModal
@@ -132,11 +124,11 @@ const Home = () => {
         <p className="main-description">Escolhe o restaurante e a data da ementa, e depois escolhe a cidade e a data do clima.</p>
       </div>
       <div className="reserva-container">
-      <button onClick={() => navigate('/reservas')} className="minhas-reservas-btn">
-        <FaUtensils className="icon-minhas-reservas" />
-        As Minhas Reservas
-      </button> 
-    </div>
+        <button onClick={() => navigate('/reservas')} className="minhas-reservas-btn">
+          <FaUtensils className="icon-minhas-reservas" />
+          As Minhas Reservas
+        </button> 
+      </div>
 
       <div className="home">
         {/* Lado esquerdo: restaurantes */}
@@ -165,26 +157,26 @@ const Home = () => {
               Data (ementa):
             </label>
             <input
-        type="date"
-        id="restaurantDate"
-        value={restaurantDate}
-        onChange={(e) => {
-          const selectedDate = e.target.value;
-          setRestaurantDate(selectedDate);
+              type="date"
+              id="restaurantDate"
+              value={restaurantDate}
+              onChange={(e) => {
+                const selectedDate = e.target.value;
+                setRestaurantDate(selectedDate);
 
-          const today = new Date();
-          const inputDate = new Date(selectedDate + 'T00:00:00'); // Evita problemas de fuso horário
+                const today = new Date();
+                const inputDate = new Date(selectedDate + 'T00:00:00'); // Evita problemas de fuso horário
 
-          if (inputDate < today.setHours(0, 0, 0, 0)) {
-            setRestaurantDateError('A data não pode ser anterior a hoje.');
-          } else {
-            setRestaurantDateError('');
-          }
-        }}
-      />
-      {restaurantDateError && (
-        <p style={{ color: 'red', fontSize: '0.9rem', marginTop: '5px' }}>{restaurantDateError}</p>
-      )}
+                if (inputDate < today.setHours(0, 0, 0, 0)) {
+                  setRestaurantDateError('A data não pode ser anterior a hoje.');
+                } else {
+                  setRestaurantDateError('');
+                }
+              }}
+            />
+            {restaurantDateError && (
+              <p style={{ color: 'red', fontSize: '0.9rem', marginTop: '5px' }}>{restaurantDateError}</p>
+            )}
           </div>
 
           <button onClick={fetchMeals} className="confirm-btn" style={{ color: ' rgb(38, 38, 38)' }}>
