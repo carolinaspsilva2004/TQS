@@ -160,4 +160,43 @@ void whenDeleteReservation_thenReturnSuccess() throws Exception {
                 .andExpect(content().string("Reservation not found"));
     }
 
+    @Test
+    @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro se o restaurante estiver cheio")
+    void whenBookMealAndRestaurantIsFull_thenReturnBadRequest() throws Exception {
+        when(mealService.getMealById(anyLong())).thenReturn(Optional.of(meal));
+        // Mocka que já existem 10 reservas para aquele restaurante e data
+        when(reservationService.countReservationsForMealOnDate(meal.getDate(), meal.getRestaurant().getId()))
+                .thenReturn(10L);
+
+        mvc.perform(post("/reservations/book/1")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message", is("Restaurant is fully booked for this date")));
+    }
+
+    @Test
+    @DisplayName("POST /reservations/checkin/{code} - Deve retornar erro se a reserva já foi usada")
+    void whenCheckInWithUsedReservation_thenReturnNotFound() throws Exception {
+
+        // Reserva já foi usada
+        when(reservationService.checkInReservation("USED123")).thenReturn(false);
+
+        mvc.perform(post("/reservations/checkin/USED123")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(content().string("Reservation not found or already used"));
+    }
+
+    @Test
+    @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro se não houver serviço naquele dia (meal não encontrada)")
+    void whenBookMealWithInvalidMeal_thenReturnMealNotFound() throws Exception {
+        when(mealService.getMealById(999L)).thenReturn(Optional.empty());
+
+        mvc.perform(post("/reservations/book/999")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.message", is("Meal not found")));
+    }
+
+
 }

@@ -74,30 +74,33 @@ public class ReservationServiceTest {
     @Test
     void shouldNotAllowReservationIfRestaurantIsFull() {
         Restaurant restaurant = new Restaurant("Rest A");
+        restaurant.setId(1L);
         Meal meal = new Meal("Steak", LocalDate.now(), restaurant);
 
-        // Digamos que o limite para reservas no restaurante seja 2
-        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now(), restaurant.getId())).thenReturn(2L);
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now(), 1L)).thenReturn(10L);
 
-        // Tentar fazer uma nova reserva
-        Reservation reservation = reservationService.createReservation(meal);
+        assertThrows(IllegalStateException.class, () -> {
+            reservationService.createReservation(meal);
+        });
 
-        // Como o limite foi atingido, a criação da reserva deve falhar
-        assertThat(reservation).isNull();
+        verify(reservationRepository, never()).save(any());
     }
+
 
     // Teste para garantir que a reserva não seja feita em um dia sem serviço (sem refeições)
     @Test
     void shouldNotAllowReservationOnDayWithoutService() {
         Restaurant restaurant = new Restaurant("Rest A");
-        Meal meal = new Meal("Pasta", LocalDate.now().plusDays(1), restaurant); // Reserva para o dia seguinte, quando não há serviço.
+        restaurant.setId(2L);
+        Meal meal = new Meal("Pasta", LocalDate.now().plusDays(1), restaurant);
 
-        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now().plusDays(1), restaurant.getId())).thenReturn(0L); // Nenhuma refeição disponível nesse dia.
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(meal.getDate(), 2L)).thenReturn(10L);
 
-        // Tentar criar a reserva para um dia sem serviço
-        Reservation reservation = reservationService.createReservation(meal);
+        assertThrows(IllegalStateException.class, () -> {
+            reservationService.createReservation(meal);
+        });
 
-        assertThat(reservation).isNull(); // A reserva não deve ser permitida
+        verify(reservationRepository, never()).save(any());
     }
 
     // Teste para garantir que a deleção de reserva funciona corretamente
