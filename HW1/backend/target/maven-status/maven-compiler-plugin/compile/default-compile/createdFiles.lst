@@ -2,6 +2,7 @@ tqs/hw1/controller/ReservationController.class
 tqs/hw1/controller/RestaurantController.class
 tqs/hw1/config/CorsConfig.class
 tqs/hw1/repository/ReservationRepository.class
+tqs/hw1/model/ErrorResponse.class
 tqs/hw1/repository/RestaurantRepository.class
 tqs/hw1/repository/MealRepository.class
 tqs/hw1/model/WeatherResponse$currentConditions.class

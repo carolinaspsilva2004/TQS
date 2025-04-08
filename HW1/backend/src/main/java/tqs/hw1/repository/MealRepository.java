@@ -12,4 +12,5 @@ public interface MealRepository extends JpaRepository<Meal, Long> {
     List<Meal> findByRestaurantIdAndDateAfter(Long restaurantId, LocalDate date);
     List<Meal> findByRestaurantId(Long restaurantId);
     List<Meal> findByDate(LocalDate date);
+    Optional<Meal> findByIdAndRestaurantId(Long id, Long restaurantId);
 }

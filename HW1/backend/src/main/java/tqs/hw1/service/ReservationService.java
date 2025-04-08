@@ -10,7 +10,7 @@ import java.util.UUID;
 @Service
 public class ReservationService {
     private final ReservationRepository reservationRepository;
-    private static final int MAX_RESERVATIONS_PER_DAY = 5;
+    private static final int MAX_RESERVATIONS_PER_DAY = 10;
 
 
     public ReservationService(ReservationRepository reservationRepository) {
@@ -30,8 +30,9 @@ public class ReservationService {
             .countByMeal_DateAndMeal_Restaurant_Id(date, restaurant.getId());
     
         if (existingReservations >= MAX_RESERVATIONS_PER_DAY) {
-            throw new IllegalStateException("Limite de reservas atingido para este restaurante nesta data.");
+                throw new IllegalStateException("Restaurant is fully booked for this date");
         }
+            
     
         Reservation reservation = new Reservation();
         reservation.setCode(UUID.randomUUID().toString());
@@ -56,10 +57,10 @@ public class ReservationService {
     
         Reservation reservation = reservationOpt.get();
         
-        // Verifica se a reserva já foi usada
         if (reservation.isUsed()) {
-            return false; // A reserva não pode ser usada novamente
+            throw new IllegalStateException("Reservation has already been used");
         }
+        
         
         // Marca a reserva como usada
         reservation.setUsed(true);
@@ -78,4 +79,7 @@ public class ReservationService {
         return false;
     }
     
+    public long countReservationsForMealOnDate(LocalDate date, Long restaurantId) {
+        return reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(date, restaurantId);
+    }
 }

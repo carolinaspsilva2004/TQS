@@ -43,4 +43,8 @@ public class MealService {
     public boolean existsById(Long id) {
         return mealRepository.existsById(id);
     }
+
+    public Optional<Meal> getMealByIdAndRestaurantId(Long id, Long restaurantId) {
+        return mealRepository.findByIdAndRestaurantId(id, restaurantId);
+    }
 }
