@@ -57,13 +57,20 @@ public class ReservationController {
     }
 
     @PostMapping("/checkin/{code}")
-    public ResponseEntity<String> checkIn(@PathVariable String code) {
-        boolean success = reservationService.checkInReservation(code);
-        if (success) {
-            return ResponseEntity.ok("Check-in successful");
+    public ResponseEntity<String> checkInReservation(@PathVariable String code) {
+        try {
+            boolean success = reservationService.checkInReservation(code);
+            if (success) {
+                return ResponseEntity.ok("Check-in successful");
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found or already used");
+            }
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found or already used");
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Reservation not found or already used");
+        
     }
+
 
     @GetMapping
     public ResponseEntity<List<Reservation>> getAllReservations() {

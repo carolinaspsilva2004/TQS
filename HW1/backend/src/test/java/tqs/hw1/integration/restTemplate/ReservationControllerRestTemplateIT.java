@@ -202,4 +202,22 @@ public class ReservationControllerRestTemplateIT {
         assertThat(response.getBody()).contains("Reservation not found");
     }
 
+    @Test
+    @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro se restaurante estiver lotado")
+    void whenRestaurantIsFullyBooked_thenReturnBadRequest() {
+        // Vamos simular o cenário de restaurante cheio adicionando 10 reservas para a mesma data e refeição
+        for (int i = 0; i < 10; i++) {
+            Reservation r = new Reservation(UUID.randomUUID().toString(), LocalDateTime.now(), false, meal);
+            reservationRepository.save(r);
+        }
+
+        // Agora tentamos criar mais uma reserva
+        String url = "http://localhost:" + randomServerPort + "/reservations/book/" + meal.getId();
+
+        ResponseEntity<String> response = testRestTemplate.postForEntity(url, null, String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody()).contains("Restaurant is fully booked for this date");
+    }
+
 }

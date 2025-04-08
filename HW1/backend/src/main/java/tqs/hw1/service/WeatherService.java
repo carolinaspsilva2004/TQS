@@ -31,7 +31,6 @@ public class WeatherService {
     private final AtomicInteger cacheHits = new AtomicInteger(0);
     private final AtomicInteger cacheMisses = new AtomicInteger(0);
 
-    // Cache configurado com expiração após 10 minutos e máximo de 100 entradas
     private final Cache<String, WeatherResponse> cache = Caffeine.newBuilder()
             .expireAfterWrite(3, TimeUnit.DAYS)
             .maximumSize(1000) // Define um limite para evitar crescimento descontrolado

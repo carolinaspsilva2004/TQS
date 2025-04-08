@@ -173,4 +173,18 @@ public class ReservationControllerMockIT {
                 .andExpect(status().isNotFound())
                 .andExpect(content().string("Reservation not found"));
     }
+
+    @Test
+    @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro se restaurante estiver lotado")
+    void whenRestaurantIsFullyBooked_thenReturnBadRequest() throws Exception {
+        when(mealService.getMealById(anyLong())).thenReturn(Optional.of(meal));
+        when(reservationService.createReservation(any(Meal.class)))
+            .thenThrow(new IllegalStateException("Restaurant is fully booked for this date"));
+
+        mvc.perform(post("/reservations/book/1")
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.message", is("Restaurant is fully booked for this date")));
+    }
+
 }
