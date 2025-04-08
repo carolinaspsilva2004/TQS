@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.unitTests.ReservationServiceTest
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.933 s <<< FAILURE! -- in tqs.hw1.unitTests.ReservationServiceTest
-tqs.hw1.unitTests.ReservationServiceTest.shouldRejectCheckInIfReservationAlreadyUsed -- Time elapsed: 0.015 s <<< ERROR!
-java.lang.IllegalStateException: Reservation has already been used
-	at tqs.hw1.service.ReservationService.checkInReservation(ReservationService.java:61)
-	at tqs.hw1.unitTests.ReservationServiceTest.shouldRejectCheckInIfReservationAlreadyUsed(ReservationServiceTest.java:64)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.612 s -- in tqs.hw1.unitTests.ReservationServiceTest

@@ -49,25 +49,18 @@ public class ReservationService {
     }
 
     public boolean checkInReservation(String code) {
-        Optional<Reservation> reservationOpt = reservationRepository.findByCode(code);
-        
-        if (reservationOpt.isEmpty()) {
-            return false; // Não existe a reserva
-        }
+        Reservation reservation = reservationRepository.findByCode(code)
+            .orElseThrow(() -> new IllegalArgumentException("Reservation not found"));
     
-        Reservation reservation = reservationOpt.get();
-        
         if (reservation.isUsed()) {
             throw new IllegalStateException("Reservation has already been used");
         }
-        
-        
-        // Marca a reserva como usada
+    
         reservation.setUsed(true);
         reservationRepository.save(reservation);
-        
         return true;
     }
+    
     
 
     public boolean deleteReservationByCode(String code) {

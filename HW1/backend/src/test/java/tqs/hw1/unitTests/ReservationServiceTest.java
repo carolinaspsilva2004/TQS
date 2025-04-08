@@ -16,6 +16,7 @@ import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ReservationServiceTest {
 
@@ -60,9 +61,12 @@ public class ReservationServiceTest {
     void shouldRejectCheckInIfReservationAlreadyUsed() {
         Reservation reservation = new Reservation("CHECK123", LocalDate.now().atStartOfDay(), true, null); // Já usado
         when(reservationRepository.findByCode("CHECK123")).thenReturn(Optional.of(reservation));
-
-        boolean checkedIn = reservationService.checkInReservation("CHECK123");
-        assertThat(checkedIn).isFalse(); // Não deve permitir o check-in, pois a reserva já foi usada
+    
+        assertThrows(IllegalStateException.class, () -> {
+            reservationService.checkInReservation("CHECK123");
+        });
+    
+        verify(reservationRepository, never()).save(any(Reservation.class)); // Garante que não tentou salvar
     }
 
 
