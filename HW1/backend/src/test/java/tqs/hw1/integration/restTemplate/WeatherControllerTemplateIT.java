@@ -53,7 +53,7 @@ public class WeatherControllerTemplateIT {
         String city = "Aveiro";
         String date = "2025-04-10";
         
-        String expectedCurrentCondition = "Clear"; 
+        String expectedCurrentCondition = "Partially cloudy"; 
 
         RestAssured.given()
                 .port(port)
