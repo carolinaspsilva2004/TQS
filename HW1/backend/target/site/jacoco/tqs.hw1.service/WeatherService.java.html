@@ -47,38 +47,38 @@ public class WeatherService {
 <span class="fc" id="L47">    }</span>
 
     public WeatherResponse getForecast(String city, String date) throws Exception {
-<span class="nc" id="L50">        String cacheKey = city + &quot;-&quot; + date;</span>
-<span class="nc" id="L51">        totalRequests.incrementAndGet();</span>
+<span class="fc" id="L50">        String cacheKey = city + &quot;-&quot; + date;</span>
+<span class="fc" id="L51">        totalRequests.incrementAndGet();</span>
 
         // Tenta buscar os dados do cache
-<span class="nc" id="L54">        WeatherResponse cachedResponse = cache.getIfPresent(cacheKey);</span>
-<span class="nc bnc" id="L55" title="All 2 branches missed.">        if (cachedResponse != null) {</span>
-<span class="nc" id="L56">            cacheHits.incrementAndGet();</span>
-<span class="nc" id="L57">            return cachedResponse;</span>
+<span class="fc" id="L54">        WeatherResponse cachedResponse = cache.getIfPresent(cacheKey);</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (cachedResponse != null) {</span>
+<span class="fc" id="L56">            cacheHits.incrementAndGet();</span>
+<span class="fc" id="L57">            return cachedResponse;</span>
         }
 
         // Caso não encontre, faz a requisição externa e guarda no cache
-<span class="nc" id="L61">        cacheMisses.incrementAndGet();</span>
-<span class="nc" id="L62">        WeatherResponse weatherResponse = fetchWeather(city, date);</span>
-<span class="nc" id="L63">        cache.put(cacheKey, weatherResponse);</span>
-<span class="nc" id="L64">        return weatherResponse;</span>
+<span class="fc" id="L61">        cacheMisses.incrementAndGet();</span>
+<span class="fc" id="L62">        WeatherResponse weatherResponse = fetchWeather(city, date);</span>
+<span class="fc" id="L63">        cache.put(cacheKey, weatherResponse);</span>
+<span class="fc" id="L64">        return weatherResponse;</span>
     }
 
     private WeatherResponse fetchWeather(String city, String date) throws Exception {
-<span class="nc" id="L68">        String url = &quot;https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/&quot; + city;</span>
+<span class="fc" id="L68">        String url = &quot;https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/&quot; + city;</span>
 
-<span class="nc" id="L70">        UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)</span>
-<span class="nc" id="L71">                .queryParam(&quot;unitGroup&quot;, &quot;metric&quot;)</span>
-<span class="nc" id="L72">                .queryParam(&quot;include&quot;, &quot;hours,current,alerts,days&quot;)</span>
-<span class="nc" id="L73">                .queryParam(&quot;key&quot;, apiKey)  // Usa a apiKey injetada</span>
-<span class="nc" id="L74">                .queryParam(&quot;contentType&quot;, &quot;json&quot;);</span>
+<span class="fc" id="L70">        UriComponentsBuilder uriBuilder = UriComponentsBuilder.fromHttpUrl(url)</span>
+<span class="fc" id="L71">                .queryParam(&quot;unitGroup&quot;, &quot;metric&quot;)</span>
+<span class="fc" id="L72">                .queryParam(&quot;include&quot;, &quot;hours,current,alerts,days&quot;)</span>
+<span class="fc" id="L73">                .queryParam(&quot;key&quot;, apiKey)  // Usa a apiKey injetada</span>
+<span class="fc" id="L74">                .queryParam(&quot;contentType&quot;, &quot;json&quot;);</span>
 
-<span class="nc" id="L76">        ResponseEntity&lt;String&gt; response = restTemplate.getForEntity(uriBuilder.toUriString(), String.class);</span>
-<span class="nc" id="L77">        return objectMapper.readValue(response.getBody(), WeatherResponse.class);</span>
+<span class="fc" id="L76">        ResponseEntity&lt;String&gt; response = restTemplate.getForEntity(uriBuilder.toUriString(), String.class);</span>
+<span class="fc" id="L77">        return objectMapper.readValue(response.getBody(), WeatherResponse.class);</span>
     }
 
-<span class="nc" id="L80">    public int getTotalRequests() { return totalRequests.get(); }</span>
-<span class="nc" id="L81">    public int getCacheHits() { return cacheHits.get(); }</span>
-<span class="nc" id="L82">    public int getCacheMisses() { return cacheMisses.get(); }</span>
+<span class="fc" id="L80">    public int getTotalRequests() { return totalRequests.get(); }</span>
+<span class="fc" id="L81">    public int getCacheHits() { return cacheHits.get(); }</span>
+<span class="fc" id="L82">    public int getCacheMisses() { return cacheMisses.get(); }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

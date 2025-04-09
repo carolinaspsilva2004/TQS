@@ -26,8 +26,8 @@ public class ReservationController {
 
     @ExceptionHandler(IllegalStateException.class)
     public ResponseEntity&lt;ErrorResponse&gt; handleIllegalStateException(IllegalStateException ex) {
-<span class="nc" id="L29">        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());</span>
-<span class="nc" id="L30">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);</span>
+<span class="fc" id="L29">        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());</span>
+<span class="fc" id="L30">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);</span>
     }
 
 
@@ -39,8 +39,8 @@ public class ReservationController {
         }
 <span class="fc" id="L40">        Meal meal = mealOpt.get();</span>
 <span class="fc" id="L41">        long existingReservations = reservationService.countReservationsForMealOnDate(meal.getDate(), meal.getRestaurant().getId());</span>
-<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (existingReservations &gt;= MAX_RESERVATIONS_PER_DAY) {</span>
-<span class="nc" id="L43">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(&quot;Restaurant is fully booked for this date&quot;));</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">        if (existingReservations &gt;= MAX_RESERVATIONS_PER_DAY) {</span>
+<span class="fc" id="L43">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(&quot;Restaurant is fully booked for this date&quot;));</span>
         }
 <span class="fc" id="L45">        Reservation reservation = reservationService.createReservation(meal);</span>
 <span class="fc" id="L46">        return ResponseEntity.status(HttpStatus.CREATED).body(reservation);</span>
@@ -65,8 +65,8 @@ public class ReservationController {
             } else {
 <span class="fc" id="L66">                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found or already used&quot;);</span>
             }
-<span class="nc" id="L68">        } catch (IllegalArgumentException e) {</span>
-<span class="nc" id="L69">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found or already used&quot;);</span>
+<span class="fc" id="L68">        } catch (IllegalArgumentException e) {</span>
+<span class="fc" id="L69">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found or already used&quot;);</span>
         }
         
     }

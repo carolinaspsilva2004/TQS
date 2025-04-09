@@ -25,11 +25,11 @@ public class MealService {
     }
 
     public List&lt;Meal&gt; getMealsByRestaurantId(Long restaurantId) {
-<span class="nc" id="L28">        return mealRepository.findByRestaurantId(restaurantId);</span>
+<span class="fc" id="L28">        return mealRepository.findByRestaurantId(restaurantId);</span>
     }
 
     public List&lt;Meal&gt; getMealsByDate(LocalDate date) {
-<span class="nc" id="L32">        return mealRepository.findByDate(date);</span>
+<span class="fc" id="L32">        return mealRepository.findByDate(date);</span>
     }
 
     public Meal saveMeal(Meal meal) {

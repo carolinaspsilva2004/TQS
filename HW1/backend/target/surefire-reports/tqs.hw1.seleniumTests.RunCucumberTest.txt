@@ -1,17 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.seleniumTests.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 24.20 s <<< FAILURE! -- in tqs.hw1.seleniumTests.RunCucumberTest
-View meals and weather forecast for selected restaurant.The user checks the active reservation and cancels it -- Time elapsed: 11.90 s <<< ERROR!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for visibility of all elements located by By.cssSelector: .reservations-list .reservation-card (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.25.0', revision: '8a8aea2337'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.8.0-57-generic', java.version: '21.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.52, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: /tmp/.org.chromium.Chromium...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:38985}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), se:cdp: ws://localhost:38985/devtoo..., se:cdpVersion: 135.0.7049.52, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 061f5f3c7982cb34c0e8d167c0df1ed5
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at stepdefinitions.DetailsCancelSteps.theUserSeesTheListOfActiveReservations(DetailsCancelSteps.java:34)
-	at ✽.the user sees the list of active reservations(classpath:tqs/hw1/scenarios.feature:30)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.60 s -- in tqs.hw1.seleniumTests.RunCucumberTest

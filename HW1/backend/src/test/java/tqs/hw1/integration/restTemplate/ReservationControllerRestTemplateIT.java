@@ -206,7 +206,7 @@ public class ReservationControllerRestTemplateIT {
     @DisplayName("POST /reservations/book/{mealId} - Deve retornar erro se restaurante estiver lotado")
     void whenRestaurantIsFullyBooked_thenReturnBadRequest() {
         // Vamos simular o cenário de restaurante cheio adicionando 10 reservas para a mesma data e refeição
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 50; i++) {
             Reservation r = new Reservation(UUID.randomUUID().toString(), LocalDateTime.now(), false, meal);
             reservationRepository.save(r);
         }

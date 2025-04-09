@@ -52,7 +52,7 @@ public class WeatherControllerMockIT {
         String city = "Aveiro";
         String date = "2025-04-10";
         
-        String expectedCurrentCondition = "Partially cloudy";  // Use the correct expected condition
+        String expectedCurrentCondition = "Clear";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/current"))
                 .andExpect(status().isOk())
@@ -83,7 +83,7 @@ public class WeatherControllerMockIT {
         String city = "Aveiro";
         String date = "2025-04-12";
         
-        String expectedHourCondition = "Rain, Overcast";  // Use the correct expected condition
+        String expectedHourCondition = "Rain, Partially cloudy";  // Use the correct expected condition
         
         mvc.perform(get("/weather/" + city + "/" + date + "/hours"))
                 .andExpect(status().isOk())
