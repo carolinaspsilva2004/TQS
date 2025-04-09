@@ -17,7 +17,7 @@ import tqs.hw1.model.ErrorResponse;
 public class ReservationController {
     private final MealService mealService;
     private final ReservationService reservationService;
-    private static final int MAX_RESERVATIONS_PER_DAY = 10; 
+    private static final int MAX_RESERVATIONS_PER_DAY = 50; 
 
     public ReservationController(MealService mealService, ReservationService reservationService) {
         this.mealService = mealService;

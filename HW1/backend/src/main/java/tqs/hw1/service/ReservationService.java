@@ -10,7 +10,7 @@ import java.util.UUID;
 @Service
 public class ReservationService {
     private final ReservationRepository reservationRepository;
-    private static final int MAX_RESERVATIONS_PER_DAY = 10;
+    private static final int MAX_RESERVATIONS_PER_DAY = 50 ;
 
 
     public ReservationService(ReservationRepository reservationRepository) {
