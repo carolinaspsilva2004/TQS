@@ -77,7 +77,7 @@ public class ReservationServiceTest {
         restaurant.setId(1L);
         Meal meal = new Meal("Steak", LocalDate.now(), restaurant);
 
-        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now(), 1L)).thenReturn(10L);
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(LocalDate.now(), 1L)).thenReturn(50L);
 
         assertThrows(IllegalStateException.class, () -> {
             reservationService.createReservation(meal);
@@ -94,7 +94,7 @@ public class ReservationServiceTest {
         restaurant.setId(2L);
         Meal meal = new Meal("Pasta", LocalDate.now().plusDays(1), restaurant);
 
-        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(meal.getDate(), 2L)).thenReturn(10L);
+        when(reservationRepository.countByMeal_DateAndMeal_Restaurant_Id(meal.getDate(), 2L)).thenReturn(50L);
 
         assertThrows(IllegalStateException.class, () -> {
             reservationService.createReservation(meal);

@@ -61,6 +61,8 @@ services:
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
 
+
 volumes:
   postgres_data:
     driver: local
+  

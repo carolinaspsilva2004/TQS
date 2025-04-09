@@ -166,7 +166,7 @@ void whenDeleteReservation_thenReturnSuccess() throws Exception {
         when(mealService.getMealById(anyLong())).thenReturn(Optional.of(meal));
         // Mocka que já existem 10 reservas para aquele restaurante e data
         when(reservationService.countReservationsForMealOnDate(meal.getDate(), meal.getRestaurant().getId()))
-                .thenReturn(10L);
+                .thenReturn(50L);
 
         mvc.perform(post("/reservations/book/1")
                         .contentType(MediaType.APPLICATION_JSON))

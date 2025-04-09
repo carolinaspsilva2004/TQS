@@ -188,6 +188,11 @@
     <build>
         <plugins>
         <plugin>
+            <groupId>org.sonarsource.scanner.maven</groupId>
+            <artifactId>sonar-maven-plugin</artifactId>
+            <version>4.0.0.4121</version>
+        </plugin>
+        <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.10</version>  <!-- Usa a versão mais recente -->
@@ -206,11 +211,6 @@
                     </goals>
                 </execution>
             </executions>
-        </plugin>
-        <plugin>
-            <groupId>org.sonarsource</groupId>
-            <artifactId>sonar-maven-plugin</artifactId>
-            <version>3.9.0.2155</version>
         </plugin>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
