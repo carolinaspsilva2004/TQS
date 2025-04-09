@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: tqs.hw1.seleniumTests.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.93 s -- in tqs.hw1.seleniumTests.RunCucumberTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.90 s -- in tqs.hw1.seleniumTests.RunCucumberTest
