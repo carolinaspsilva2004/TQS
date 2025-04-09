@@ -1,16 +1,16 @@
 import { check } from "k6";
 import http from "k6/http";
 
-const BASE_URL = "http://localhost:8080"; // Substitua com a URL do seu backend
+const BASE_URL = "http://localhost:8080"; 
 export const options = {
     stages: [
-        { duration: "10s", target: 1 }, // Aumenta para 10 usuários em 10 segundos
-        { duration: "30s", target: 1 }, // Mantém 10 usuários por 30 segundos
-        { duration: "10s", target: 0 }, // Reduz para 0 usuários em 10 segundos
+        { duration: "10s", target: 1 }, 
+        { duration: "30s", target: 1 }, 
+        { duration: "10s", target: 0 }, 
         ],
     thresholds: {
-      "http_req_duration{expected_response:true}": ["p(95)<1000"], // 95% das requisições < 4s
-      "http_req_failed": ["rate<0.05"], // Falha < 2% das requisições
+      "http_req_duration{expected_response:true}": ["p(95)<1000"], 
+      "http_req_failed": ["rate<0.05"], // Máximo de 5% de falhas
       "checks": ["rate>0.83"], // Pelo menos 95% dos checks devem passar
     },
   }
