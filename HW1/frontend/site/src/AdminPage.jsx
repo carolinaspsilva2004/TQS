@@ -2,10 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AdminPage.css'; // Importação do arquivo CSS para o estilo
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const AdminPage = () => {
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Buscar todas as reservas do backend
@@ -40,6 +43,13 @@ const AdminPage = () => {
   return (
     <div className="admin-page">
       <h1>Painel de Admin - Verificação de Reservas</h1>
+      <button 
+              className="back-button" 
+              onClick={() => navigate('/home')}
+            >
+              <FaArrowLeft className="back-button-icon" />
+              <span className="back-button-text">Voltar</span>
+      </button>
       {loading ? (
         <div className="loading">Carregando reservas...</div>
       ) : (

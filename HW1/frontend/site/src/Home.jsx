@@ -130,6 +130,12 @@ const Home = () => {
         </button> 
       </div>
 
+      <div className="worker-container">
+        <button onClick={() => navigate('/admin')} className="worker-btn">
+          Food services workers        
+          </button> 
+      </div>
+
       <div className="home">
         {/* Lado esquerdo: restaurantes */}
         <div className="left-side">

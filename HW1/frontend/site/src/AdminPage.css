@@ -97,3 +97,36 @@
     background-color: #f4511e;
   }
   
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #6b6b6b;  /* Cor mais moderna */
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50px;  /* Bordas arredondadas para um visual mais moderno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+  
+  .back-button:hover {
+    background-color: #3c3c3c;  /* Cor mais escura no hover */
+    transform: scale(1.05);  /* Efeito de ampliação ao passar o mouse */
+  }
+  
+  .back-button-icon {
+    margin-right: 8px;  /* Espaço entre o ícone e o texto */
+    font-size: 18px;  /* Tamanho do ícone */
+  }
+  
+  .back-button-text {
+    font-size: 16px;  /* Tamanho do texto */
+  }

@@ -131,6 +131,31 @@ input[type="text"] {
   background-color: #516f5a;
 }
 
+.worker-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #264398;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  max-width: fit-content;
+  margin-left: 85px;
+  transition: background 0.3s ease;
+}
+
+.worker-btn:hover {
+  background-color: #3153ba;
+}
+
+
+
+
+
+
 .icon-minhas-reservas {
   color: #ffffff;
   font-size: 1.2rem;
@@ -244,4 +269,12 @@ input[type="text"] {
   margin-top: 0px;
   padding-left: 380px;
   padding-right: 400px;
+}
+
+.worker-section {
+  background-color: #f0f9ff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #bee3f8;
+  align-items: right;
 }
