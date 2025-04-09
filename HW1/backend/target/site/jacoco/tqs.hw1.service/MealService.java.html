@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MealService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW1</a> &gt; <a href="index.source.html" class="el_package">tqs.hw1.service</a> &gt; <span class="el_source">MealService.java</span></div><h1>MealService.java</h1><pre class="source lang-java linenums">package tqs.hw1.service;
+
+import org.springframework.stereotype.Service;
+import tqs.hw1.model.Meal;
+import tqs.hw1.repository.MealRepository;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class MealService {
+    private final MealRepository mealRepository;
+
+<span class="fc" id="L15">    public MealService(MealRepository mealRepository) {</span>
+<span class="fc" id="L16">        this.mealRepository = mealRepository;</span>
+<span class="fc" id="L17">    }</span>
+
+    public List&lt;Meal&gt; getAllMeals() {
+<span class="fc" id="L20">        return mealRepository.findAll();</span>
+    }
+
+    public Optional&lt;Meal&gt; getMealById(Long id) {
+<span class="fc" id="L24">        return mealRepository.findById(id);</span>
+    }
+
+    public List&lt;Meal&gt; getMealsByRestaurantId(Long restaurantId) {
+<span class="nc" id="L28">        return mealRepository.findByRestaurantId(restaurantId);</span>
+    }
+
+    public List&lt;Meal&gt; getMealsByDate(LocalDate date) {
+<span class="nc" id="L32">        return mealRepository.findByDate(date);</span>
+    }
+
+    public Meal saveMeal(Meal meal) {
+<span class="fc" id="L36">        return mealRepository.save(meal);</span>
+    }
+
+    public void deleteMeal(Long id) {
+<span class="fc" id="L40">        mealRepository.deleteById(id);</span>
+<span class="fc" id="L41">    }</span>
+
+    public boolean existsById(Long id) {
+<span class="fc" id="L44">        return mealRepository.existsById(id);</span>
+    }
+
+    public Optional&lt;Meal&gt; getMealByIdAndRestaurantId(Long id, Long restaurantId) {
+<span class="nc" id="L48">        return mealRepository.findByIdAndRestaurantId(id, restaurantId);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

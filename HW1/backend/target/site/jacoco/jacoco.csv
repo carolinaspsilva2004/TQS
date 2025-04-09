@@ -1,0 +1,23 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+HW1,tqs.hw1.model,WeatherResponse.Day,26,27,0,0,9,10,5,5,5,5
+HW1,tqs.hw1.model,WeatherResponse.Day.Hours,23,21,0,0,9,8,5,4,5,4
+HW1,tqs.hw1.model,ErrorResponse,4,9,0,0,2,4,1,2,1,2
+HW1,tqs.hw1.model,WeatherResponse.currentConditions,23,21,0,0,9,8,5,4,5,4
+HW1,tqs.hw1.model,Reservation,4,63,0,0,2,22,1,12,1,12
+HW1,tqs.hw1.model,WeatherResponse.Alert,23,21,0,0,9,8,5,4,5,4
+HW1,tqs.hw1.model,WeatherResponse,26,21,0,0,9,8,5,4,5,4
+HW1,tqs.hw1.model,Meal,0,55,0,0,0,20,0,11,0,11
+HW1,tqs.hw1.model,Restaurant,0,29,0,0,0,12,0,7,0,7
+HW1,tqs.hw1.controller,RestaurantController,0,102,0,8,0,21,0,11,0,7
+HW1,tqs.hw1.controller,ReservationController,25,103,1,7,5,25,2,10,1,7
+HW1,tqs.hw1.controller,WeatherController,5,91,0,0,0,20,1,7,1,7
+HW1,tqs.hw1.controller,MealController,19,82,3,5,5,20,4,8,1,7
+HW1,tqs.hw1.service,ReservationService,25,91,1,5,4,26,5,6,4,4
+HW1,tqs.hw1.service,WeatherService,107,62,2,0,21,16,6,1,5,1
+HW1,tqs.hw1.service,RestaurantService,0,31,0,0,0,9,0,6,0,6
+HW1,tqs.hw1.service,MealService,16,31,0,0,3,9,3,6,3,6
+HW1,tqs.hw1,Hw1Application,5,3,0,0,2,1,1,1,1,1
+HW1,tqs.hw1.config,WebConfig,0,15,0,0,0,3,0,2,0,2
+HW1,tqs.hw1.config,CorsConfig,0,8,0,0,0,2,0,2,0,2
+HW1,tqs.hw1.config,MetricsConfig,0,7,0,0,0,2,0,2,0,2
+HW1,tqs.hw1.config,CorsConfig.new WebMvcConfigurer() {...},0,45,0,0,0,6,0,2,0,2

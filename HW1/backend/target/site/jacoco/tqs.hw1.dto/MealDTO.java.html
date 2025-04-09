@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MealDTO.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW1</a> &gt; <a href="index.source.html" class="el_package">tqs.hw1.dto</a> &gt; <span class="el_source">MealDTO.java</span></div><h1>MealDTO.java</h1><pre class="source lang-java linenums">package tqs.hw1.dto;
+
+import java.time.LocalDate;
+
+public class MealDTO {
+    private Long id;
+    private String description;
+    private LocalDate date;
+    private Long restaurantId;
+    private String weather;
+
+<span class="nc" id="L12">    public MealDTO() {</span>
+<span class="nc" id="L13">    }</span>
+
+<span class="nc" id="L15">    public MealDTO(Long id, String description, LocalDate date, Long restaurantId, String weather) {</span>
+<span class="nc" id="L16">        this.id = id;</span>
+<span class="nc" id="L17">        this.description = description;</span>
+<span class="nc" id="L18">        this.date = date;</span>
+<span class="nc" id="L19">        this.restaurantId = restaurantId;</span>
+<span class="nc" id="L20">        this.weather = weather;</span>
+<span class="nc" id="L21">    }</span>
+
+    public Long getId() {
+<span class="nc" id="L24">        return id;</span>
+    }
+
+    public String getDescription() {
+<span class="nc" id="L28">        return description;</span>
+    }
+
+    public LocalDate getDate() {
+<span class="nc" id="L32">        return date;</span>
+    }
+
+    public Long getRestaurantId() {
+<span class="nc" id="L36">        return restaurantId;</span>
+    }
+
+    public String getWeather() {
+<span class="nc" id="L40">        return weather;</span>
+    }
+
+    public void setId(Long id) {
+<span class="nc" id="L44">        this.id = id;</span>
+<span class="nc" id="L45">    }</span>
+
+    public void setDescription(String description) {
+<span class="nc" id="L48">        this.description = description;</span>
+<span class="nc" id="L49">    }</span>
+
+    public void setDate(LocalDate date) {
+<span class="nc" id="L52">        this.date = date;</span>
+<span class="nc" id="L53">    }</span>
+
+    public void setRestaurantId(Long restaurantId) {
+<span class="nc" id="L56">        this.restaurantId = restaurantId;</span>
+<span class="nc" id="L57">    }</span>
+
+    public void setWeather(String weather) {
+<span class="nc" id="L60">        this.weather = weather;</span>
+<span class="nc" id="L61">    }</span>
+
+    @Override
+    public String toString() {
+<span class="nc" id="L65">        return &quot;MealDTO{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, description='&quot; + description + '\'' +
+                &quot;, date=&quot; + date +
+                &quot;, restaurantId=&quot; + restaurantId +
+                &quot;, weather='&quot; + weather + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

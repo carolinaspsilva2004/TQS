@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WeatherController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW1</a> &gt; <a href="index.source.html" class="el_package">tqs.hw1.controller</a> &gt; <span class="el_source">WeatherController.java</span></div><h1>WeatherController.java</h1><pre class="source lang-java linenums">package tqs.hw1.controller;
+
+import tqs.hw1.service.WeatherService;
+import tqs.hw1.model.WeatherResponse;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+
+@RestController
+@RequestMapping(&quot;/weather&quot;)
+public class WeatherController {
+
+    private final WeatherService weatherService;
+
+<span class="fc" id="L19">    public WeatherController(WeatherService weatherService) {</span>
+<span class="fc" id="L20">        this.weatherService = weatherService;</span>
+<span class="fc" id="L21">    }</span>
+
+    @GetMapping(&quot;/{city}/{date}&quot;)
+    public WeatherResponse getWeatherForDate(@PathVariable String city, @PathVariable String date) throws Exception {
+<span class="fc" id="L25">        return weatherService.getForecast(city, date);</span>
+    }
+
+    @GetMapping(&quot;/{city}/{date}/current&quot;)
+    public WeatherResponse getDaysAndCurrentWeather(@PathVariable String city, @PathVariable String date) throws Exception {
+<span class="fc" id="L30">        WeatherResponse weatherResponse = weatherService.getForecast(city, date);</span>
+        
+<span class="fc" id="L32">        return new WeatherResponse(</span>
+            null,
+<span class="fc" id="L34">            weatherResponse.getCurrentConditions(),</span>
+            null
+        );
+    }
+
+    @GetMapping(&quot;/{city}/{date}/alerts&quot;)
+    public WeatherResponse getWeatherAlerts(@PathVariable String city, @PathVariable String date) throws Exception {
+<span class="fc" id="L41">        WeatherResponse weatherResponse = weatherService.getForecast(city, date);</span>
+        
+<span class="fc" id="L43">        return new WeatherResponse(</span>
+            null, 
+            null, 
+<span class="fc" id="L46">            weatherResponse.getAlerts()</span>
+        );
+    }
+
+    @GetMapping(&quot;/{city}/{date}/hours&quot;)
+    public List&lt;WeatherResponse.Day.Hours&gt; getWeatherHours(@PathVariable String city, @PathVariable String date) throws Exception {
+<span class="fc" id="L52">        WeatherResponse weatherResponse = weatherService.getForecast(city, date);</span>
+    
+<span class="fc" id="L54">        WeatherResponse.Day selectedDay = weatherResponse.getDays().stream()</span>
+<span class="fc" id="L55">            .filter(day -&gt; day.getDatetime().equals(date))</span>
+<span class="fc" id="L56">            .findFirst()</span>
+<span class="pc" id="L57">            .orElseThrow(() -&gt; new Exception(&quot;Date not found in response&quot;));</span>
+    
+<span class="fc" id="L59">        return selectedDay.getHours();</span>
+    }
+
+    @GetMapping(&quot;/cache/stats&quot;)
+    public String getCacheStats() {
+<span class="fc" id="L64">        return String.format(&quot;Total Requests: %d, Cache Hits: %d, Cache Misses: %d&quot;,</span>
+<span class="fc" id="L65">                weatherService.getTotalRequests(),</span>
+<span class="fc" id="L66">                weatherService.getCacheHits(),</span>
+<span class="fc" id="L67">                weatherService.getCacheMisses());</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

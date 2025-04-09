@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservationController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW1</a> &gt; <a href="index.source.html" class="el_package">tqs.hw1.controller</a> &gt; <span class="el_source">ReservationController.java</span></div><h1>ReservationController.java</h1><pre class="source lang-java linenums">package tqs.hw1.controller;
+
+import tqs.hw1.model.Meal;
+import tqs.hw1.model.Reservation;
+import tqs.hw1.service.ReservationService;
+import tqs.hw1.service.MealService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+import tqs.hw1.model.ErrorResponse;
+
+@RestController
+@RequestMapping(&quot;/reservations&quot;)
+public class ReservationController {
+    private final MealService mealService;
+    private final ReservationService reservationService;
+    private static final int MAX_RESERVATIONS_PER_DAY = 50; 
+
+<span class="fc" id="L22">    public ReservationController(MealService mealService, ReservationService reservationService) {</span>
+<span class="fc" id="L23">        this.mealService = mealService;</span>
+<span class="fc" id="L24">        this.reservationService = reservationService;</span>
+<span class="fc" id="L25">    }</span>
+
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleIllegalStateException(IllegalStateException ex) {
+<span class="nc" id="L29">        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());</span>
+<span class="nc" id="L30">        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);</span>
+    }
+
+
+    @PostMapping(&quot;/book/{mealId}&quot;)
+    public ResponseEntity&lt;?&gt; bookMeal(@PathVariable Long mealId) {
+<span class="fc" id="L36">        Optional&lt;Meal&gt; mealOpt = mealService.getMealById(mealId);</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (mealOpt.isEmpty()) {</span>
+<span class="fc" id="L38">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse(&quot;Meal not found&quot;));</span>
+        }
+<span class="fc" id="L40">        Meal meal = mealOpt.get();</span>
+<span class="fc" id="L41">        long existingReservations = reservationService.countReservationsForMealOnDate(meal.getDate(), meal.getRestaurant().getId());</span>
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (existingReservations &gt;= MAX_RESERVATIONS_PER_DAY) {</span>
+<span class="nc" id="L43">            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(&quot;Restaurant is fully booked for this date&quot;));</span>
+        }
+<span class="fc" id="L45">        Reservation reservation = reservationService.createReservation(meal);</span>
+<span class="fc" id="L46">        return ResponseEntity.status(HttpStatus.CREATED).body(reservation);</span>
+    }
+
+    
+  
+
+    @GetMapping(&quot;/{code}&quot;)
+    public ResponseEntity&lt;Reservation&gt; checkReservation(@PathVariable String code) {
+<span class="fc" id="L54">        return reservationService.getReservationByCode(code)</span>
+<span class="fc" id="L55">                .map(ResponseEntity::ok)</span>
+<span class="fc" id="L56">                .orElseGet(() -&gt; ResponseEntity.status(HttpStatus.NOT_FOUND).build());</span>
+    }
+
+    @PostMapping(&quot;/checkin/{code}&quot;)
+    public ResponseEntity&lt;String&gt; checkInReservation(@PathVariable String code) {
+        try {
+<span class="fc" id="L62">            boolean success = reservationService.checkInReservation(code);</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            if (success) {</span>
+<span class="fc" id="L64">                return ResponseEntity.ok(&quot;Check-in successful&quot;);</span>
+            } else {
+<span class="fc" id="L66">                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found or already used&quot;);</span>
+            }
+<span class="nc" id="L68">        } catch (IllegalArgumentException e) {</span>
+<span class="nc" id="L69">            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found or already used&quot;);</span>
+        }
+        
+    }
+
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;Reservation&gt;&gt; getAllReservations() {
+<span class="fc" id="L77">        List&lt;Reservation&gt; reservations = reservationService.getReservations();</span>
+<span class="fc" id="L78">        return ResponseEntity.ok(reservations);</span>
+    }
+
+    @DeleteMapping(&quot;/{code}&quot;)
+    public ResponseEntity&lt;String&gt; deleteReservation(@PathVariable String code) {
+<span class="fc" id="L83">        boolean deleted = reservationService.deleteReservationByCode(code);</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        if (deleted) {</span>
+<span class="fc" id="L85">            return ResponseEntity.ok(&quot;Reservation deleted successfully&quot;);</span>
+        }
+<span class="fc" id="L87">        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Reservation not found&quot;);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>

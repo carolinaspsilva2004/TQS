@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MealController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">HW1</a> &gt; <a href="index.source.html" class="el_package">tqs.hw1.controller</a> &gt; <span class="el_source">MealController.java</span></div><h1>MealController.java</h1><pre class="source lang-java linenums">package tqs.hw1.controller;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import tqs.hw1.model.Meal;
+import tqs.hw1.service.MealService;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import tqs.hw1.model.Restaurant;
+import tqs.hw1.service.RestaurantService;
+@RestController
+@RequestMapping(&quot;/meals&quot;)
+public class MealController {
+    private final MealService mealService;
+    private final RestaurantService restaurantService;
+
+<span class="fc" id="L20">    public MealController(MealService mealService, RestaurantService restaurantService) {</span>
+<span class="fc" id="L21">        this.mealService = mealService;</span>
+<span class="fc" id="L22">        this.restaurantService = restaurantService;</span>
+<span class="fc" id="L23">    }</span>
+
+    @GetMapping
+    public ResponseEntity&lt;List&lt;Meal&gt;&gt; getAllMeals() {
+<span class="fc" id="L27">        return ResponseEntity.ok(mealService.getAllMeals());</span>
+    }
+
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Meal&gt; getMealById(@PathVariable Long id) {
+<span class="fc" id="L32">        return mealService.getMealById(id)</span>
+<span class="fc" id="L33">                .map(ResponseEntity::ok)</span>
+<span class="pc" id="L34">                .orElseGet(() -&gt; ResponseEntity.notFound().build());</span>
+    }
+
+    @GetMapping(&quot;/restaurant/{restaurantId}&quot;)
+    public ResponseEntity&lt;List&lt;Meal&gt;&gt; getMealsByRestaurantId(@PathVariable Long restaurantId) {
+<span class="fc" id="L39">        return ResponseEntity.ok(mealService.getMealsByRestaurantId(restaurantId));</span>
+    }
+
+    @GetMapping(&quot;/date/{date}&quot;)
+    public ResponseEntity&lt;List&lt;Meal&gt;&gt; getMealsByDate(@PathVariable String date) {
+<span class="fc" id="L44">        LocalDate localDate = LocalDate.parse(date);</span>
+<span class="fc" id="L45">        return ResponseEntity.ok(mealService.getMealsByDate(localDate));</span>
+    }
+
+    @PostMapping
+    public ResponseEntity&lt;Meal&gt; createMeal(@RequestBody Meal meal) {
+        try {
+<span class="pc bpc" id="L51" title="2 of 4 branches missed.">            if (meal.getRestaurant() == null || meal.getRestaurant().getId() == null) {</span>
+<span class="nc" id="L52">                return ResponseEntity.badRequest().body(null);</span>
+            }
+
+            // Buscar o restaurante completo do BD
+<span class="fc" id="L56">            Optional&lt;Restaurant&gt; restaurant = restaurantService.getRestaurantById(meal.getRestaurant().getId());</span>
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">            if (restaurant.isEmpty()) {</span>
+<span class="nc" id="L58">                return ResponseEntity.badRequest().body(null);</span>
+            }
+
+            // Atribuir o restaurante carregado à meal
+<span class="fc" id="L62">            meal.setRestaurant(restaurant.get());</span>
+
+<span class="fc" id="L64">            return ResponseEntity.ok(mealService.saveMeal(meal));</span>
+<span class="nc" id="L65">        } catch (Exception e) {</span>
+<span class="nc" id="L66">            e.printStackTrace();</span>
+<span class="nc" id="L67">            return ResponseEntity.status(500).body(null);</span>
+        }
+    }
+
+
+    
+
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Void&gt; deleteMeal(@PathVariable Long id) {
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (mealService.existsById(id)) {</span>
+<span class="fc" id="L77">            mealService.deleteMeal(id);</span>
+<span class="fc" id="L78">            return ResponseEntity.noContent().build();</span>
+        }
+<span class="fc" id="L80">        return ResponseEntity.notFound().build();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
